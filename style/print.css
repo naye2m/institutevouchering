@@ -1,14 +1,17 @@
 
-
-#v {
-    
+.vmain{
     position: relative;
     top: 00vh;
     height: 100vh;
 }
+
 thead {
     background-color: #c2d59b !important;
 }
-#input {
+#input1 {
     display: none ;
+}
+@page:first{
+    size: a4 landscape;
+    margin: 0;
 }

@@ -58,3 +58,16 @@ const cusObjt = {
         total: this.price * this.quantity
     }
 }
+
+// var str = '{"hello":"world"}';
+// try {
+    //   var obj = JSON.parse(str); // this is how you parse a string into JSON 
+//   document.body.innerHTML += obj.hello;
+// } catch (ex) {
+    //   console.error(ex);
+    // }
+// ! var str = '{"hello":"world"}';
+// ? var str = '{"hello":"world"}';
+// todo var str = '{"hello":"world"}';
+// * var str = '{"hello":"world"}';
+// // var str = '{"hello":"world"}';

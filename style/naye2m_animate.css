@@ -1,0 +1,56 @@
+.animation {
+    animation: 5000ms ease-in-out 800ms infinite normal repeat;
+
+}
+
+@keyframes naye2m_background_animation {
+
+    100%,
+    0% {
+        background-color: #e5b534;
+        opacity: 1;
+        background-image: linear-gradient(30deg,
+                #a48124 12%,
+                transparent 12.5%,
+                transparent 87%,
+                #a48124 87.5%,
+                #a48124),
+            linear-gradient(150deg,
+                #a48124 12%,
+                transparent 12.5%,
+                transparent 87%,
+                #a48124 87.5%,
+                #a48124),
+            linear-gradient(30deg,
+                #a48124 12%,
+                transparent 12.5%,
+                transparent 87%,
+                #a48124 87.5%,
+                #a48124),
+            linear-gradient(150deg,
+                #a48124 12%,
+                transparent 12.5%,
+                transparent 87%,
+                #a48124 87.5%,
+                #a48124),
+            linear-gradient(60deg,
+                #a4812477 25%,
+                transparent 25.5%,
+                transparent 75%,
+                #a4812477 75%,
+                #a4812477),
+            linear-gradient(60deg,
+                #a4812477 25%,
+                transparent 25.5%,
+                transparent 75%,
+                #a4812477 75%,
+                #a4812477);
+    }
+
+}
+
+@-webkit-keyframes naye2m_background_animation {
+
+    100%,
+    0% {}
+}
