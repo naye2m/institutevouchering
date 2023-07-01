@@ -1,13 +1,13 @@
-setTimeout(() => {
+    console.log("   _______ __  _                    __________   \r\n  / ____(_) /_(_)___ ___  ____     /  _/_  __/   \r\n / /   / / __/ /_  // _ \\/ __ \\    / /  / /      \r\n/ /___/ / /_/ / / //  __/ / / /  _/ /  / /       \r\n\\____/_/\\__/_/ /___|___/_/ /_/  /___/ /_/        \r\n   _________  / /_  __/ /_(_)___  ____  _____    \r\n  / ___/ __ \\/ / / / / __/ / __ \\/ __ \\/ ___/    \r\n (__  ) /_/ / / /_/ / /_/ / /_/ / / / (__  )     \r\n/____/\\____/_/\\__,_/\\__/_/\\____/_/ /_/____/\r\n                                              -@naye2m\r\nCopyright © 2012 - 2023 Citizen IT® solutions. All rights reserved.");// turn fist on DIPLOY
     var presentCustomer;
     let rawDataForm = document.forms[0];
 
 
-    function Customer(name, address, buyingFor = 'Customer', invoiceNumber, phone = 0, _discountAmount = 0) {
+    function Customer(name, address, buyingFor = 'Customer', invoiceNumber, phone = 0, _discountAmount = 0) {//chenges in this constructor should be also modified in server side //spreadsheet//DB//codescript//
 
         this.name = name.toUpperCase();
         this.address = address.toUpperCase();
-        this.QrData = name + "innerDataInBtoa";
+        this.fetchingFormData = '';
         this.time = new Date();
         this.items = new Array();
         this.itemCount = 0;
@@ -17,8 +17,8 @@ setTimeout(() => {
         this.buyingFor = buyingFor; //
         this.grandTotal = 0;
         this.subtotal = 0;
-
-
+        // this.qrjs = null; 
+        
         nameEle[0].innerHTML = `<p class="s14" style="padding-top: 11pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">${this.buyingFor} : <span class="h4">${this.name}, ${this.address}</span><span class="s15">.</span></p>`;
         /////////////////////////////////////////////////////////////////////////////
         // this.totalAmount = items.forEach(item => {
@@ -92,18 +92,18 @@ setTimeout(() => {
     Customer.prototype.final = function () {
         this.createTbl();
         document.getElementsByClassName("v-secondary")[1].innerHTML = document.getElementsByClassName("v-secondary")[0].innerHTML;
+        
 
-        this.QrData = window.btoa(JSON.stringify(this));
-        document.getElementById("rowdat").value = this.QrData;
-        // new QRCode(document.getElementById("qrcode"), {
-        //     // text: presentCustomer.QrData,
-        //     text: 'https://www.citizenit.com/',
-        //     width: 50,
-        //     height: 50,
-        //     colorDark : '#',
-        //     colorLight : "#000000",
-        //     correctLevel : QRCode.CorrectLevel.H
-        // });
+        let tmpfetchingFormDat = {...this};
+        tmpfetchingFormDat.items.forEach(function(val){val.pop()});
+        delete tmpfetchingFormDat.fetchingFormData;
+        console.log(tmpfetchingFormDat);
+        // todo modifier need here
+        tmpfetchingFormDat = JSON.stringify(tmpfetchingFormDat);
+        console.log(tmpfetchingFormDat);
+        this.fetchingFormData = window.btoa(tmpfetchingFormDat);
+        // document.getElementById("rowdat").value = 'bAsEbin' +  this.fetchingFormData ;
+        document.getElementById("rowdat").value = this.fetchingFormData ;
         // todo make tag customer/office copy 
     };
 
@@ -130,7 +130,7 @@ setTimeout(() => {
 
     // newCustomer.prototype.generateQrCode = function() {
     // var qr = new QRCode(document.getElementById("qrcode"), {
-    // text: this.QrData,
+    // text: this.fetchingFormData,
     // width: 200,
     // height: 200
     // });
@@ -159,23 +159,70 @@ setTimeout(() => {
     }
 
     // todo this should be hidden ++ APP Script
+    // // const deplymentID = AKfycbxJ9vxbdHSoMvhr9ahLPbkdqerSsJF-IwtMQg2RnFWznx6OetZKLkJVhJhVeP3xqgUU
+    // var scriptURL = 'https://script.google.com/macros/s/AKfycbxJ9vxbdHSoMvhr9ahLPbkdqerSsJF-IwtMQg2RnFWznx6OetZKLkJVhJhVeP3xqgUU/exec'
     // const deplymentID = AKfycbwwpudyHgrwpPmM7qS2nC0xa2TsuKs1UVWEwdrpOnsWNxW48dFPadxfVyagnBrGdjSk
-    var scriptURL = 'https://script.google.com/macros/s/AKfycbwwpudyHgrwpPmM7qS2nC0xa2TsuKs1UVWEwdrpOnsWNxW48dFPadxfVyagnBrGdjSk/exec'
-    var fetchingForm = rawDataForm; //?? make it constant
+    // var scriptURL = 'https://script.google.com/macros/s/AKfycbwwpudyHgrwpPmM7qS2nC0xa2TsuKs1UVWEwdrpOnsWNxW48dFPadxfVyagnBrGdjSk/exec'//2nd deployment
+    // var scriptURL = 'https://script.google.com/macros/s/AKfycbwNZNyairQJqPfaydWe6RjvarBgYDX3isggiSSByRd0RZVxznkUYO8IkIUAVwC1_TM/exec'//3rd deployment
+    var scriptURL = 'https://script.google.com/macros/s/AKfycbxBx4pqfK2TQtxPc9y0oon6jMnf2Z3eW4Nr8Z-4Rh213lkf-_YR4S4MlHxwCktDcSBk/exec'//4th deployment
+    // var scriptURL = 'https://script.google.com/macros/s/AKfycbwVmBDq5ymZXacyfRkBD0C_Pyokmcg1rIQY2lHXI_wi9nEBOhM6tUrwIqmaUjy7OyNp/exec'//v2 1st deployment
+    const fetchingForm = rawDataForm; //?? make it constant
     // const fetchingForm = document.forms['formName']
-
-    fetchingForm.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, {
+fetchingForm.addEventListener('submit', e => {
+    e.preventDefault()
+    // fetch(scriptURL, {
+    //         method: 'POST',
+    //         body: new FormData(fetchingForm),
+    //         // headers: {
+    //         //     "Content-Type": "application/json",
+    //         //     // 'Content-Type': 'application/x-www-form-urlencoded',
+    //         //   }
+    //     })
+    //     .then(response => alert("Thank you! your fetchingForm is submitted successfully."))
+    //     // .then(response => console.log(response))
+    //     // .then(() => {
+    //     //     window.location.reload();
+    //     // })
+    //     .catch(error => console.error('Error!', error.message))
+    logJSONData();//cheked file
+})
+        var tt;
+        async function logJSONData() {
+            const ttr = await fetch(scriptURL, {
                 method: 'POST',
                 body: new FormData(fetchingForm)
             })
-            .then(response => alert("Thank you! your fetchingForm is submitted successfully."))
-            .then(() => {
-                window.location.reload();
-            })
-            .catch(error => console.error('Error!', error.message))
-    })
+            // .then(response =>  response.json())
+            .then(response => console.log('ok!',response.json()), err => console.error("logjsonData line 7 then1", err))
+            .then(response => {console.log(response.json());return response.json()}, err => console.error("logjsonData line 7 then1", err))
+            // .then(r2 => console.log('ok!',tt = r2),err => console.error("logjsonData line 8 then2", err))
+            // .then(hione => console.log('ok!', hione), err => console.error("logjsonData line 9 then3", err))
+
+            //// const response = await fetch(scriptURL, {
+            //     method: 'POST',
+            //     body: new FormData(fetchingForm)
+            // })
+            // .then(response => console.log('ok!', response))
+            ///////// const response = await fetch(scriptURL, {
+            //     method: 'POST',
+            //     body: new FormData(fetchingForm)
+            // })
+            // .then(response => console.log('ok!', response))
+            // .catch(err => console.error('error', err.message));
+            // const jsonData = await response;
+            // console.log(jsonData);//not accu
+    //     // fetch(scriptURL, {
+    //     //     method: 'POST',
+    //     //     body: new FormData(fetchingForm)
+    //     // })
+    //     // .then(response => alert("Thank you! your fetchingForm is submitted successfully."))
+    //     // .then(response => console.log(response))
+    //     // // .then(() => {
+    //     // //     window.location.reload();
+    //     // // })
+    //     // .catch(error => console.error('Error!', error.message))
+      }
+      
     // var qrcode = new QRCode("qrcode", {
     //     text: "http://jindo.dev.naver.com/collie",
     //     width: 128,
@@ -200,4 +247,4 @@ setTimeout(() => {
     // ??// nayem.createTbl() dont uncomment this line;
     presentCustomer.final();
     // presentCustomer.final();
-}, 1);
+    
