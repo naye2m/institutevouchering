@@ -45,10 +45,10 @@ body {
   /* display: none ;  */
 
   
-  /* position: relative;
+  position: relative;
   top: -100vh;
   height: 0vh;
-  display: flex !important; */
+  /* display: flex !important; */
 }
 
 .v-secondary {
@@ -561,7 +561,7 @@ footer div p {
   height: 100px;
 }
 
-#input1 {
+.id_input1 {
   height: calc(92vh - 10px);
   width: calc(92vw - 10px);
   position: absolute;
@@ -637,7 +637,7 @@ input[type="radio"] {
   border: #001f5f 2px solid;
 }
 
-#input1 input {
+.id_input1 input {
   /* align-self: right; */
   position: relative;
   text-align: left;
@@ -646,12 +646,12 @@ input[type="radio"] {
   transition: 800ms ease-in-out;
 }
 
-#input1 div {
+.id_input1 div {
   display: block;
   overflow: hidden;
 }
 
-#input1 span {
+.id_input1 span {
   display: block;
   font-size: 12pt;
 }
@@ -693,7 +693,7 @@ input::placeholder {
   color: #e5b53480;
 }
 
-#input1 h2 {
+.id_input1 h2 {
   color: #e5b534;
   /* position: relative; */
   width: min-content;
@@ -707,12 +707,12 @@ input::placeholder {
 }
 
 /* width */
-#input1::-webkit-scrollbar {
+.id_input1::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-#input1::-webkit-scrollbar-track {
+.id_input1::-webkit-scrollbar-track {
   background: #00aeff;
   border-radius: 20px;
   width: 40px;
@@ -720,14 +720,14 @@ input::placeholder {
 }
 
 /* Handle */
-#input1::-webkit-scrollbar-thumb {
+.id_input1::-webkit-scrollbar-thumb {
   background: #ffa2a2;
   border-radius: 20px;
   width: 40px;
 }
 
 /* Handle on hover */
-#input1::-webkit-scrollbar-thumb:hover {
+.id_input1::-webkit-scrollbar-thumb:hover {
   background: #522;
 }
 

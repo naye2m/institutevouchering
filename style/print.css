@@ -8,7 +8,7 @@
 thead {
     background-color: #c2d59b !important;
 }
-#input1 {
+.id_input1 {
     display: none ;
 }
 @page:first{
