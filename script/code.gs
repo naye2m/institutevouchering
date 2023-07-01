@@ -4,6 +4,7 @@ var testAppsScript_outputs = {
 const sheetName = 'Sheet1'
 
 const scriptProp = PropertiesService.getScriptProperties()
+
 function testHere(param) {
 
   //  // Logger.log(SpreadsheetApp.getActiveSpreadsheet().getId())
@@ -20,17 +21,19 @@ function testHere(param) {
     htmlBody: `inline Google Logo<img src=''> images! <br> 
       inline YouTube Logo <img src=''>`,
   });
-  
+
   // Logger.log(DocumentApp.create("testAppsScript_outputs").getId())
 
   Logger.log(newfile.getId(), SpreadsheetApp.getActiveSpreadsheet().getId())
   Logger.log(newFolder.getId())
 
 }
+
 function testOnSheet(param) {
   let afile = DriveApp.getFileById('1b4yE0251JtI9ggsqMcjWTaUsJ4rRDLp9');
   afile.setContent(param)
 }
+
 function intialSetup() {
   const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
 
@@ -48,6 +51,16 @@ function doPost(e) {
       inline YouTube Logo <img src=''>
       <p>${JSON.stringify(e)} `,
   })
+  var eTmp = {
+    ...e
+  }
+  //   const newRow = headers.map(function (header) {
+  //   return header === 'Date' ? new Date() : e.parameter[header]
+  // })
+  // testAppsScript_outputs.doc.appendHorizontalRule()
+  // testAppsScript_outputs.doc.appendParagraph(JSON.stringify(e))
+  Logger.log(aTest.json = JSON.parse(Utilities.newBlob(Utilities.base64Decode(eTmp.parameter["test"])).getDataAsString()))
+  aTest.json.test = eTmp.parameter["test"]
   const lock = LockService.getScriptLock()
   lock.tryLock(10000)
 
@@ -57,28 +70,35 @@ function doPost(e) {
     // Logger.log(scriptProp.getProperty('key'))
     const sheet = doc.getSheetByName(sheetName)
     // Logger.log()
+    // throw new Error({'hehe':'haha'})
+    // const fsheet = aTest.sheet
+    // const sheet = fsheet.getSheetByName('sheet1')
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
     const nextRow = sheet.getLastRow() + 1
-    
-    const newRow = headers.map(function (header) {
-      return header === 'Date' ? new Date() : e.parameter[header]
-    })
 
+    const newRow = headers.map(function (header) {
+      return header === 'Date' ? new Date() : header === "items" ? aTest.json.items.join("\)\(") : aTest.json[header]
+    })
+    // todo afile Url that will get the next page
+    Logger.log(aTest.json.items)
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'hione': 5, 'row': nextRow  }))
+      .createTextOutput(JSON.stringify({
+        'result': 'success',
+        'serchingForURL',
+        'row': nextRow
+      }))
       .setMimeType(ContentService.MimeType.JSON)
-  }
-
-  catch (e) {
+  } catch (e) {
+    // Logger.log({ 'result': 'error', 'error': err })
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e.message }))
+      .createTextOutput(JSON.stringify({
+        'result': 'error',
+        'error': e.message
+      }))
       .setMimeType(ContentService.MimeType.JSON)
-  }
-
-  finally {
+  } finally {
     lock.releaseLock()
-    // return 'returned ok'
   }
 }
