@@ -1,12 +1,12 @@
 function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
+    var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 // for (var i = 0; i < 100; i++) {
 //     console.log(`<p></p>`)
-const cusObj = {
+var cusObj = {
     name: '',
     address: '',
     itemObject: {
@@ -16,7 +16,7 @@ const cusObj = {
         total: this.price * this.quantity
     }
 }
-// const itemObject = (dispm, pripm, quapm, ...ArrayPM ) => {
+// var itemObject = (dispm, pripm, quapm, ...ArrayPM ) => {
 //     this.items = {
 //          discription: despm,
 //          price: pripm, 
@@ -36,7 +36,7 @@ function itemObject(dispm, pripm, quapm, ...ArrayPM) {
     }
 }
 
-const cusObjt = {
+var cusObjt = {
     name: '',
     age: 0,
     address: '',
@@ -75,7 +75,7 @@ const cusObjt = {
 // Example POST method implementation:
 async function postData(url = "", data = {}) {
     // Default options are marked with *
-    const response = await fetch(url, {
+    var response = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -97,28 +97,87 @@ postData("https://example.com/answer", {
     console.log(data); // JSON data parsed by `data.json()` call
 });
 //?? ///////////////////////////////////////////////////////////////////////////
-let object = { a: 1, b: 2, c: 3 };
+let object = {
+    a: 1,
+    b: 2,
+    c: 3
+};
 
-for (const property in object) {
-  console.log(`${property}: ${object[property]}`);
+for (var property in object) {
+    console.log(`${property}: ${object[property]}`);
 }
 //?? ///////////////////////////////////////////////////////////////////////////
 function copyFunction() {
     // Get the text field
     var copyText = document.getElementById("myInput");
-  
+
     // Select the text field
     copyText.select();
     copyText.setSelectionRange(0, 99999); // For mobile devices
-  
-     // Copy the text inside the text field
+
+    // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
-  
+
     // Alert the copied text
     alert("Copied the text: " + copyText.value);
+}
+//?? ///////////////////////////////////////////////////////////////////////////
+
+var myArray = [1, 2, 3, 4, 5];
+
+function removeValue(value, index, arr) {
+    // If the value at the current array index matches the specified value (2)
+    if (value === 2) {
+        // Removes the value from the original array
+        arr.splice(index, 1);
+        return true;
+    }
+    return false;
+}
+
+// Pass the removeValue function into the filter function to return the specified value
+var x = myArray.filter(removeValue);
+
+console.log(`myArray values: ${myArray}`);
+console.log(`variable x value: ${x}`);
+
+
+//?? ///////////////////////////////////////////////////////////////////////////
+
+
+var myArray = [1, 2, 3, 4, 5];
+
+var index = myArray.indexOf(2);
+
+var x = myArray.splice([], 1);
+
+console.log(`myArray values: ${myArray}`);
+console.log(`variable x value: ${x}`);
+
+
+
+//?? ///////////////////////////////////////////////////////////////////////////
+function ValidateEmail(input) {
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
+    if (input.value.match(validRegex)) {
+  
+    //   alert("Valid email address!");
+  
+      document.form1.text1.focus();
+  
+      return true;
+  
+    } else {
+  
+    //   alert("Invalid email address!");
+  
+      document.form1.text1.focus();
+  
+      return false;
+  
+    }
+  
   }
-//?? ///////////////////////////////////////////////////////////////////////////
-
-//?? ///////////////////////////////////////////////////////////////////////////
-
 //?? ///////////////////////////////////////////////////////////////////////////

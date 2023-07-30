@@ -4,7 +4,6 @@ var testAppsScript_outputs = {
 const sheetName = 'Sheet1'
 
 const scriptProp = PropertiesService.getScriptProperties()
-
 function testHere(param) {
 
   //  // Logger.log(SpreadsheetApp.getActiveSpreadsheet().getId())
@@ -28,12 +27,10 @@ function testHere(param) {
   Logger.log(newFolder.getId())
 
 }
-
 function testOnSheet(param) {
   let afile = DriveApp.getFileById('1b4yE0251JtI9ggsqMcjWTaUsJ4rRDLp9');
   afile.setContent(param)
 }
-
 function intialSetup() {
   const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
 
@@ -54,6 +51,14 @@ function doPost(e) {
   var eTmp = {
     ...e
   }
+  //?? new added t1
+  let keyList = ["name", "address", "emailAdd", "time", "items", "itemCount", "buyingFor", "invoiceNumber", "_discountAmount", "grandTotal", "subtotal", "phone", "options"]
+  let [namesORkeys, valueArr, tmpObj] = [keyList, aTest.json, {}];
+  for (let i = 0; i < namesORkeys.length; i++) {
+    tmpObj[namesORkeys[i]] = valueArr[i];
+  }
+  aTest.json = { ...tmpObj };
+  //?? new t1 end/////
   //   const newRow = headers.map(function (header) {
   //   return header === 'Date' ? new Date() : e.parameter[header]
   // })
@@ -82,21 +87,130 @@ function doPost(e) {
     // todo afile Url that will get the next page
     Logger.log(aTest.json.items)
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+let tmpJson = aTest.JSONsfolder.createFile(`${nextRow - 1} No rows json file.json`, `{"jsonFetchetfromWeb":${JSON.stringify(eTmp)}}`)
+    let tmpJsonURL = tmpJson.getDownloadUrl()
+    let tmpJsonId = tmpJson.getId()
+    Logger.log(tmpJsonURL)
+    Logger.log(tmpJson.getId())
+    Logger.log(JSON.stringify({ 'result': 'success', 'row': nextRow, 'resDat': [tmpJsonId, nextRow - 1] }))
+    ////t1\// st////
+    MailApp.sendEmail({
+      to: "nayeem.citizenit+bb@gmail.com, nayeem.citizenit+aa@gmail.com, nayesgjm.citizenit+aa@gmail.com",//use separate sendMail
+      subject: `Mr. ${aTest.json["name"].toLowerCase()} sir please recive your voucher - Citizen IT voucher`,
+      htmlBody:
+        `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div.main {
+            background-color: aquamarine;
+            color: rgb(0, 147, 98);
+            width: 350px;
+            border: 10px solid #0cc;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            transition-duration: 400ms;
+            -webkit-transition-duration: 400ms;
+
+            & :hover {
+                filter: drop-shadow(), hue-rotate(30deg);
+
+            }
+
+            * {
+                padding: 0 auto;
+                box-sizing: border-box;
+            }
+
+            &>h1 {
+                font-size: 16pt;
+            }
+
+            &>p {
+                font-size: 12pt;
+            }
+
+        }
+
+        #anc {
+            transition-duration: 400ms;
+            -webkit-transition-duration: 400ms;
+            font-size: 10pt;
+            text-decoration: none !important;
+            font-weight: bolder;
+            color: rgb(30, 133, 224);
+            display: block;
+            background: #0cc;
+            margin: 0 auto;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 10px;
+            border: rgb(0, 134, 160) 3px solid;
+
+            &:hover {
+                color: rgb(0, 79, 149);
+                background: rgb(124, 255, 255);
+                font-size: medium;
+
+            }
+        }
+                table{
+            margin: 0 auto;
+            padding-top: 25pt;
+            /* border: 1px solid black; */
+            text-align: start;
+            &>tbody>tr>td{
+                font-size: small;
+                border: 1px solid rgb(0, 147, 98);
+                border-style: solid none none none ;
+
+                padding: 5px;
+                font-weight: 900;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://naye2m.github.io/citizenitonlinevoucher/ -->
+    <Div class="main">
+        <h1>Your order has confirmed!🥳🎉</h1>
+        <p>This is your online voucher validation</p>
+        <a id="anc" href="https://naye2m.github.io/citizenitonlinevoucher/?id=${tmpJsonId}&me=em">Get voucher</a>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Total price:</td>
+                    <td>${aTest.json["subtotal"]}</td>
+                </tr>
+                <tr>
+                    <td>Total discount:</td>
+                    <td>${aTest.json["_discountAmount"]}</td>
+                </tr>
+                <tr>
+                    <td>Grand total:</td>
+                    <td>${aTest.json["grandTotal"]}</td>
+                </tr>
+            </tbody>
+        </table>
+    </Div>
+</body>
+
+</html>`
+    ///t1 end//////////////////////////////////////////
 
     return ContentService
-      .createTextOutput(JSON.stringify({
-        'result': 'success',
-        'serchingForURL',
-        'row': nextRow
-      }))
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow, 'resDat': [tmpJsonId, nextRow - 1] }))
       .setMimeType(ContentService.MimeType.JSON)
-  } catch (e) {
-    // Logger.log({ 'result': 'error', 'error': err })
+  } catch (err) {
+    Logger.log({ 'result': 'error', 'error': err })
     return ContentService
-      .createTextOutput(JSON.stringify({
-        'result': 'error',
-        'error': e.message
-      }))
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': err }))
       .setMimeType(ContentService.MimeType.JSON)
   } finally {
     lock.releaseLock()
