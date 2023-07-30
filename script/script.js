@@ -306,7 +306,8 @@ function newItem(name, price, qty, itemSirialNo) {
 //** var scriptURL = 'https://script.google.com/macros/s/AKfycbwwpudyHgrwpPmM7qS2nC0xa2TsuKs1UVWEwdrpOnsWNxW48dFPadxfVyagnBrGdjSk/exec'//2nd deployment
 //** var scriptURL = 'https://script.google.com/macros/s/AKfycbwNZNyairQJqPfaydWe6RjvarBgYDX3isggiSSByRd0RZVxznkUYO8IkIUAVwC1_TM/exec'//3rd deployment
 //** var scriptURL = 'https://script.google.com/macros/s/AKfycbxBx4pqfK2TQtxPc9y0oon6jMnf2Z3eW4Nr8Z-4Rh213lkf-_YR4S4MlHxwCktDcSBk/exec' //4th deployment
-var scriptURL = 'https://script.google.com/macros/s/AKfycbwuuHmci7IXs2yZznsTOA37hduR7fAoa2aPXn-r57yvMuNlX5f7erdJs-4jmhqOZ-Co/exec' //5th deployment
+//** var scriptURL = 'https://script.google.com/macros/s/AKfycbwuuHmci7IXs2yZznsTOA37hduR7fAoa2aPXn-r57yvMuNlX5f7erdJs-4jmhqOZ-Co/exec' //5th deployment
+var scriptURL = 'https://script.google.com/macros/s/AKfycbxe6yiMKiDYfhmh9OwCyqJ9Z9Or4_JzShfK4bmRPnWTt2-yZ0I2JAD68SzBkyYI2KjJ/exec' //beta 1 deployment 😙
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbwVmBDq5ymZXacyfRkBD0C_Pyokmcg1rIQY2lHXI_wi9nEBOhM6tUrwIqmaUjy7OyNp/exec'//v2 1st deployment
 const fetchingForm = rawDataForm; //?? make it constant
 // const fetchingForm = document.forms['formName']
