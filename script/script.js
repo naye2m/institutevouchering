@@ -1,7 +1,7 @@
 console.log("   _______ __  _                    __________   \r\n  / ____(_) /_(_)___ ___  ____     /  _/_  __/   \r\n / /   / / __/ /_  // _ \\/ __ \\    / /  / /      \r\n/ /___/ / /_/ / / //  __/ / / /  _/ /  / /       \r\n\\____/_/\\__/_/ /___|___/_/ /_/  /___/ /_/        \r\n   _________  / /_  __/ /_(_)___  ____  _____    \r\n  / ___/ __ \\/ / / / / __/ / __ \\/ __ \\/ ___/    \r\n (__  ) /_/ / / /_/ / /_/ / /_/ / / / (__  )     \r\n/____/\\____/_/\\__,_/\\__/_/\\____/_/ /_/____/\r\n                                              -@naye2m\r\nCopyright © 2012 - 2023 Citizen IT® solutions. All rights reserved."); // turn fist on DIPLOY
 var presentCustomer;
 let rawDataForm = document.forms[0];
-var t1, t2, t3, t4, pCust, tmpItem = ["", "", 0, 0];
+var t1, t2, t3, t4, pCust, tmpItem = [" ", " ", 0, 0];
 
 function ValidateEmail(inp) {
     return inp.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? inp : ValidateEmail(confirm("wanna give a valid mail?") ? prompt("Please enter a valid email address", "citizenit.bd+customer@gmail.com") : "citizenit.bd+customer@gmail.com");
@@ -306,9 +306,14 @@ function newItem(name, price, qty, itemSirialNo) {
 //** var scriptURL = 'https://script.google.com/macros/s/AKfycbwwpudyHgrwpPmM7qS2nC0xa2TsuKs1UVWEwdrpOnsWNxW48dFPadxfVyagnBrGdjSk/exec'//2nd deployment
 //** var scriptURL = 'https://script.google.com/macros/s/AKfycbwNZNyairQJqPfaydWe6RjvarBgYDX3isggiSSByRd0RZVxznkUYO8IkIUAVwC1_TM/exec'//3rd deployment
 //** var scriptURL = 'https://script.google.com/macros/s/AKfycbxBx4pqfK2TQtxPc9y0oon6jMnf2Z3eW4Nr8Z-4Rh213lkf-_YR4S4MlHxwCktDcSBk/exec' //4th deployment
-//** var scriptURL = 'https://script.google.com/macros/s/AKfycbwuuHmci7IXs2yZznsTOA37hduR7fAoa2aPXn-r57yvMuNlX5f7erdJs-4jmhqOZ-Co/exec' //5th deployment
-var scriptURL = 'https://script.google.com/macros/s/AKfycbxe6yiMKiDYfhmh9OwCyqJ9Z9Or4_JzShfK4bmRPnWTt2-yZ0I2JAD68SzBkyYI2KjJ/exec' //beta 1 deployment 😙
+//  var scriptURL = 'https://script.google.com/macros/s/AKfycbwuuHmci7IXs2yZznsTOA37hduR7fAoa2aPXn-r57yvMuNlX5f7erdJs-4jmhqOZ-Co/exec' //5th deployment
+// var scriptURL = 'https://script.google.com/macros/s/AKfycbxwov6MHoQWX-yAbJlDfEFvSm8ZrMAaWsrvWuoh3Pk/exec' //test
+// var scriptURL = 'https://script.google.com/macros/s/AKfycbzzHC0dZ3GGbN_uVdfgmyvz9D8hpJAssbUMyM_rs7JWkuSMvopzMKlx0ItetgXIfVYd/exec' //bww3
+// var scriptURL = 'https://script.google.com/macros/s/AKfycby2BEVxlMQ55AMGe6OaSxE1EthVsOBnbqdqJoveUIo20zCMXqOKAh_LpuWHhGG1DqRW/exec' //beta wish final
+// var scriptURL = 'https://script.google.com/macros/s/AKfycbxe6yiMKiDYfhmh9OwCyqJ9Z9Or4_JzShfK4bmRPnWTt2-yZ0I2JAD68SzBkyYI2KjJ/exec' //beta 1 deployment 😙
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbwVmBDq5ymZXacyfRkBD0C_Pyokmcg1rIQY2lHXI_wi9nEBOhM6tUrwIqmaUjy7OyNp/exec'//v2 1st deployment
+// var scriptURL = 'https://script.google.com/macros/s/AKfycbyLPYi2-4ZA9p3un3dJZolmhrScSQgHT8OWmzMXie6WtN9x_exX34w52cLa-EzAjlQ/exec' //v10 beta final version
+var scriptURL = 'https://script.google.com/macros/s/AKfycbxXRO2nzNnNBSeUw1y__T145fupfxTwzN_2RunC2El0rtyQep7OZ1BaJ1Be2Kam7eyO/exec'// desabled mail v11
 const fetchingForm = rawDataForm; //?? make it constant
 // const fetchingForm = document.forms['formName']
 fetchingForm.addEventListener('submit', e => {
@@ -339,14 +344,17 @@ async function logJSONData() {
         .then(response => {
             tt = response;
             console.log('ok!', response);
+            // setTimeout(() => {console.log('waiting')},500);
+            // setTimeout(() => {console.log("waiting")},5000);
             return response.json()
         }, err => console.error("logjsonData line 7 then1", err))
         .then(response => {
             tt = response;
             tmpda = { ...response };
             console.log('hi', response);
-            return response
+            return t2 = response
         }, err => console.error("logjsonData line 7 then1", err))
+        .then(e => e.error ? console.log('result:', e.error):console.log('result:', e.resDat) ,err => console.log('error:', err.message))
         //** .then(r2 => console.log('ok!',tt = r2),err => console.error("logjsonData line 8 then2", err))
         //** .then(j => {
         //**     console.log(j);
@@ -444,9 +452,19 @@ function loadpage(inp) {
 ////////////////////////////////
 ////////////////////////////////
 function main() {
-    presentCustomer.final();
+    // presentCustomer.final();
     loadpage(1);
 }
+// ??// nayem.createTbl() dont uncomment this line;
+// presentCustomer.final();
+
+// tmp household
+//**  t1 = [], t2 = [];
+//**  for (const key in t3) {
+//**      t1.push(t3[key]);
+//**      t2.push(key);
+//**  }
+main();
 ////////////////////////////////
 
 var nayem2 = new Customer('nayem2', "dfsx@fh.com", 'dhaka', 'Customer', '1001', '+01645545465', 1100);
@@ -461,13 +479,3 @@ nayem.addItem("f0ja", 'm', '1year', 1300, 5);
 nayem.addItem('b0', 'n', '1year', 1500, 6);
 nayem.addItem('c0', 'o', '1year', 1000, 2);
 nayem.addItem('d0', 'p', '1year', 1200, 3);
-// ??// nayem.createTbl() dont uncomment this line;
-// presentCustomer.final();
-
-// tmp household
-//**  t1 = [], t2 = [];
-//**  for (const key in t3) {
-//**      t1.push(t3[key]);
-//**      t2.push(key);
-//**  }
-main();

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test </title>
+</head>
+
+<body>
+
+
+    <form id="nana" action="">
+        <lebel name="text">text</lebel>
+        <input name="na" value="na" type="text">        
+        <lebel name="text1">text</lebel>
+        <input name="na1" value="na1" type="text">        
+        <lebel name="text2">text</lebel>
+        <input name="na2" value="na2" type="text">        
+        <lebel name="color" name="color" id="color"> color</lebel>
+        <input type="color" name="color" id="color">
+        <input type="submit" value="sub">
+    </form>
+    <script>
+        var sForm = document.getElementById("nana");
+        sForm.addEventListener('submit', e => {
+            e.preventDefault();
+            // console.log(this);
+            // console.log(sForm);
+            // 1: get form data
+            const formData = new FormData(sForm);
+            // 2: store form data in object
+            const jsonObject = Object.fromEntries(formData);
+
+            console.log(jsonObject);
+
+        })
+    </script>
+</body>
+
+</html>

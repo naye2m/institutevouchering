@@ -1,3 +1,10 @@
+@import url(animation.css);
+@import url(font.css);
+@import url(naye2m_animate.css);
+/* @import url(print.css) print; */
+@import url(theme.css);
+/* @import url();
+@import url(); */
 /* #03045e // #0077b6 // #00b4d8 // #90e0ef // #caf0f8
 #0a2463 // #3e92cc // #fffaff // #d8315b // #1e1b18
 #3c3744 // #090c9b // #3066be // #b4c5e4 // #fbfff1
@@ -14,10 +21,10 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  /* font-family: sans-serif; */
-  font-family: "Times new roman" system-ui, -apple-system, BlinkMacSystemFont,
+  /* font-family: sutonnyOMJban, sans-serif; */
+  font-family: sutonnyOMJban, "Times new roman" system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif, sutonnyMJ, sutonnyOMJ, nikoshBAN, nikosh;
   font-size: 16pt;
   font-weight: 300;
   line-height: 1.5;
@@ -45,9 +52,9 @@ body {
   /* display: none ;  */
 
 
-  position: relative;
+  /* position: relative;
   top: -100vh;
-  height: 0vh;
+  height: 0vh; */
   /* display: flex !important; */
 }
 
@@ -74,7 +81,13 @@ body {
       height: 0vh;
       
     } */
-
+span.copyOF {
+  float: right;
+  height: 0;
+  width: 0;
+  position: relative;
+  right: 60px;
+}
 .v-in {
   width: 20pt !important;
   background-color: rgba(255, 255, 0, 0.01) !important;
@@ -125,11 +138,13 @@ body {
   margin: 0;
   padding: 0;
   text-indent: 0;
+  /* font-family: sutonnyOMJban !important; */
+
 }
 
 h1 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -138,7 +153,7 @@ h1 {
 
 .s4 {
   color: black;
-  font-family: "Yu Gothic UI Light", sans-serif;
+  font-family: sutonnyOMJban, "Yu Gothic UI Light", sans-serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -147,7 +162,7 @@ h1 {
 
 p {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -158,7 +173,7 @@ p {
 
 a {
   color: #00f;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -167,7 +182,7 @@ a {
 
 h2 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -176,7 +191,7 @@ h2 {
 
 h3 {
   color: #001f5f;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -185,7 +200,7 @@ h3 {
 
 .h4 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: italic;
   font-weight: bold;
   text-decoration: none;
@@ -194,7 +209,7 @@ h3 {
 
 .s5 {
   color: #00f;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -203,7 +218,7 @@ h3 {
 
 .s7 {
   color: #001f5f;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -212,7 +227,7 @@ h3 {
 
 .s8 {
   color: #234060;
-  font-family: Calibri, sans-serif;
+  font-family: sutonnyOMJban, Calibri, sans-serif;
   font-style: italic;
   font-weight: bold;
   text-decoration: underline;
@@ -221,7 +236,7 @@ h3 {
 
 .s9 {
   color: #234060;
-  font-family: Calibri, sans-serif;
+  font-family: sutonnyOMJban, Calibri, sans-serif;
   font-style: italic;
   font-weight: bold;
   text-decoration: none;
@@ -230,7 +245,7 @@ h3 {
 
 .s11 {
   color: #234060;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -239,7 +254,7 @@ h3 {
 
 .s12 {
   color: #234060;
-  font-family: Arial, sans-serif;
+  font-family: sutonnyOMJban, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -248,7 +263,7 @@ h3 {
 
 .s13 {
   color: #234060;
-  font-family: Arial, sans-serif;
+  font-family: sutonnyOMJban, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -257,7 +272,7 @@ h3 {
 
 .s14 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -266,7 +281,7 @@ h3 {
 
 .s15 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -275,7 +290,7 @@ h3 {
 
 .s16 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -284,7 +299,7 @@ h3 {
 
 .s17 {
   color: black;
-  font-family: "Courier New", monospace;
+  font-family: sutonnyOMJban, "Courier New", monospace;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -293,7 +308,7 @@ h3 {
 
 .s18 {
   color: #111;
-  font-family: "Courier New", monospace;
+  font-family: sutonnyOMJban, "Courier New", monospace;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -302,7 +317,7 @@ h3 {
 
 .s19 {
   color: #111;
-  font-family: "Courier New", monospace;
+  font-family: sutonnyOMJban, "Courier New", monospace;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -311,7 +326,7 @@ h3 {
 
 .s20 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -320,7 +335,7 @@ h3 {
 
 .s21 {
   color: black;
-  font-family: Calibri, sans-serif;
+  font-family: sutonnyOMJban, Calibri, sans-serif;
   font-style: italic;
   font-weight: bold;
   text-decoration: none;
@@ -329,7 +344,7 @@ h3 {
 
 .s22 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -338,7 +353,7 @@ h3 {
 
 .s23 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -347,7 +362,7 @@ h3 {
 
 .s24 {
   color: black;
-  font-family: Gabriola;
+  font-family: sutonnyOMJban, Gabriola;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -356,7 +371,7 @@ h3 {
 
 .s25 {
   color: black;
-  font-family: "Courier New", monospace;
+  font-family: sutonnyOMJban, "Courier New", monospace;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -365,7 +380,7 @@ h3 {
 
 .s26 {
   color: black;
-  font-family: "Courier New", monospace;
+  font-family: sutonnyOMJban, "Courier New", monospace;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -374,7 +389,7 @@ h3 {
 
 .s27 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -383,7 +398,7 @@ h3 {
 
 .s28 {
   color: black;
-  font-family: "Courier New", monospace;
+  font-family: sutonnyOMJban, "Courier New", monospace;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -392,7 +407,7 @@ h3 {
 
 .s29 {
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -400,6 +415,7 @@ h3 {
 }
 
 /* junks */
+
 
 li {
   display: block;
@@ -412,7 +428,7 @@ li {
 #l1>li>*:first-child:before {
   content: " ";
   color: black;
-  font-family: Symbol, serif;
+  font-family: sutonnyOMJban, Symbol, serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -472,7 +488,7 @@ td {
 
   font-size: 12pt;
   /*
-    font-family: "Times New Roman", serif;
+    font-family: sutonnyOMJban, "Times New Roman", serif;
     font-style: normal;
     font-weight: normal; */
 }
@@ -527,7 +543,7 @@ text-align: center;
 width: 100pt;
 } */
 body td {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: sutonnyOMJban, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
     "Courier New", Courier, monospace;
   font-size: 12pt;
@@ -537,7 +553,7 @@ body td {
 }
 
 tfoot td {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: sutonnyOMJban, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.15;
   font-size: 9pt;
@@ -610,7 +626,7 @@ footer div p {
 
 *:disabled {
   /* color: #999; */
-  filter: grayscale(0.5);
+  filter: grayscale(0.2);
 }
 
 #qrcode {
@@ -674,7 +690,7 @@ footer div p {
   font-weight: 900;
   font-size: 16pt;
   display: block;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: sutonnyOMJban, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   /* justify-content: center; */
   box-sizing: content-box;
   text-align: left;
@@ -750,7 +766,7 @@ select,
   background-color: #2c6997;
   padding: 0 10px;
   font-size: 20pt;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: sutonnyOMJban, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border: #001f5f 2px solid;
   /* align-self: right; */
   position: relative;
@@ -941,7 +957,7 @@ table.visu,
   width: 100%;
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: sutonnyOMJban, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 16px;
 
   td {
@@ -960,10 +976,11 @@ td.action button,
   opacity: 0.85;
 
 }
-.visTft{
+
+.visTft {
   width: 10%;
   display: table-cell;
   border: #001f5f solid 1px;
   /* outline: #1e4664; */
-  
+
 }

@@ -34,6 +34,11 @@
 
       <!-- </br> -->
       </br>
+      <span class="copyOF">
+        <ul>
+          <li>hi  </li>
+        </ul>
+      </span>
       <h1 class="zin2" style="text-indent: 0pt;text-align: center;">C<span style="  color: #080;">i</span>tizen <span
           style=" color: #F00;">I</span><span style=" color: #080;">T </span>Solu<span style=" color: #F00;">t</span>ion
       </h1>
@@ -541,9 +546,9 @@
           name="customeName" placeholder="Enter Name" id="customeName">
         <label for="customeAdd">Address: </label><input required value="" class="custConstractor" type="text"
           name="customeAdd" placeholder="Enter Address" id="customeAdd">
-        <label for="customerEmail">email: </label><input required value="" class="custConstractor" type="email"
+        <label for="customerEmail">Email: </label><input required value="" class="custConstractor" type="email"
           name="customerEmail" placeholder="exampl@gmail.com" id="customerEmail">
-        <label for="custPhone">phone: </label><input required value="" class="custConstractor" type="number"
+        <label for="custPhone">Phone: </label><input required value="" class="custConstractor" type="number"
           name="custPhone" placeholder="01XXX XXX XXX" id="custPhone"><!-- onkeydown="console.log('+88'+this.value)"-->
         <label for="customerType">Customer type:</label>
 
@@ -581,13 +586,13 @@
             </thead>
             <tbody>
               <tr>
-                <td class="name">Name</td>
+                <!-- <td class="name">Name</td>
                 <td class="dis">Discription</td>
                 <td class="war">Warranty</td>
                 <td class="itemUnitPrice">Unit Price</td>
                 <td class="qty">qty</td>
                 <td class="total">Total Price</td>
-                <td class="action"><button>Remove</button></td>
+                <td class="action"><button>Remove</button></td> -->
               </tr>
             </tbody>
             <tfoot>
@@ -604,7 +609,7 @@
                 <td class="visTft lebel">Remove</td>
                 <td class="visTft removeItem" colspan="2"><input type="text" name="rmvItem" disabled onblur="confirm(`wanna delete item named ${this.value}`)?pCust.deleteItem(this.value):console.log('delete aboreted')" id="visInpTf1" class="visTfInp" placeholder="removeItem"></td>
                 <td class="visTft lebel">Discount</td>
-                <td class="visTft dis" colspan="1"><input type="text" name="" id="visInpTf1" class="visTfInp" placeholder="" onblur="confirm(`Wanna add discont ${this.value} taka ?`)?presentCustomer._discountAmount = this.value:console.log('Aboreted'); presentCustomer.final();" ></td>
+                <td class="visTft dis"  colspan="1"><input type="text" name="" id="visInpTf1" class="visTfInp" tabindex="1" placeholder="" onblur="confirm(`Wanna add discont ${this.value} taka ?`)?presentCustomer._discountAmount = this.value:console.log('Aboreted'); presentCustomer.final();" ></td>
                 <td class="visTft lebel">Total</td>
                 <td id="visTot" class="visTft war"colspan="1"></td>
                 <!-- <td class="qty">qty</td>
@@ -615,7 +620,7 @@
           </table>
         </div>
 
-        <button class="button" onclick="loadpage(1)"><span>previous</span></button>
+        <button class="button" tabindex="1" onclick="loadpage(1)"><span>previous</span></button>
         <button class="button" onclick="loadpage(3)"><span>Next</span></button>
       </div>
       <div class="hide" id="custInp3">
