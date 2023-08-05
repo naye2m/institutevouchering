@@ -2,6 +2,9 @@ var testAppsScript_outputs = {
   doc: DocumentApp.openById("1bD5vMNq2TFJ2ssvzFBq66P-YXUCSf4oY03bTvnm3Xjc").getBody()
 }
 const sheetName = 'Sheet1'
+var eTmp = {}
+
+Logger.log(DriveApp.getFolderById('1EdkFyxMT0yOR2mFLQ_GkBUVA2y_BGcG_').getUrl())
 
 const scriptProp = PropertiesService.getScriptProperties()
 function testHere(param) {
@@ -38,37 +41,41 @@ function intialSetup() {
 }
 
 function doPost(e) {
+  e = { "parameter": { "test": "WyJOQVlFTSIsIkRIQUtBIiwic2ZhQGlsLmNvbSIsIjIwMjMtMDctMzBUMTI6MTk6MzMuNDcyWiIsW1sxLCJmamEiLCJtIiwxMzAwLDUsIjF5ZWFyIiw2NTAwXSxbMiwiYiIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFszLCJjIiwibyIsMTAwMCwyLCIxeWVhciIsMjAwMF0sWzQsImQiLCJwIiwxMjAwLDMsIjF5ZWFyIiwzNjAwXSxbNSwiZjBqYSIsIm0iLDEzMDAsNSwiMXllYXIiLDY1MDBdLFs2LCJiMCIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFs3LCJjMCIsIm8iLDEwMDAsMiwiMXllYXIiLDIwMDBdLFs4LCJkMCIsInAiLDEyMDAsMywiMXllYXIiLDM2MDBdXSw4LCJDdXN0b21lciIsbnVsbCwxMTAwLDQxMTAwLDQyMjAwLCIrMDE2NDU1NDU0NjUiLFt0cnVlLCJ2MSIsIjA0MDEzMDA3MjMiXV0=" }, "queryString": "", "contextPath": "", "contentLength": 675, "parameters": { "test": ["WyJOQVlFTSIsIkRIQUtBIiwic2ZhQGlsLmNvbSIsIjIwMjMtMDctMzBUMTI6MTk6MzMuNDcyWiIsW1sxLCJmamEiLCJtIiwxMzAwLDUsIjF5ZWFyIiw2NTAwXSxbMiwiYiIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFszLCJjIiwibyIsMTAwMCwyLCIxeWVhciIsMjAwMF0sWzQsImQiLCJwIiwxMjAwLDMsIjF5ZWFyIiwzNjAwXSxbNSwiZjBqYSIsIm0iLDEzMDAsNSwiMXllYXIiLDY1MDBdLFs2LCJiMCIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFs3LCJjMCIsIm8iLDEwMDAsMiwiMXllYXIiLDIwMDBdLFs4LCJkMCIsInAiLDEyMDAsMywiMXllYXIiLDM2MDBdXSw4LCJDdXN0b21lciIsbnVsbCwxMTAwLDQxMTAwLDQyMjAwLCIrMDE2NDU1NDU0NjUiLFt0cnVlLCJ2MSIsIjA0MDEzMDA3MjMiXV0="] } }
+  var n1bool = false
   testAppsScript_outputs.doc.appendHorizontalRule()
   testAppsScript_outputs.doc.appendParagraph(JSON.stringify(e))
-  Logger.log(e)
-  MailApp.sendEmail({
-    to: "nayeem.citizenit+CITSvowDat@gmail.com",
-    subject: "CITSvowDat",
-    htmlBody: `inline Google Logo<img src=''> images! <br> 
-      inline YouTube Logo <img src=''>
-      <p>${JSON.stringify(e)} `,
-  })
+  // Logger.log(e)//1 
+  // let nn = 0;
   var eTmp = {
     ...e
   }
+  // testAppsScript_outputs.doc.appendHorizontalRule()
+  // testAppsScript_outputs.doc.appendParagraph(JSON.stringify(e))
+  // Logger.log(eTmp.parameter["test"])//2
+  // Logger.log(eTmp.json = JSON.parse(Utilities.newBlob(Utilities.base64Decode(eTmp.parameter["test"])).getDataAsString()))//3
+  eTmp.json = JSON.parse(Utilities.newBlob(Utilities.base64Decode(eTmp.parameter["test"])).getDataAsString())
+  eTmp.json.test = eTmp.parameter["test"]
   //?? new added t1
   let keyList = ["name", "address", "emailAdd", "time", "items", "itemCount", "buyingFor", "invoiceNumber", "_discountAmount", "grandTotal", "subtotal", "phone", "options"]
-  let [namesORkeys, valueArr, tmpObj] = [keyList, aTest.json, {}];
+  let [namesORkeys, valueArr, tmpObj] = [keyList, eTmp.json, {}];
   for (let i = 0; i < namesORkeys.length; i++) {
     tmpObj[namesORkeys[i]] = valueArr[i];
   }
-  aTest.json = { ...tmpObj };
+  eTmp.json = { ...tmpObj };
+  eTmp.folder = DriveApp.getFolderById('11kmj5sBHRJ6A5KurUlE7CmwVQOVLLA-A')
+  eTmp.folder2 = DriveApp.getFolderById('1YligxFKUjZufjJjLQhtqLNSD6yZtdNPg')//customer voucher root
+  eTmp.testfolder = DriveApp.getFolderById('1YYHDHgn7eiLmob-yFEBmDVBYZ8DwQH1F')//test folder under customervowcher
+  eTmp.JSONsfolder = DriveApp.getFolderById('1EdkFyxMT0yOR2mFLQ_GkBUVA2y_BGcG_')//JSONs folder under customervowcher
+  eTmp.doc = DocumentApp.openById('1EN4o5nb-nLjGw31hzSdhhV9CI_30akRQcd9PrWHpDJE')
+  eTmp.sheet = SpreadsheetApp.openById('1poxqbupKQotVWwvjsoxhGBZg49jhztHTfsp9JABT3bQ')
   //?? new t1 end/////
   //   const newRow = headers.map(function (header) {
   //   return header === 'Date' ? new Date() : e.parameter[header]
   // })
-  // testAppsScript_outputs.doc.appendHorizontalRule()
-  // testAppsScript_outputs.doc.appendParagraph(JSON.stringify(e))
-  Logger.log(aTest.json = JSON.parse(Utilities.newBlob(Utilities.base64Decode(eTmp.parameter["test"])).getDataAsString()))
-  aTest.json.test = eTmp.parameter["test"]
   const lock = LockService.getScriptLock()
   lock.tryLock(10000)
-
+  // nn = 1
   try {
     const doc = SpreadsheetApp.openById('1Jc627Uk1dxyFnFfiMxRSQIhcJ-2_reGcRiwS0R76vW4')
     // const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
@@ -80,139 +87,83 @@ function doPost(e) {
     // const sheet = fsheet.getSheetByName('sheet1')
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
     const nextRow = sheet.getLastRow() + 1
-
+    let tmpJson = eTmp.JSONsfolder.createFile(`${nextRow - 1} No rows json file.json`, `{"jsonFetchetfromWeb":${JSON.stringify(eTmp.json)}}`)
+    // nn++
+    eTmp.json['JSONurl'] = tmpJson.getDownloadUrl()
+    eTmp.json['JSONid'] = tmpJson.getId()
     const newRow = headers.map(function (header) {
-      return header === 'Date' ? new Date() : header === "items" ? aTest.json.items.join("\)\(") : aTest.json[header]
+      return header === 'Date' ? new Date() : header === "items" ? eTmp.json.items.join("\)\(") : eTmp.json[header]
     })
     // todo afile Url that will get the next page
-    Logger.log(aTest.json.items)
+    // Logger.log(eTmp.json.items)//4
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
-let tmpJson = aTest.JSONsfolder.createFile(`${nextRow - 1} No rows json file.json`, `{"jsonFetchetfromWeb":${JSON.stringify(eTmp)}}`)
-    let tmpJsonURL = tmpJson.getDownloadUrl()
-    let tmpJsonId = tmpJson.getId()
-    Logger.log(tmpJsonURL)
-    Logger.log(tmpJson.getId())
-    Logger.log(JSON.stringify({ 'result': 'success', 'row': nextRow, 'resDat': [tmpJsonId, nextRow - 1] }))
+    // Logger.log(eTmp.JSONsfolder)//t1 test
+    // Logger.log(eTmp.json.JSONurl)
+    // Logger.log(eTmp.json.JSONid)
+    // Logger.log(tmpJson.getId())
+    // nn = 3
+    // Logger.log(JSON.stringify({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota(), 'row': nextRow, 'resDat': [, nextRow - 1] }))
     ////t1\// st////
-    MailApp.sendEmail({
-      to: "nayeem.citizenit+bb@gmail.com, nayeem.citizenit+aa@gmail.com, nayesgjm.citizenit+aa@gmail.com",//use separate sendMail
-      subject: `Mr. ${aTest.json["name"].toLowerCase()} sir please recive your voucher - Citizen IT voucher`,
-      htmlBody:
-        `<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <style>
-        div.main {
-            background-color: aquamarine;
-            color: rgb(0, 147, 98);
-            width: 350px;
-            border: 10px solid #0cc;
-            margin: 0 auto;
-            padding: 10px;
-            border-radius: 20px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: center;
-            transition-duration: 400ms;
-            -webkit-transition-duration: 400ms;
-
-            & :hover {
-                filter: drop-shadow(), hue-rotate(30deg);
-
-            }
-
-            * {
-                padding: 0 auto;
-                box-sizing: border-box;
-            }
-
-            &>h1 {
-                font-size: 16pt;
-            }
-
-            &>p {
-                font-size: 12pt;
-            }
-
-        }
-
-        #anc {
-            transition-duration: 400ms;
-            -webkit-transition-duration: 400ms;
-            font-size: 10pt;
-            text-decoration: none !important;
-            font-weight: bolder;
-            color: rgb(30, 133, 224);
-            display: block;
-            background: #0cc;
-            margin: 0 auto;
-            width: fit-content;
-            padding: 10px;
-            border-radius: 10px;
-            border: rgb(0, 134, 160) 3px solid;
-
-            &:hover {
-                color: rgb(0, 79, 149);
-                background: rgb(124, 255, 255);
-                font-size: medium;
-
-            }
-        }
-                table{
-            margin: 0 auto;
-            padding-top: 25pt;
-            /* border: 1px solid black; */
-            text-align: start;
-            &>tbody>tr>td{
-                font-size: small;
-                border: 1px solid rgb(0, 147, 98);
-                border-style: solid none none none ;
-
-                padding: 5px;
-                font-weight: 900;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- https://naye2m.github.io/citizenitonlinevoucher/ -->
-    <Div class="main">
-        <h1>Your order has confirmed!🥳🎉</h1>
-        <p>This is your online voucher validation</p>
-        <a id="anc" href="https://naye2m.github.io/citizenitonlinevoucher/?id=${tmpJsonId}&me=em">Get voucher</a>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Total price:</td>
-                    <td>${aTest.json["subtotal"]}</td>
-                </tr>
-                <tr>
-                    <td>Total discount:</td>
-                    <td>${aTest.json["_discountAmount"]}</td>
-                </tr>
-                <tr>
-                    <td>Grand total:</td>
-                    <td>${aTest.json["grandTotal"]}</td>
-                </tr>
-            </tbody>
-        </table>
-    </Div>
-</body>
-
-</html>`
+    // eTmp.json.emailAdd = "citizenit.bd+customergmail.com"
+    eTmp.json.emailAdd = eTmp.json.emailAdd.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? eTmp.json.emailAdd : "citizenit.bd+customer@gmail.com"
+    Logger.log(eTmp.json.emailAdd)
+    // var tmpMailList = ['nayeem.citizenit+bb@gmail.com', 'nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
+    var tmpMailList = [ 'nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
+    // todo (dev) mail list should be modified by front end
     ///t1 end//////////////////////////////////////////
 
+    // nn= "succsess";
+    Logger.log({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota() - tmpMailList.length, 'row': nextRow, 'resDat': [eTmp.json.JSONid, nextRow - 1] })
+    n1bool = true
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow, 'resDat': [tmpJsonId, nextRow - 1] }))
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota()- tmpMailList.length, 'row': nextRow, 'resDat': [eTmp.json.JSONid, nextRow - 1] }))
       .setMimeType(ContentService.MimeType.JSON)
   } catch (err) {
-    Logger.log({ 'result': 'error', 'error': err })
+    n1bool = false
+    Logger.log({ 'result': 'error', 'error': err.massage, 'errorName': err })
+    MailApp.sendEmail({
+      to: "nayeem.citizenit+CITSvowDatErr@gmail.com",
+      subject: "CITSvowDat err",
+      htmlBody: `<p>${JSON.stringify(e)} </p>
+      <p>${JSON.stringify({ 'result': 'error', 'error': err, 'errmas': err.massage })} </p>`,
+    })
     return ContentService
       .createTextOutput(JSON.stringify({ 'result': 'error', 'error': err }))
       .setMimeType(ContentService.MimeType.JSON)
   } finally {
     lock.releaseLock()
+    if (!n1bool) {
+      return
+    } else if(MailApp.getRemainingDailyQuota() >= tmpMailList.length) {
+      let nameInL = eTmp.json.name.toLowerCase()
+      for (let i = 0; i < tmpMailList.length; i++) {
+        // Logger.log(tmpMailList[i])
+        //////////////////////////////////
+        MailApp.sendEmail({
+          to: tmpMailList[i],//use separate sendMail
+          subject: `Mr. ${nameInL[0].toUpperCase() + nameInL.substring(1)} sir please recive your voucher - Citizen IT voucher`,
+          htmlBody: `<h1>Your order has confirmed!🥳🎉</h1>
+            <p>This is your online voucher validation</p>
+            <a id="anc" href="https://naye2m.github.io/citizenitonlinevoucher/?id=${eTmp.json.JSONid}&me=em">Get voucher</a>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Total price:</td>
+                        <td>${eTmp.json["subtotal"]}</td>
+                    </tr>
+                    <tr>
+                        <td>Total discount:</td>
+                        <td>${eTmp.json["_discountAmount"]}</td>
+                    </tr>
+                    <tr>
+                        <td>Grand total:</td>
+                        <td>${eTmp.json["grandTotal"]}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Div>`
+        })
+      }
+    }
   }
 }
