@@ -84,9 +84,11 @@ body {
 span.copyOF {
   float: right;
   height: 0;
-  width: 0;
+  /* width: 0; */
   position: relative;
-  right: 60px;
+  right: 2vw;
+    display: block;
+    font-size: .5em;
 }
 .v-in {
   width: 20pt !important;
@@ -630,10 +632,12 @@ footer div p {
 }
 
 #qrcode {
-  img {
+  /* img {
     position: absolute !important;
     height: 100px;
-  }
+  } */
+  position: absolute;
+  left: 10px;
 }
 
 .id_input1 {

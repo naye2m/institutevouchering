@@ -14,3 +14,5 @@ Descriptive yet concise.
 
 //////////////////////////////////////////
 fetch data as array
+////////////////////////
+test given mail accessability
