@@ -2,7 +2,7 @@
     font-family: sutonnyOMJban;
     /* src: url(fonts\SutonnyOMJ.ttf) format("opentype"); */
     src: local(sutonnyOMJ);
-    unicode-range: U+0981-0983, 0985-098C, 098F-0990, 0993-09A8, 09AA-09B0, 09B2, 09B6-09B9, 09BC, 09BE-09C4, 09C7-09C8, 09CB-09CD, 09D7, 09DC-09DD, 09DF-09E3, 09E6-09FA;
+    unicode-range: U+0981-0983, U+0985-098C, U+098F-0990, U+0993-09A8, U+09AA-09B0, U+09B2, U+09B6-09B9, U+09BC, U+09BE-09C4, U+09C7-09C8, U+09CB-09CD, U+09D7, U+09DC-09DD, U+09DF-09E3, U+09E6-09FA;
 }
 @font-face {
     font-family: "Ampersand";

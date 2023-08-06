@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="DataTables/datatables.min.css" rel="stylesheet" />
+    <title>Your Voucher</title>
+</head>
+
+<body>
+    <div id="params"></div>
+
+    <script>
+        let params = new URLSearchParams(document.location.search);
+        let name = params.get("name"); // is the string "Jonathan"
+        //  let paramUrl = params.get("e"); // 
+        let age = parseInt(params.get("age"), 10); // is the number 18
+        document.getElementById('params').innerHTML = name + " " + age;
+        console.log(params);
+
+
+        // on last only
+
+        //?? setTimeout(() => window.history.replaceState(null, '', window.location.pathname), 100);
+        function addScriptElement() {
+            // create a new div element
+            const screle = document.createElement("script");
+            screle.type = "application/json";
+            screle.src = `https://drive.google.com/uc?export=view&id=${params.get("e")}`;
+            screle.id = "screle";
+            // // and give it some content
+            // const newContent = document.createTextNode("Hi there and greetings!");
+            document.body.appendChild(screle);
+            // // add the text node to the newly created div
+            // newDiv.appendChild(newContent);
+
+            // add the newly created element and its content into the DOM
+            // const currentDiv = document.getElementById("div1");
+            // document.body.insertBefore(newDiv, currentDiv);
+        }
+        addScriptElement();
+        // let table = new DataTable('#datatables', {
+        //     responsive: true
+        // });
+    </script>
+    <div>
+        <table id="example">
+            <thead>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="tr1" class="tr1">
+                    <td class="td1">1</td>
+                    <td class="td2">2</td>
+                    <td class="td3">3</td>
+                    <td class="td4">4</td>
+                    <td class="td5">5</td>
+                </tr>
+                <tr id="tr2" class="tr2">
+                    <td class="td1">6</td>
+                    <td class="td2">7</td>
+                    <td class="td3">8</td>
+                    <td class="td4">9</td>
+                    <td class="td5">10</td>
+                </tr>
+                <tr id="tr3" class="tr3">
+                    <td class="td1">11</td>
+                    <td class="td2">12</td>
+                    <td class="td3">13</td>
+                    <td class="td4">14</td>
+                    <td class="td5">16</td>
+                </tr>
+                <tr id="tr4" class="tr4">
+                    <td class="td1">hi os e he</td>
+                    <td class="td2">hi os e he</td>
+                    <td class="td3">hi os e he</td>
+                    <td class="td4">hi os e he</td>
+                    <td class="td5">hi os e he</td>
+                </tr>
+                <tr id="tr5" class="tr5">
+                    <td class="td1">hi os e he</td>
+                    <td class="td2">hi os e he</td>
+                    <td class="td3">hi os e he</td>
+                    <td class="td4">hi os e he</td>
+                    <td class="td5">hi os e he</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+    <script src="script/lib/jq.min.js"></script>
+    <script src="DataTables/datatables.min.js">
+        // new DataTables("#dataTables")
+    </script>
+    <script>
+        const dataSet = [
+    ['Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800'],
+    ['Garrett Winters', 'Accountant', 'Tokyo', '8422', '2011/07/25', '$170,750'],
+    ['Ashton Cox', 'Junior Technical Author', 'San Francisco', '1562', '2009/01/12', '$86,000'],
+    ['Cedric Kelly', 'Senior Javascript Developer', 'Edinburgh', '6224', '2012/03/29', '$433,060'],
+    ['Airi Satou', 'Accountant', 'Tokyo', '5407', '2008/11/28', '$162,700'],
+    ['Brielle Williamson', 'Integration Specialist', 'New York', '4804', '2012/12/02', '$372,000'],
+    ['Herrod Chandler', 'Sales Assistant', 'San Francisco', '9608', '2012/08/06', '$137,500'],
+    ['Rhona Davidson', 'Integration Specialist', 'Tokyo', '6200', '2010/10/14', '$327,900'],
+    ['Colleen Hurst', 'Javascript Developer', 'San Francisco', '2360', '2009/09/15', '$205,500'],
+    ['Sonya Frost', 'Software Engineer', 'Edinburgh', '1667', '2008/12/13', '$103,600'],
+    ['Jena Gaines', 'Office Manager', 'London', '3814', '2008/12/19', '$90,560'],
+    ['Quinn Flynn', 'Support Lead', 'Edinburgh', '9497', '2013/03/03', '$342,000'],
+    ['Charde Marshall', 'Regional Director', 'San Francisco', '6741', '2008/10/16', '$470,600'],
+    ['Haley Kennedy', 'Senior Marketing Designer', 'London', '3597', '2012/12/18', '$313,500'],
+    ['Tatyana Fitzpatrick', 'Regional Director', 'London', '1965', '2010/03/17', '$385,750'],
+    ['Michael Silva', 'Marketing Designer', 'London', '1581', '2012/11/27', '$198,500'],
+    ['Paul Byrd', 'Chief Financial Officer (CFO)', 'New York', '3059', '2010/06/09', '$725,000'],
+    ['Gloria Little', 'Systems Administrator', 'New York', '1721', '2009/04/10', '$237,500'],
+    ['Bradley Greer', 'Software Engineer', 'London', '2558', '2012/10/13', '$132,000'],
+    ['Dai Rios', 'Personnel Lead', 'Edinburgh', '2290', '2012/09/26', '$217,500'],
+    ['Jenette Caldwell', 'Development Lead', 'New York', '1937', '2011/09/03', '$345,000'],
+    ['Yuri Berry', 'Chief Marketing Officer (CMO)', 'New York', '6154', '2009/06/25', '$675,000'],
+    ['Caesar Vance', 'Pre-Sales Support', 'New York', '8330', '2011/12/12', '$106,450'],
+    ['Doris Wilder', 'Sales Assistant', 'Sydney', '3023', '2010/09/20', '$85,600'],
+    ['Angelica Ramos', 'Chief Executive Officer (CEO)', 'London', '5797', '2009/10/09', '$1,200,000'],
+    ['Gavin Joyce', 'Developer', 'Edinburgh', '8822', '2010/12/22', '$92,575'],
+    ['Jennifer Chang', 'Regional Director', 'Singapore', '9239', '2010/11/14', '$357,650'],
+    ['Brenden Wagner', 'Software Engineer', 'San Francisco', '1314', '2011/06/07', '$206,850'],
+    ['Fiona Green', 'Chief Operating Officer (COO)', 'San Francisco', '2947', '2010/03/11', '$850,000'],
+    ['Shou Itou', 'Regional Marketing', 'Tokyo', '8899', '2011/08/14', '$163,000'],
+    ['Michelle House', 'Integration Specialist', 'Sydney', '2769', '2011/06/02', '$95,400'],
+    ['Suki Burks', 'Developer', 'London', '6832', '2009/10/22', '$114,500'],
+    ['Prescott Bartlett', 'Technical Author', 'London', '3606', '2011/05/07', '$145,000'],
+    ['Gavin Cortez', 'Team Leader', 'San Francisco', '2860', '2008/10/26', '$235,500'],
+    ['Martena Mccray', 'Post-Sales support', 'Edinburgh', '8240', '2011/03/09', '$324,050'],
+    ['Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675'],
+];
+ 
+new DataTable('#example', {
+    columns: [
+        { title: 'Name' },
+        { title: 'Position' },
+        { title: 'Office' },
+        { title: 'Extn.' },
+        { title: 'Start date' },
+        { title: 'Salary' }
+    ],
+    data: dataSet
+});
+    </script>
+</body>
+
+</html>
