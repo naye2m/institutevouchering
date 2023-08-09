@@ -4,7 +4,7 @@ var testAppsScript_outputs = {
 const sheetName = 'Sheet1'
 var eTmp = {}
 
-Logger.log(DriveApp.getFolderById('1EdkFyxMT0yOR2mFLQ_GkBUVA2y_BGcG_').getUrl())
+// Logger.log(DriveApp.getFolderById('1EdkFyxMT0yOR2mFLQ_GkBUVA2y_BGcG_').getUrl())
 
 const scriptProp = PropertiesService.getScriptProperties()
 function testHere(param) {
@@ -41,7 +41,6 @@ function intialSetup() {
 }
 
 function doPost(e) {
-  e = { "parameter": { "test": "WyJOQVlFTSIsIkRIQUtBIiwic2ZhQGlsLmNvbSIsIjIwMjMtMDctMzBUMTI6MTk6MzMuNDcyWiIsW1sxLCJmamEiLCJtIiwxMzAwLDUsIjF5ZWFyIiw2NTAwXSxbMiwiYiIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFszLCJjIiwibyIsMTAwMCwyLCIxeWVhciIsMjAwMF0sWzQsImQiLCJwIiwxMjAwLDMsIjF5ZWFyIiwzNjAwXSxbNSwiZjBqYSIsIm0iLDEzMDAsNSwiMXllYXIiLDY1MDBdLFs2LCJiMCIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFs3LCJjMCIsIm8iLDEwMDAsMiwiMXllYXIiLDIwMDBdLFs4LCJkMCIsInAiLDEyMDAsMywiMXllYXIiLDM2MDBdXSw4LCJDdXN0b21lciIsbnVsbCwxMTAwLDQxMTAwLDQyMjAwLCIrMDE2NDU1NDU0NjUiLFt0cnVlLCJ2MSIsIjA0MDEzMDA3MjMiXV0=" }, "queryString": "", "contextPath": "", "contentLength": 675, "parameters": { "test": ["WyJOQVlFTSIsIkRIQUtBIiwic2ZhQGlsLmNvbSIsIjIwMjMtMDctMzBUMTI6MTk6MzMuNDcyWiIsW1sxLCJmamEiLCJtIiwxMzAwLDUsIjF5ZWFyIiw2NTAwXSxbMiwiYiIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFszLCJjIiwibyIsMTAwMCwyLCIxeWVhciIsMjAwMF0sWzQsImQiLCJwIiwxMjAwLDMsIjF5ZWFyIiwzNjAwXSxbNSwiZjBqYSIsIm0iLDEzMDAsNSwiMXllYXIiLDY1MDBdLFs2LCJiMCIsIm4iLDE1MDAsNiwiMXllYXIiLDkwMDBdLFs3LCJjMCIsIm8iLDEwMDAsMiwiMXllYXIiLDIwMDBdLFs4LCJkMCIsInAiLDEyMDAsMywiMXllYXIiLDM2MDBdXSw4LCJDdXN0b21lciIsbnVsbCwxMTAwLDQxMTAwLDQyMjAwLCIrMDE2NDU1NDU0NjUiLFt0cnVlLCJ2MSIsIjA0MDEzMDA3MjMiXV0="] } }
   var n1bool = false
   testAppsScript_outputs.doc.appendHorizontalRule()
   testAppsScript_outputs.doc.appendParagraph(JSON.stringify(e))
@@ -55,6 +54,7 @@ function doPost(e) {
   // Logger.log(eTmp.parameter["test"])//2
   // Logger.log(eTmp.json = JSON.parse(Utilities.newBlob(Utilities.base64Decode(eTmp.parameter["test"])).getDataAsString()))//3
   eTmp.json = JSON.parse(Utilities.newBlob(Utilities.base64Decode(eTmp.parameter["test"])).getDataAsString())
+  Logger.log(eTmp.json)
   eTmp.json.test = eTmp.parameter["test"]
   //?? new added t1
   let keyList = ["name", "address", "emailAdd", "time", "items", "itemCount", "buyingFor", "invoiceNumber", "_discountAmount", "grandTotal", "subtotal", "phone", "options"]
@@ -86,13 +86,23 @@ function doPost(e) {
     // const fsheet = aTest.sheet
     // const sheet = fsheet.getSheetByName('sheet1')
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
-    const nextRow = sheet.getLastRow() + 1
+    var nextRow = sheet.getLastRow() + 1
+    let vv = new Date();
+    // let tmpInvoiceNo = "" +eTmp.options[3] + nextRow + vv.toGMTString().replaceAll(" ",'-').substr(5,11);
+    Logger.log("" + eTmp.json.options[3] + nextRow + vv.toISOString().replaceAll("-", '').substr(2, 6))
+    eTmp.json["invoiceNumber"] = "" + eTmp.json.options[3] + nextRow + vv.toISOString().replaceAll("-", '').substr(2, 6);
+    Logger.log(eTmp.json["invoiceNumber"])
+
     let tmpJson = eTmp.JSONsfolder.createFile(`${nextRow - 1} No rows json file.json`, `{"jsonFetchetfromWeb":${JSON.stringify(eTmp.json)}}`)
     // nn++
+    // Logger.log(tmpJson.getAs("application/json").text())
+    //  Logger.log( tmpJson.getBlob().getDataAsString())
     eTmp.json['JSONurl'] = tmpJson.getDownloadUrl()
     eTmp.json['JSONid'] = tmpJson.getId()
+    // Logger.log("done")
+    Logger.log(eTmp.json.items)
     const newRow = headers.map(function (header) {
-      return header === 'Date' ? new Date() : header === "items" ? eTmp.json.items.join("\)\(") : eTmp.json[header]
+      return header === 'Date' ? new Date() : header === "items" ? eTmp.json.items.join("\)\(") : header === "options" ? eTmp.json.options.join("\)\(") : eTmp.json[header]
     })
     // todo afile Url that will get the next page
     // Logger.log(eTmp.json.items)//4
@@ -108,15 +118,28 @@ function doPost(e) {
     eTmp.json.emailAdd = eTmp.json.emailAdd.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? eTmp.json.emailAdd : "citizenit.bd+customer@gmail.com"
     Logger.log(eTmp.json.emailAdd)
     // var tmpMailList = ['nayeem.citizenit+bb@gmail.com', 'nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
-    var tmpMailList = [ 'nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
+    var tmpMailList = ['nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
     // todo (dev) mail list should be modified by front end
     ///t1 end//////////////////////////////////////////
 
     // nn= "succsess";
-    Logger.log({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota() - tmpMailList.length, 'row': nextRow, 'resDat': [eTmp.json.JSONid, nextRow - 1] })
     n1bool = true
+    let returningDat = {
+      'result': 'success',
+      'mailRemains': MailApp.getRemainingDailyQuota() - tmpMailList.length,
+      'row': nextRow,
+      'resDat': [
+        eTmp.json.JSONid,
+        nextRow - 1,
+        eTmp.json["invoiceNumber"]
+      ]
+    }
+    Logger.log(JSON.stringify(returningDat))
+    Logger.log({ 'fetchedDat': e.parameter.test, 'result': 'error' })
+    Logger.log("code succeed")
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota()- tmpMailList.length, 'row': nextRow, 'resDat': [eTmp.json.JSONid, nextRow - 1] }))
+      // .createTextOutput(JSON.stringify({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota() - tmpMailList.length, 'row': nextRow, 'resDat': [eTmp.json.JSONid, nextRow - 1, eTmp.json["invoiceNumber"]] }))
+      .createTextOutput(JSON.stringify(returningDat))
       .setMimeType(ContentService.MimeType.JSON)
   } catch (err) {
     n1bool = false
@@ -127,24 +150,32 @@ function doPost(e) {
       htmlBody: `<p>${JSON.stringify(e)} </p>
       <p>${JSON.stringify({ 'result': 'error', 'error': err, 'errmas': err.massage })} </p>`,
     })
+    let errReturn = {
+      'fetchedDat': e.parameter.test,
+      'result': 'error',
+      'error': err
+    }
+    Logger.log("code has a problem")
+    Logger.log(JSON.stringify(errReturn))
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': err }))
+      .createTextOutput(JSON.stringify(errReturn))
       .setMimeType(ContentService.MimeType.JSON)
   } finally {
     lock.releaseLock()
     if (!n1bool) {
       return
-    } else if(MailApp.getRemainingDailyQuota() >= tmpMailList.length) {
+    } else if (MailApp.getRemainingDailyQuota() >= tmpMailList.length) {
       let nameInL = eTmp.json.name.toLowerCase()
       for (let i = 0; i < tmpMailList.length; i++) {
-        // Logger.log(tmpMailList[i])
+        Logger.log(tmpMailList[i])
         //////////////////////////////////
         MailApp.sendEmail({
           to: tmpMailList[i],//use separate sendMail
           subject: `Mr. ${nameInL[0].toUpperCase() + nameInL.substring(1)} sir please recive your voucher - Citizen IT voucher`,
           htmlBody: `<h1>Your order has confirmed!🥳🎉</h1>
             <p>This is your online voucher validation</p>
-            <a id="anc" href="https://naye2m.github.io/citizenitonlinevoucher/?id=${eTmp.json.JSONid}&me=em">Get voucher</a>
+            <p>Your Invoice no is - ${eTmp.json["invoiceNumber"]}</p>
+            <a id="anc" href="https://naye2m.github.io/citizenitonlinevoucher/?id=${eTmp.json.JSONid}&inv=${eTmp.json["invoiceNumber"]}&row=${nextRow - 1}&me=em">Get voucher</a>
             <table>
                 <tbody>
                     <tr>
@@ -166,4 +197,8 @@ function doPost(e) {
       }
     }
   }
-}
+}// function doGet(e){
+//   return ContentService
+//       .createTextOutput(JSON.stringify({ 'result': 'success','resDat': [e] }))
+//       .setMimeType(ContentService.MimeType.JSON)
+// }
