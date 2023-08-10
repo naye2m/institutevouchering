@@ -56,3 +56,52 @@ test given mail accessability
    <p> Since we are on a mobile device it may be hard for us to demonstrate this well. But you can try to hold the link and release it to see the effects. </p>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+   <title> Try It Yourself </title>
+   <style type="text/css">
+      ol {
+         list-style-type: upper-roman;
+         color: #f8f9f9;
+         background: #173459;
+         padding: 15px;
+      }
+      
+      ul {
+         list-style-type: square;
+         color: #f8f9f9;
+         background: #173459;
+         padding: 15px;
+      }
+      
+      ol li {
+         background: #d9534f;
+         padding: 5px;
+         margin-left: 30px;
+      }
+      
+      ul li {
+         background: #d9534f;
+         padding: 5px;
+         margin-left: 30px;
+      }
+   </style>
+</head>
+<body>
+   <ul>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+   </ul>
+   <ol>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+      <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
+   </ol>
+</body>
+</html>
