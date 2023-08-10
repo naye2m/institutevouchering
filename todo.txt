@@ -17,3 +17,42 @@ Descriptive yet concise.
 fetch data as array
 ////////////////////////
 test given mail accessability
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title> Try It Yourself </title>
+   <style type="text/css">
+      a {
+         outline: none;
+         text-decoration: none;
+         font-family: sans-serif;
+      }
+      a:link {
+         color: black;
+      }
+      a:visited {
+         background: lightgrey;
+      }
+      a:focus {
+         border: 1px solid red;
+         background: lightgrey;
+      }
+      a:hover {
+         border: 1px solid #f8f9f9;
+         background: #173459;
+         color: white;
+      }
+      a:active {
+         text-decoration: underline;
+         border: 1px solid lightgrey;
+         background: #d9534f;
+         color: white;
+      }
+   </style>
+</head>
+<body>
+   <p> Go to <a href="http://www.example.com">Example.com</a>. </p>
+   <p> Since we are on a mobile device it may be hard for us to demonstrate this well. But you can try to hold the link and release it to see the effects. </p>
+</body>
+</html>
