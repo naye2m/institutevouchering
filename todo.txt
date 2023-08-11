@@ -1,4 +1,4 @@
-@commit sjsjejeih3h9kgzu6rututufzjgs
+@commit 
 Don't
 
 <meta name="description" content="A donut recipe.">
@@ -16,6 +16,7 @@ Descriptive yet concise.
 //////////////////////////////////////////
 fetch data as array
 ////////////////////////
+<<<<<<< Updated upstream
 test given mail accessability
 
 <!DOCTYPE html>
@@ -105,3 +106,16 @@ test given mail accessability
    </ol>
 </body>
 </html>
+=======
+test given mail accessibility
+
+////////////////////////
+invoice and time HTML
+////////////////////////
+LOADER
+////////////////////////
+apps script //??e turned off// work with this script//
+ 
+////////////////////////
+invoiceNumber and date set on htmlBody copy that to online voucher
+>>>>>>> Stashed changes
