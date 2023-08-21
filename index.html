@@ -36,7 +36,7 @@
       </br>
       <span class="copyOF">
         <ul>
-          <li>hi  </li>
+          <li>hi </li>
         </ul>
       </span>
       <h1 class="zin2" style="text-indent: 0pt;text-align: center;">C<span style="  color: #080;">i</span>tizen <span
@@ -92,11 +92,14 @@
         </tbody>
         <tfoot>
           <tr>
-            <td class="QRSTD" id="td34" colspan="3" rowspan="4">
-              <div class="QRScon" id="qrcode-container">
-                <canvas class="QRS" id="qrcode" class="qrcode"></canvas>
-                <!-- <h4>With some styles</h4>
-                <canvas id="qrcode-2" class="qrcode"></canvas> -->
+            <td class="" id="" colspan="3" rowspan="4">
+              <div>Scan This QR Code for online validation</div>
+              <div class="QRSTD" id="td34">
+                <div class="QRScon" id="qrcode-container">
+                  <canvas class="QRS" id="qrcode" class="qrcode"></canvas>
+                  <!-- <h4>With some styles</h4>
+                    <canvas id="qrcode-2" class="qrcode"></canvas> -->
+                </div>
               </div>
             </td>
             <td>subtotal</td>
@@ -548,8 +551,8 @@
         <div class="header">PAGE 1</div>
         <label for="customeName">Name: </label><input required value="" class="custConstractor" type="text"
           name="customeName" placeholder="Enter Name" id="customeName">
-        <label for="customeAdd">Address: </label><input required value="" class="custConstractor" type="text"
-          name="customeAdd" placeholder="Enter Address" id="customeAdd">
+        <label for="customeAdd">Address: </label><input required value="Nesarabad, Pirojpur." class="custConstractor"
+          type="text" name="customeAdd" placeholder="Enter Address" id="customeAdd">
         <label for="customerEmail">Email: </label><input required value="" class="custConstractor" type="email"
           name="customerEmail" placeholder="exampl@gmail.com" id="customerEmail">
         <label for="custPhone">Phone: </label><input required value="" class="custConstractor" type="number"
@@ -601,21 +604,34 @@
             </tbody>
             <tfoot>
               <tr>
-                <td class="name"><input type="text" name="item_name" id="Item name" onkeyup="tmpItem[0] = this.value" ,placeholder="Item name"></td>
-                <td class="dis"><input type="text" name="item_dis" id="itemDis" onkeyup="tmpItem[1] = this.value" ,placeholder="Description"></td>
-                <td class="war"><input type="text" name="item_war" id="itemWar" onkeyup="tmpItem[2] = this.value" ,placeholder="Warrenty"></td>
-                <td class="itemUnitPrice"><input type="number" name="itemUnitPrice" id="itemUnitPrice" onkeyup="tmpItem[3] = this.value" ,placeholder="itemUnitPrice"></td>
-                <td class="qty"><input type="number" name="item_qty" id="qty" onkeyup="tmpItem[4] = this.value" ,placeholder="qty"></td>
-                <td class="price"><input disabled type="number" name="item_price" id="itemPrice" placeholder="Price"></td>
-                <td class="action"><button onclick="pCust.addItem(...tmpItem.map(e => (e == undefined|e=='')? alert('what? addItem err!'):e))">addItem</button></td>
+                <td class="name"><input type="text" name="item_name" id="Item name" onkeyup="tmpItem[0] = this.value"
+                    ,placeholder="Item name"></td>
+                <td class="dis"><input type="text" name="item_dis" id="itemDis" onkeyup="tmpItem[1] = this.value"
+                    ,placeholder="Description"></td>
+                <td class="war"><input type="text" name="item_war" id="itemWar" onkeyup="tmpItem[2] = this.value"
+                    ,placeholder="Warrenty"></td>
+                <td class="itemUnitPrice"><input type="number" name="itemUnitPrice" id="itemUnitPrice"
+                    onkeyup="tmpItem[3] = this.value" ,placeholder="itemUnitPrice"></td>
+                <td class="qty"><input type="number" name="item_qty" id="qty" onkeyup="tmpItem[4] = this.value"
+                    ,placeholder="qty"></td>
+                <td class="price"><input disabled type="number" name="item_price" id="itemPrice" placeholder="Price">
+                </td>
+                <td class="action"><button
+                    onclick="pCust.addItem(...tmpItem.map(e => (e == undefined|e=='')? alert('what? addItem err!'):e))">addItem</button>
+                </td>
               </tr>
               <tr>
                 <td class="visTft lebel">Remove</td>
-                <td class="visTft removeItem" colspan="2"><input type="text" name="rmvItem" disabled onblur="confirm(`wanna delete item named ${this.value}`)?pCust.deleteItem(this.value):console.log('delete aboreted')" id="visInpTf1" class="visTfInp" placeholder="removeItem"></td>
+                <td class="visTft removeItem" colspan="2"><input type="text" name="rmvItem" disabled
+                    onblur="confirm(`wanna delete item named ${this.value}`)?pCust.deleteItem(this.value):console.log('delete aboreted')"
+                    id="visInpTf1" class="visTfInp" placeholder="removeItem"></td>
                 <td class="visTft lebel">Discount</td>
-                <td class="visTft dis"  colspan="1"><input type="text" name="" id="visInpTf1" class="visTfInp" tabindex="1" placeholder="" onblur="confirm(`Wanna add discont ${this.value} taka ?`)?presentCustomer._discountAmount = this.value:console.log('Aboreted'); presentCustomer.final();" ></td>
+                <td class="visTft dis" colspan="1"><input type="text" name="" id="visInpTf1" class="visTfInp"
+                    tabindex="1" placeholder=""
+                    onblur="confirm(`Wanna add discont ${this.value} taka ?`)?presentCustomer._discountAmount = this.value:console.log('Aboreted'); presentCustomer.final();">
+                </td>
                 <td class="visTft lebel">Total</td>
-                <td id="visTot" class="visTft war"colspan="1"></td>
+                <td id="visTot" class="visTft war" colspan="1"></td>
                 <!-- <td class="qty">qty</td>
                 <td class="total"></td>
                 <td class="action"></td> -->
@@ -623,7 +639,6 @@
             </tfoot>
           </table>
         </div>
-
         <button class="button" tabindex="1" onclick="loadpage(1)"><span>previous</span></button>
         <button class="button" onclick="loadpage(3)"><span>Next</span></button>
       </div>
@@ -637,7 +652,7 @@
           <!-- <input type="hidden" name="customer" id="" value="00">
         <input type="number" name="invoiceNumber" id="" value="512">
         <input type="text" name="hi" id="" onblur="setTimeout(this.value = new Date(), 1000);"> -->
-          <input type="submit" value="submit" >
+          <input type="submit" value="submit">
         </form>
         <button class="button" onclick="loadpage(2)"><span>previous</span></button>
         <button class="button" onclick="loadpage(1)"><span>Next</span></button>

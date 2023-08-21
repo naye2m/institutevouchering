@@ -1,7 +1,7 @@
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + d.toUTCString();
+    var expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 // for (var i = 0; i < 100; i++) {
@@ -97,7 +97,7 @@ postData("https://example.com/answer", {
     console.log(data); // JSON data parsed by `data.json()` call
 });
 //?? ///////////////////////////////////////////////////////////////////////////
-let object = {
+var object = {
     a: 1,
     b: 2,
     c: 3
@@ -184,11 +184,115 @@ function ValidateEmail(input) {
 
 
     fetch("data.json").then(i=>i.json()).then(i=>{
-        for( let j in i){
+        for( var j in i){
             console.log(j, i[j]);
         }
     });
 
 //?? ///////////////////////////////////////////////////////////////////////////
+function storageAvailable(type) {
+    var storage;
+    try {
+      storage = window[type];
+      var x = "__storage_test__";
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+    } catch (e) {
+      return (
+        e instanceof DOMException &&
+        // everything except Firefox
+        (e.code === 22 ||
+          // Firefox
+          e.code === 1014 ||
+          // test name field too, because code might not be present
+          // everything except Firefox
+          e.name === "QuotaExceededError" ||
+          // Firefox
+          e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+        // acknowledge QuotaExceededError only if there's something already stored
+        storage &&
+        storage.length !== 0
+      );
+    }
+  }
+//?? ///////////////////////////////////////////////////////////////////////////
+
+// Longhand
+var num = null
+var actualNum
+
+if (num !== null && num !== undefined) {
+  actualNum = num
+} else {
+  actualNum = 0
+}
+
+// Shorthand
+var num = null
+var actualNum = num ?? 0 // 0
+//?? ///////////////////////////////////////////////////////////////////////////
+// Longhand
+var num = null
+
+if (num === null) {
+  num = 0
+}
+
+// shorthand
+var num = null
+
+num ??= 0
+
+//?? ///////////////////////////////////////////////////////////////////////////
+
+// Longhand
+var obj = {
+    x: {
+      y: 1,
+      z: 2
+    },
+    other: 'test string'
+  }
+  
+  console.log('Value of z in x: ', obj.x.z)
+  console.log('Value of other: ', obj.other)
+  
+  // Shorthand
+  var obj = {
+    x: {
+      y: 1,
+      z: 2
+    },
+    other: 'test string'
+  }
+  
+  var {x, other} = obj
+  var {z} = x
+  
+  console.log('Value of z in x: ', z)
+  console.log('Value of other: ', other)
+  
+  //You can also rename the variables you destructure from the object. Here's an example:
+  var obj = {x: 1, y: 2}
+  var {x: myVar} = object
+  
+  console.log('My renamed variable: ', myVar) // My renamed variable: 1
+//?? ///////////////////////////////////////////////////////////////////////////
+var st2 = '',str= "আমার নাম";
+for (var inSt in str ){
+    var n = "&#x".concat(str[inSt].charCodeAt().toString(16));
+    console.log(n,str[inSt]);
+     st2 += n
+}
+
+//?? ///////////////////////////////////////////////////////////////////////////
+
+var banglaRedx = /\p{Bengali}/;//! dosent works
+var banglaRedx = /[\u0980-\u09FF]+/;//!! works
+"ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়"
+.match(/[\u0980-\u09FF]+/)   //!! bangla unicode block
+//?? ///////////////////////////////////////////////////////////////////////////
+
 
 //?? ///////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-@commit 
+@commit
 Don't
 
 <meta name="description" content="A donut recipe.">
@@ -6,9 +6,7 @@ Too vague.
 
 Do
 
-<meta
-  name="description"
-  content="Mary's simple recipe for maple bacon donuts
+<meta name="description" content="Mary's simple recipe for maple bacon donuts
            makes a sticky, sweet treat with just a hint
            of salt that you'll keep coming back for.">
 Descriptive yet concise.
@@ -16,11 +14,11 @@ Descriptive yet concise.
 //////////////////////////////////////////
 fetch data as array
 ////////////////////////
-<<<<<<< Updated upstream
 test given mail accessability
 
 <!DOCTYPE html>
 <html>
+
 <head>
    <title> Try It Yourself </title>
    <style type="text/css">
@@ -29,21 +27,26 @@ test given mail accessability
          text-decoration: none;
          font-family: sans-serif;
       }
+
       a:link {
          color: black;
       }
+
       a:visited {
          background: lightgrey;
       }
+
       a:focus {
          border: 1px solid red;
          background: lightgrey;
       }
+
       a:hover {
          border: 1px solid #f8f9f9;
          background: #173459;
          color: white;
       }
+
       a:active {
          text-decoration: underline;
          border: 1px solid lightgrey;
@@ -52,13 +55,17 @@ test given mail accessability
       }
    </style>
 </head>
+
 <body>
    <p> Go to <a href="http://www.example.com">Example.com</a>. </p>
-   <p> Since we are on a mobile device it may be hard for us to demonstrate this well. But you can try to hold the link and release it to see the effects. </p>
+   <p> Since we are on a mobile device it may be hard for us to demonstrate this well. But you can try to hold the link
+      and release it to see the effects. </p>
 </body>
+
 </html>
 <!DOCTYPE html>
 <html>
+
 <head>
    <title> Try It Yourself </title>
    <style type="text/css">
@@ -68,20 +75,20 @@ test given mail accessability
          background: #173459;
          padding: 15px;
       }
-      
+
       ul {
          list-style-type: square;
          color: #f8f9f9;
          background: #173459;
          padding: 15px;
       }
-      
+
       ol li {
          background: #d9534f;
          padding: 5px;
          margin-left: 30px;
       }
-      
+
       ul li {
          background: #d9534f;
          padding: 5px;
@@ -89,6 +96,7 @@ test given mail accessability
       }
    </style>
 </head>
+
 <body>
    <ul>
       <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
@@ -105,8 +113,8 @@ test given mail accessability
       <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </li>
    </ol>
 </body>
+
 </html>
-=======
 test given mail accessibility
 
 ////////////////////////
@@ -115,7 +123,78 @@ invoice and time HTML
 LOADER
 ////////////////////////
 apps script //??e turned off// work with this script//
- 
+
 ////////////////////////
 invoiceNumber and date set on htmlBody copy that to online voucher
->>>>>>> Stashed changes
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .grid-container {
+         border: 4px solid black;
+         display: grid;
+         grid-template-columns: 100px repeat(3, 1fr);
+         grid-template-rows: 100px;
+         grid-auto-rows: 200px;
+         grid-auto-columns: 50px;
+      }
+
+      .grid-item {
+         border: 2px solid mediumvioletred;
+         padding: 10px;
+      }
+
+      /* .grid-item:nth-child(4) {
+           grid-column-start: 4;
+      } */
+
+      .example {
+         grid-column: 3/6;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item example">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+   </div>
+</body>
+
+</html>
+/////////////////////////////////////////////////////////////////
+bangla regex modifier for encode and decode string
+this should be used in frontend to backend
+   <script>
+      var st2 = '', str = "আমার নাম";
+      for (var inSt in str) {
+         var n = "&#x".concat(str[inSt].charCodeAt().toString(16));
+         console.log(n, str[inSt]);
+         st2 += n
+      }
+
+      //?? ///////////////////////////////////////////////////////////////////////////
+
+      var banglaRedx = /\p{Bengali}/;//! dosent works
+      var banglaRedx = /[\u0980-\u09FF]+/;//!! works
+      "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়"
+         .match(/[\u0980-\u09FF]+/)   //!! bangla unicode block
+      function bangla{
+         regex: /[\u0980-\u09FF]+/;
+         alphabets : "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়";
+         getCharUni = function (char){
+            
+         }
+         getStrUni = function (string){ 
+            char.length = 1?char.match(this.regex)?char.charCodeAt(0).toString(16):char:this.getStrUni(char);
+         }
+      } 
+   </script>

@@ -87,9 +87,10 @@ span.copyOF {
   /* width: 0; */
   position: relative;
   right: 2vw;
-    display: block;
-    font-size: .5em;
+  display: block;
+  font-size: .5em;
 }
+
 .v-in {
   width: 20pt !important;
   background-color: rgba(255, 255, 0, 0.01) !important;
@@ -489,6 +490,7 @@ td {
   min-width: fit-content;
 
   font-size: 12pt;
+
   /*
     font-family: sutonnyOMJban, "Times New Roman", serif;
     font-style: normal;
@@ -549,9 +551,17 @@ body td {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
     "Courier New", Courier, monospace;
   font-size: 12pt;
-  padding: 0;
-  margin: 0;
+  padding: 0 10px;
   opacity: 1;
+
+  &:has(input, button) {
+    padding: 0;
+
+  }
+}
+
+code {
+  font-family: firaCode, 'Courier New', Courier, monospace;
 }
 
 tfoot td {
@@ -564,10 +574,12 @@ tfoot td {
 
 .double-underline {
   text-decoration: underline double;
-}
 
-.double-underline::after {
-  content: "tk";
+  ::after {
+    content: "tk";
+    /* content: "৳";
+    content: "$"; */
+  }
 }
 
 /* td.discription {
@@ -748,6 +760,7 @@ button {
 .button:hover span:after {
   opacity: 1;
   right: 0;
+  filter: drop-shadow(0 0 0 0);
 }
 
 input {
@@ -755,13 +768,7 @@ input {
 
 }
 
-input,
-input[type="text"],
-input[type="password"],
-input[type="radio"],
-button,
-select,
-.visTft {
+input, input[type="text"], input[type="password"], input[type="radio"], button, select, .visTft {
   display: inline-block;
   flex-grow: 1;
   color: #e5b534;
@@ -984,7 +991,42 @@ td.action button,
 .visTft {
   width: 10%;
   display: table-cell;
-  border: #001f5f solid 1px;
+  border: solid 1px;
   /* outline: #1e4664; */
 
+}
+
+:root {
+  --red: #a24e34;
+  --green: #01f346;
+  --blue: #01f3e6;
+  --yellow: #f0e765;
+  --bg: #fff;
+  --fg: #000;
+  --roundness: 3pt;
+  /* --primary-color : #; */
+  --secondary-color: #2c6997;
+  --primary-color: #e5b534;
+  --secondary-color: #2c6997;
+  --sec-primary-color: #e5b534;
+  --primary-color: #5241124;
+  --error: var(--red);
+  --errorBorder: 1px dashed var(--red);
+  --ok: var(--green);
+  --warning: var(--yellow);
+  /* brand  */
+  /* primary PriSec sec complimentry transparancy white black primaryHue secHue red green blue */
+  --bp:var(--primary-color);
+  --bsp:var(--sec-primary-color);
+  --bs:var(--secondary-color);
+  --bc:0;
+  --bt:0.7;
+  --bw: hsl(0, 0%, 90%);
+  --bb: hsl(0, 0%, 10%);
+  --bph: 45deg;
+  --bsh: 225deg;
+  --br: var(--red);
+  --bg: var(--green);
+  --bb: var(--blue);
+  --b:#;  
 }

@@ -218,6 +218,7 @@ Customer.prototype.final = function () {
 
     // console.log('fetcfh dat',tmpfetchingFormDat);
     document.getElementById("rowdat").value = this.fetchingFormData;
+    //?? /////////////////// V UNMATCHED - ELEMENTS!!!
     // todo make tag customer/office copy 
     document.getElementsByClassName("copyOF")[0].innerHTML = "&#x2688;Customer Copy";
     document.getElementsByClassName("copyOF")[1].innerHTML = "&#x2688;Office Copy"; 
@@ -319,7 +320,8 @@ function newItem(name, price, qty, itemSirialNo) {
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbwVmBDq5ymZXacyfRkBD0C_Pyokmcg1rIQY2lHXI_wi9nEBOhM6tUrwIqmaUjy7OyNp/exec'//v2 1st deployment
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbyLPYi2-4ZA9p3un3dJZolmhrScSQgHT8OWmzMXie6WtN9x_exX34w52cLa-EzAjlQ/exec' //v10 beta final version
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbxXRO2nzNnNBSeUw1y__T145fupfxTwzN_2RunC2El0rtyQep7OZ1BaJ1Be2Kam7eyO/exec'// desabled mail v11
-var scriptURL = 'https://script.google.com/macros/s/AKfycby9o566JsLPDNXV7NKGPbPlyWs5S9DGIxp4B-DIA3WRna1g6xiHqMLBnPswgHyAZW_W/exec'// With mail🤠 v12
+// var scriptURL = 'https://script.google.com/macros/s/AKfycby9o566JsLPDNXV7NKGPbPlyWs5S9DGIxp4B-DIA3WRna1g6xiHqMLBnPswgHyAZW_W/exec'// With mail🤠 v12
+var scriptURL ="https://script.google.com/macros/s/AKfycbwIGSqLwsJWghhG3P-VOEgQeN_g6j9ED8ZOzlj12jt86vqef3PjqEjItEqP2pur1e4J/exec"//beta with invoice no v14
 const fetchingForm = rawDataForm; //?? make it constant
 // const fetchingForm = document.forms['formName']
 fetchingForm.addEventListener('submit', e => {
@@ -349,7 +351,11 @@ async function logJSONData() {
         // .then(response =>  response.json())
         .then(response => {
             tt = response;
-            console.log('ok!', response);
+            // console.log('ok!', response);
+            if (!response.ok) {
+                LocalStorage.ge
+                throw new Error(`HTTP error: ${response.status}`);
+              }
             // setTimeout(() => {console.log('waiting')},500);
             // setTimeout(() => {console.log("waiting")},5000);
             return response.json()
@@ -370,6 +376,8 @@ async function logJSONData() {
             return tmpSRes = {...tmp}
         }, err => console.error("logjson", err))
         .then(response => {
+            //localstorage
+            localStorage.setItem("lastRow", JSON.stringify(tmpSRes.cRow));
             //QR DATA
             generateQRCode(`https://naye2m.github.io/citizenitonlinevoucher/?id=${tmpSRes.resDat[0]}&row=${tmpSRes.cRow}&me=qr&v=1#hi`); 
             //alert
