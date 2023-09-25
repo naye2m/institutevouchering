@@ -1,5 +1,5 @@
 @commit
-hh- hshhshybjdfkliauhjdfskjfskjdkljkfkjkadjskadjfkdjaskafsdkjkdjsklhjfdksjjhjmfdkjfkkkkk'
+hh- hshhshybjdfklisdgafjkfskjfskjdkljkfkjkadjskadjfkdjaskafsdkjkdjsklhjfdksjjhjmfdkjfkkkkk'
 <meta name="description" content="A donut recipe.">
 Too vague.
 
@@ -172,28 +172,60 @@ invoiceNumber and date set on htmlBody copy that to online voucher
 /////////////////////////////////////////////////////////////////
 bangla regex modifier for encode and decode string
 this should be used in frontend to backend
-   <script>
-      var st2 = '', str = "আমার নাম";
-      for (var inSt in str) {
-         var n = "&#x".concat(str[inSt].charCodeAt().toString(16));
-         console.log(n, str[inSt]);
-         st2 += n
+<script>
+   var st2 = '', str = "আমার নাম";
+   for (var inSt in str) {
+      var n = "&#x".concat(str[inSt].charCodeAt().toString(16));
+      console.log(n, str[inSt]);
+      st2 += n
+   }
+
+   //?? ///////////////////////////////////////////////////////////////////////////
+
+   var banglaRedx = /\p{Bengali}/;//! dosent works
+   var banglaRedx = /[\u0980-\u09FF]+/;//!! works
+   "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়"
+      .match(/[\u0980-\u09FF]+/)   //!! bangla unicode block
+   function bangla{
+      regex: /[\u0980-\u09FF]+/;
+      alphabets: "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়";
+      getCharUni = function (char) {
+
       }
-
-      //?? ///////////////////////////////////////////////////////////////////////////
-
-      var banglaRedx = /\p{Bengali}/;//! dosent works
-      var banglaRedx = /[\u0980-\u09FF]+/;//!! works
-      "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়"
-         .match(/[\u0980-\u09FF]+/)   //!! bangla unicode block
-      function bangla{
-         regex: /[\u0980-\u09FF]+/;
-         alphabets : "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়";
-         getCharUni = function (char){
-            
-         }
-         getStrUni = function (string){ 
-            char.length = 1?char.match(this.regex)?char.charCodeAt(0).toString(16):char:this.getStrUni(char);
-         }
-      } 
-   </script>
+      getStrUni = function (string) {
+         char.length = 1 ? char.match(this.regex) ? char.charCodeAt(0).toString(16) : char : this.getStrUni(char);
+      }
+   } 
+</script>
+<style>
+   .switch__circle {
+      position: absolute;
+      width: 500px;
+      height: 705px;
+      border-radius: 50%;
+      background-color: #ecf0f3;
+      box-shadow: inset 8px 8px 12px #d1d9e6, 
+                  inset -8px -8px 12px #f9f9f9;
+      bottom: -60%;
+      left: -60%;
+      transition: 1.25s;
+   }
+   .form__input {
+    width: 350px;
+    height: 40px;
+    margin: 4px 0;
+    padding-left: 25px;
+    font-size: 13px;
+    letter-spacing: 0.15px;
+    border: none;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    background-color: #ecf0f3;
+    transition: 0.25s ease;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+    &:focus{
+      box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+    }
+}
+</style>
