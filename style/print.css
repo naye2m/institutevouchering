@@ -4,10 +4,6 @@
     top: 00vh;
     height: 100vh;
 }
-
-thead {
-    background-color: #c2d59b !important;
-}
 .id_input1 {
     display: none ;
 }
@@ -15,3 +11,6 @@ thead {
     size: a4 landscape;
     margin: 0;
 }
+/* a::after {
+    content: " (" attr(href) ")";
+  } */

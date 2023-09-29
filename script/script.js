@@ -180,7 +180,7 @@ Customer.prototype.final = function () {
     tmpfetchingFormDat.GSoptions = ["Logger.log('ok')", { op: "scopes" }];
     delete tmpfetchingFormDat.fetchingFormData;
     tmpfetchingFormDat.items = Object.values(presentCustomer.items);
-    tmpfetchingFormDat.options = [true, "v1", "0401300723","NAY"];
+    tmpfetchingFormDat.options = [true, "v1", "0401300723", "NAY"];
     // console.log(Object.keys(tmpfetchingFormDat));
     tmpfetchingFormDat = Object.values(tmpfetchingFormDat);
     //??["name","address","emailAdd","time","items","itemCount","buyingFor","invoiceNumber","_discountAmount","grandTotal","subtotal","phone","options"]
@@ -221,7 +221,7 @@ Customer.prototype.final = function () {
     //?? /////////////////// V UNMATCHED - ELEMENTS!!!
     // todo make tag customer/office copy 
     document.getElementsByClassName("copyOF")[0].innerHTML = "&#x2688;Customer Copy";
-    document.getElementsByClassName("copyOF")[1].innerHTML = "&#x2688;Office Copy"; 
+    document.getElementsByClassName("copyOF")[1].innerHTML = "&#x2688;Office Copy";
 };
 
 // add item to customer
@@ -321,11 +321,16 @@ function newItem(name, price, qty, itemSirialNo) {
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbyLPYi2-4ZA9p3un3dJZolmhrScSQgHT8OWmzMXie6WtN9x_exX34w52cLa-EzAjlQ/exec' //v10 beta final version
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbxXRO2nzNnNBSeUw1y__T145fupfxTwzN_2RunC2El0rtyQep7OZ1BaJ1Be2Kam7eyO/exec'// desabled mail v11
 // var scriptURL = 'https://script.google.com/macros/s/AKfycby9o566JsLPDNXV7NKGPbPlyWs5S9DGIxp4B-DIA3WRna1g6xiHqMLBnPswgHyAZW_W/exec'// With mail🤠 v12
-var scriptURL ="https://script.google.com/macros/s/AKfycbwIGSqLwsJWghhG3P-VOEgQeN_g6j9ED8ZOzlj12jt86vqef3PjqEjItEqP2pur1e4J/exec"//beta with invoice no v14
+var scriptURL = "https://script.google.com/macros/s/AKfycbwIGSqLwsJWghhG3P-VOEgQeN_g6j9ED8ZOzlj12jt86vqef3PjqEjItEqP2pur1e4J/exec"//beta with invoice no v14
 const fetchingForm = rawDataForm; //?? make it constant
 // const fetchingForm = document.forms['formName']
 fetchingForm.addEventListener('submit', e => {
     e.preventDefault()
+    if (!fetchingComplete) {
+        return alert('Please wait...');
+    }
+    document.querySelector("#custInp3 > form > input[type=submit]:nth-child(2)").value = "Please Wait...";
+    fetchingComplete = false;
     //** fetch(scriptURL, {
     //**         method: 'POST',
     //**         body: new FormData(fetchingForm),
@@ -342,7 +347,7 @@ fetchingForm.addEventListener('submit', e => {
     //**     .catch(error => console.error('Error!', error.message))
     logJSONData(); //cheked file
 })
-var tt, tmpda, tmpSRes = [];
+var tt, tmpda, fetchingComplete = true, tmpSRes = [];
 async function logJSONData() {
     const ttr = await fetch(scriptURL, {
         method: 'POST',
@@ -355,7 +360,7 @@ async function logJSONData() {
             if (!response.ok) {
                 LocalStorage.ge
                 throw new Error(`HTTP error: ${response.status}`);
-              }
+            }
             // setTimeout(() => {console.log('waiting')},500);
             // setTimeout(() => {console.log("waiting")},5000);
             return response.json()
@@ -369,17 +374,20 @@ async function logJSONData() {
         .then(e => e.error ? console.log('error 🥱:', e.error) : e, err => console.log('error:', err.message))
         .then(response => {
             let tmp = {
-                result: response.result, 
-                mailRemains: response.mailRemains, 
-                cRow: response.row - 1, 
-                resDat: response.resDat};
-            return tmpSRes = {...tmp}
+                result: response.result,
+                mailRemains: response.mailRemains,
+                cRow: response.row - 1,
+                resDat: response.resDat
+            };
+            return tmpSRes = { ...tmp }
         }, err => console.error("logjson", err))
         .then(response => {
+            document.querySelector("#v > div > span.timeAndInvNo > div.inv > span.invNo").innerText = JSON.stringify(tmpSRes["resDat"][2]);
             //localstorage
             localStorage.setItem("lastRow", JSON.stringify(tmpSRes.cRow));
             //QR DATA
-            generateQRCode(`https://naye2m.github.io/citizenitonlinevoucher/?id=${tmpSRes.resDat[0]}&row=${tmpSRes.cRow}&me=qr&v=1#hi`); 
+            presentCustomer.final()
+            generateQRCode(`https://naye2m.github.io/citizenitonlinevoucher/?id=${tmpSRes.resDat[0]}&row=${tmpSRes.cRow}&me=qr&v=1#hi`);
             //alert
             alert(JSON.stringify(tmpSRes));
             //print
@@ -391,14 +399,19 @@ async function logJSONData() {
         //         tmp[tmpkey[i]] = tmpSRes[i]
         //     }
         //     tmpSRes = {...tmp}
-    // })
+        // })
         //** .then(r2 => console.log('ok!',tt = r2),err => console.error("logjsonData line 8 then2", err))
         //** .then(j => {
         //**     console.log(j);
         //**     return window.print
         //** }, err => console.error("logjsonData line9 then3", err))
         .catch(err => console.error("logjsonData line10 then4", err))
-        .finally(() => { alert("Complete"); console.log(tmpda);});
+        .finally(() => {
+            alert("Complete");
+            console.log(tmpda);
+            document.querySelector("#custInp3 > form > input[type=submit]:nth-child(2)").value = "Submit Done. Submit again";
+            fetchingComplete = true;
+        });
 
     //* // const response = await fetch(scriptURL, {
     // **    method: 'POST',
@@ -435,7 +448,7 @@ async function logJSONData() {
 // });
 
 var qrcodeContainer = document.getElementsByClassName("QRS")[0],
-     qrcodeContainer2 = document.getElementsByClassName("QRS")[1];
+    qrcodeContainer2 = document.getElementsByClassName("QRS")[1];
 function generateQRCode(website) {
     // let website = document.getElementById("website").value;
     if (website) {
@@ -443,39 +456,39 @@ function generateQRCode(website) {
         let qrcodeContainer = document.getElementsByClassName("QRS")[0];
         let qrcodeContainer1 = document.getElementsByClassName("QRS")[1];
         qrcodeContainer.innerHTML = "";
-      new QRious({
-        element: qrcodeContainer,
-        size: 120,
-        level: 'H',
-        padding: 0,
-        value: website
-      });
+        new QRious({
+            element: qrcodeContainer,
+            size: 120,
+            level: 'H',
+            padding: 0,
+            value: website
+        });
         qrcodeContainer1.innerHTML = "";
-      new QRious({
-        element: qrcodeContainer1,
-        size: 120,
-        level: 'H',
-        value: website
-      });
-      /*With some styles*/
-    //   let qrcodeContainer2 = document.getElementById("qrcode-2"); 
-    //   qrcodeContainer2.innerHTML = "";
-    //   new QRious({
-    //     element: qrcodeContainer2, 
-    //     background: '#ffffff',
-    //     backgroundAlpha: 1,
-    //     foreground: '#5868bf',
-    //     foregroundAlpha: 1,
-    //     value: website
-    //   });
-    //   document.getElementById("qrcode-container").style.display = "block";
-      document.getElementsByClassName("QRScon")[0].style.display = "block";
-      document.getElementsByClassName("QRScon")[1].style.display = "block";
+        new QRious({
+            element: qrcodeContainer1,
+            size: 120,
+            level: 'H',
+            value: website
+        });
+        /*With some styles*/
+        //   let qrcodeContainer2 = document.getElementById("qrcode-2"); 
+        //   qrcodeContainer2.innerHTML = "";
+        //   new QRious({
+        //     element: qrcodeContainer2, 
+        //     background: '#ffffff',
+        //     backgroundAlpha: 1,
+        //     foreground: '#5868bf',
+        //     foregroundAlpha: 1,
+        //     value: website
+        //   });
+        //   document.getElementById("qrcode-container").style.display = "block";
+        document.getElementsByClassName("QRScon")[0].style.display = "block";
+        document.getElementsByClassName("QRScon")[1].style.display = "block";
     } else {
-      alert("Please enter a valid URL");
+        alert("Please enter a valid URL");
     }
     // qrcodeContainer2.innerHTML = qrcodeContainer.innerHTML;
-  }
+}
 
 //** /////////// HTML    ST///////////////////
 function addCust() {
@@ -483,7 +496,7 @@ function addCust() {
         var [...tA] = [...document.getElementsByClassName("custConstractor")];
         console.log(tA = tA.map(e => e.value));
         let [cusName, address, email, phone, custype] = tA;
-        phone = "+88" + phone ;
+        phone = "+88" + phone;
         console.log(tA);
         // console.log(cusName.value)
         console.log(cusName, email, address, custype, "", phone);
@@ -504,6 +517,8 @@ function loadSecPage() {
 
 }
 
+var a = [new Date()]
+a[1] = a[0].getDate().toFixed(0).padStart(2, 0) + "/" + a[0].getMonth().toFixed().padStart(2, 0) + "/" + a[0].getFullYear();
 function loadpage(inp) {
 
     switch (inp) {
@@ -533,7 +548,10 @@ function loadpage(inp) {
 ////////////////////////////////
 function main() {
     // presentCustomer.final();
+    document.querySelector("#v > div > span.timeAndInvNo > div.time > span.presentDate").innerText = a[1];
     loadpage(1);
+
+
 }
 // ??// nayem.createTbl() dont uncomment this line;
 // presentCustomer.final();
@@ -547,15 +565,14 @@ function main() {
 main();
 ////////////////////////////////
 
-var nayem2 = new Customer('nayem2', "dfsx@fh.com", 'dhaka', 'Customer', '1001', '+01645545465', 1100);
-nayem2.addItem("fkjakds", 'm', '1year', 1300, 5);
-nayem2.addItem('b', 'n', '1year', 1500, 6);
-var nayem = new Customer('nayem', "sfa@il.com", 'dhaka', 'Customer', '1001', '+01645545465', 1100);
-nayem.addItem("fja", 'm', '1year', 1300, 5);
-nayem.addItem('b', 'n', '1year', 1500, 6);
-nayem.addItem('c', 'o', '1year', 1000, 2);
-nayem.addItem('d', 'p', '1year', 1200, 3);
-nayem.addItem("f0ja", 'm', '1year', 1300, 5);
-nayem.addItem('b0', 'n', '1year', 1500, 6);
-nayem.addItem('c0', 'o', '1year', 1000, 2);
-nayem.addItem('d0', 'p', '1year', 1200, 3);
+() => {
+    var nayem = new Customer('nayem', "sfa@il.com", 'dhaka', 'Customer', '1001', '+01645545465', 1100);
+    nayem.addItem("fja", 'm', '1year', 1300, 5);
+    nayem.addItem('b', 'n', '1year', 1500, 6);
+    nayem.addItem('c', 'o', '1year', 1000, 2);
+    nayem.addItem('d', 'p', '1year', 1200, 3);
+    nayem.addItem("f0ja", 'm', '1year', 1300, 5);
+    nayem.addItem('b0', 'n', '1year', 1500, 6);
+    nayem.addItem('c0', 'o', '1year', 1000, 2);
+    nayem.addItem('d0', 'p', '1year', 1200, 3);
+};

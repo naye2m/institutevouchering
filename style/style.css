@@ -23,11 +23,11 @@ body {
   height: 100vh;
   /* font-family: sutonnyOMJban, sans-serif; */
   font-family: sutonnyOMJban, "Times new roman" system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif, sutonnyMJ, sutonnyOMJ, nikoshBAN, nikosh;
-  font-size: 16pt;
-  font-weight: 300;
-  line-height: 1.5;
+    font-size: 16pt;
+    font-weight: 300;
+    line-height: 1.5;
   background: #fff;
   color: #000;
   text-align: center;
@@ -38,6 +38,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+@media screen and (max-width: var(--phone-screen-size-high) ) {
+  
+  *{
+    font-size: 60% !important;
+  }
+  .v-secondary{
+    transform: scale(0.6);
+  }
+  
 }
 
 .vmain {
@@ -50,28 +60,28 @@ body {
   align-content: stretch;
   height: 100%;
   /* display: none ;  */
-
-
-  /* position: relative;
+  
+  
+  position: relative;
   top: -100vh;
-  height: 0vh; */
+  height: 0vh;
   /* display: flex !important; */
 }
 
 .v-secondary {
   position: relative;
   /* width: calc(50% - 0pt); */
-  max-width: calc(50% - 10pt);
+  max-width: calc(50% - 1pt);
   box-sizing: border-box;
   background-color: #fff;
-  border: #666 1pt solid;
+  border: #ffffff 1pt solid;
   border-radius: 1pt;
   flex-grow: 1;
   align-items: center;
   text-align: center;
   overflow: hidden;
   display: flexbox;
-
+  background-size: contain;
   /* display: inline-flexbox; */
 }
 
@@ -81,7 +91,7 @@ body {
       height: 0vh;
       
     } */
-span.copyOF {
+    span.copyOF {
   float: right;
   height: 0;
   /* width: 0; */
@@ -92,8 +102,9 @@ span.copyOF {
 }
 
 .v-in {
-  width: 20pt !important;
-  background-color: rgba(255, 255, 0, 0.01) !important;
+  width: 1pt !important;
+  background-color: #ffffff !important;
+  box-sizing: border-box;
 }
 
 .hide {
@@ -147,11 +158,12 @@ body {
 
 h1 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
   font-size: 28pt;
+
 }
 
 .s4 {
@@ -165,7 +177,7 @@ h1 {
 
 p {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -176,7 +188,7 @@ p {
 
 a {
   color: #00f;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -185,7 +197,7 @@ a {
 
 h2 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -194,7 +206,7 @@ h2 {
 
 h3 {
   color: #001f5f;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: underline;
@@ -203,8 +215,8 @@ h3 {
 
 .h4 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
-  font-style: italic;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
+  font-style: none;
   font-weight: bold;
   text-decoration: none;
   font-size: 12pt;
@@ -212,7 +224,7 @@ h3 {
 
 .s5 {
   color: #00f;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -221,7 +233,7 @@ h3 {
 
 .s7 {
   color: #001f5f;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -248,7 +260,7 @@ h3 {
 
 .s11 {
   color: #234060;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -275,7 +287,7 @@ h3 {
 
 .s14 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -284,7 +296,7 @@ h3 {
 
 .s15 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -293,7 +305,7 @@ h3 {
 
 .s16 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -329,7 +341,7 @@ h3 {
 
 .s20 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -347,7 +359,7 @@ h3 {
 
 .s22 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -356,7 +368,7 @@ h3 {
 
 .s23 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -392,7 +404,7 @@ h3 {
 
 .s27 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
@@ -410,7 +422,7 @@ h3 {
 
 .s29 {
   color: black;
-  font-family: sutonnyOMJban, "Times New Roman", serif;
+  font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
@@ -460,7 +472,7 @@ table {
 }
 
 thead {
-  background-color: #c2d59b;
+  background-color: #c2d59baa;
 }
 
 table.visu {
@@ -490,9 +502,10 @@ td {
   min-width: fit-content;
 
   font-size: 12pt;
+  
 
   /*
-    font-family: sutonnyOMJban, "Times New Roman", serif;
+    font-family: sutonnyOMJban, "Bodoni MT", "Times New Roman", serif;
     font-style: normal;
     font-weight: normal; */
 }
@@ -516,7 +529,6 @@ tbody {
   } */
   /* opacity: 0.1 ; */
   &.nUnibg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAACCCAIAAADg/0LGAAAgAElEQVR4nO1dB3viyJa9FRQQIMAYjO1uh+6ZnvTevvmJ+xN393vzJnSyx42NyQiUK+xXEmCcc7dtdLq/CSCkknRUuuHcW0hKCRkyLAdwdp8zLA8yumdYImR0z7BEyOieYYmQ0T3DEiGje4YlQkb3DEuEjO4ZlggZ3TMsETK6Z1giZHTPsETI6J5hiZDRPcMSgWY3O8NNwCUIqf6ZgiCgGNBzu3QZ3TNcilhAzCHiEAjwmWCczbfECDSq5wkYBACBpT0POyHTu2e4ADEHJ4J+EEVhkH6LMVKYbSoBhBApdzBGppmv6Divg/a0WZ/RPcMpSICWy0ZewBinlBCMMNHmPJdSCM6kBIQAE4oQllIKHjOuyK8bZi2nl00JT9XMyeie4QRcwN9j5nquRgnVtDmbuZBCCEUXhNJZXn0uFRBCBGOq6VKKOI45FzmDvrYtjTzF65rRPcMUIYf9gcs41zWKiSalYHEspMQI5XIFm4JOgGCgs4mbSfV4TBg4vhczjhHSdEPwOIwYIXh3pWA8PcZndM8Ac64LKTVNV1SOIyGlaeTWLGoQQPgKT1SClB7DnUD4gUcwIlQPw0BK+XbVfmqMz+ieQTmmnweulFLTDc4ixoVG8KtSXqe3iLcIkF6EDh31zOi6EUUhAOysFMynxPiM7ssOCfB54EVM6LrB4ihmvFGyKzl5t6g6F7A/8sKYp4y3cvmtIn46fmtG92VHy4PBZKzrOmeMcf6qbNvGvS5JDHA4Fq43MQwzCILdqm1qIIWyl4QEJqabmVTFb3Ryx+fqbsjovtSIOXzqT9KIehTz7RW7oD/A9YgBDgZeEDFdU3lMTTPD0OdCLG6TRnXyVnEtB1/NxM80M0uNIx+4EITS1IZ5EK4rfgO8LlkY45hxAPB8lwsxD96nsUvTzGmUuN74Q8fpBV/pJmSz+/Ii5PC5PyEYCSE1it9UrIe9FDGH911HCIlVuEbTqYaxml6FhChUsUtKiWFYnAVBGK+WSo0HPv4FyOi+vGh50HMc0zSiKPquWnyMxNAwAIfBig6UKH1B6rSmFnzIoDV2Y8ZN0wSQvh+8qpTK5uPejYzuywopP/Q9LtTdz+UKW4VHuQxXywm4gGMfhhPHMAzOlBDh3WqRPKZ9ndnuS4qAozDmGCMh5Xrusa7B1TEXgmE9D3mrEEURocqpbXqPezcyAfByIeQwiZVs3Y2FrhEpQdf1b6hvQQCvi2iPkTiOCcZB4HIr/3gTfEb3pQAX0AthEsWpOiARrCv3MQwD28p/2yuAAW2XrI99NxmnGEZQfTQLPqP7C4cEGAXQnqhQIFGidUWvqZ4xjqQEW/v2F4BgsK380J1ghFwGZTHVn5FEq6NhKZJh3/9Amav6wvH3BCauo1GCCeWMpQpHTc/ZOs4lCscnouKKOXzojSnBs6IRmJv+CKnykVUDzHvXTGV0f8nYH4uJOzFNpQpQ7iDGtpWvmfCo0Y87433PZVxghGSSc50lpFTKNykfETnTelWg9/E0Mrq/WBy5rOe4uZwyhIMgLOQLGxZ+mlUXKUIOPgMdQyTU34BDGKrAPMY4lSWnKsvtStG6qwGW0f1lIuTwsatsGEJ13/ertt2wnm5N3WWIBbgR9IIoDANdnYweRoEQ4s5K+izu/jJxOFEVpVTLhWFQLNhJfv7ZtclQidiyCTu2XsjbYcQ4j3RdGWaf+xMubvD7c8jo/gIRcvB8T9cIi32E0OY3jjTeFwTDVkFWbTsVnBmGwRjv3ElVltH9BWISqXOiWi6K+YZdIM9vWj8PtGaBoZE4CjEiGiVDdxLwW+8lo/tLA5cwCjyMEWcBITj/BMLqDwIEsGlbQmUMONV0xrgb33q/Gd1fGqSEMOaUKK25lSvgF3SHDQJWLh/HsWp+Q7ATCX7LOEtG95cGrjoDSEyoENKmz9A/vRI1E6sGTqCSZVEcxrd0WDO6vzSkIQsplGFLX9ztVaJ5jAWPFxr43QIZ3V8a5hlTJY95YXN70ooVzXKud/n5Q48nwzcGQSr3LsSLzR7KRFygxD+Y3DbolNH9pQEhFbBLy/5fHueZVJ2HMdGEEIam31b889ACYCmF4zB+EhFVTWRLpQc+SobLQRCUTKsVOhgjj8PjFOV9MwxCSK321BG/7Wz9YHT3ei0mgA+cAfU8b7pbpLppxjXHzlkWq9omWJyx8aBtRRI2V3W4X/+eDJfA1qGdmO0jz62bFlzt1QUuiBsHOHQD6LQ7x0TpWdiDrGMQg7DBoHBNWQcX0w5QqYSmePs2IQ9A93jQcd3xl6HH2Hx1h5NlHuIYHHCg51R7x5v51c5k0vJ9QOjnXA5WLqS77MAwkkzjtE4r9x/eCQaDiT92QJQN06o2HnLPTwwagUqh2B2NhJAeQ9foB/f2lf7whlgpwKuddNPD8cAbeGjBnpAqQji1n9A5O2Px27Rz9uJXdq3wxmxcLexpeqoIS/Gei/XSXYq470t3r9l83+3OPWVd11/lNdsqA6XAWMj93nDQDtS3PU/2vE66mV2UlFwgaeMSmnG7f+xMd74e7ND1e45wivH4f5pNSB7INkL/AKAvmvGNnBz7NIzYoeO+reavItFKCSbj9H4ptU18zt4v0Om3lEJlJf1MKJECQQRrlCKMeMwZ59TUjIJmmXrMmdsNUlan20spSZ4USzkhIIgir+9LITXVWRtLIUUic7/6jIaBqlPRNer7gV0sle9kGdyL7lGz+VenM//feim32nhFzPz8ETUAao1axQm7rf2ed73fFCOvf+yoRSN0IpkcHk2C154J9223w6U4PtpPua7e7FL+2er9RHMv2alAaKec/9ifBBE79uCqjkWVGpSrqqc1APgT2Ds89a2GYP010KTLI8KgnRgQUkgEgA3MA44J3tqo5rhOSU4D4AT2y0eTnqvndZlkPkUk8sXcJqoBkXEOxZveBPzjw6FyNkwi/GteL04IhyMHIRRGbMUubdxV9HZ3ukfN5n8WuL5RMavru0Q/a09pkNPsXMM2KoedD+1+yrbL9ump7oJADTUqZCDM0BjC+9MduOgnqilIujsAY3Ecu3FcvO9+nzQ0AlvlwsFw0h2NpMyv5y+51wsMBn5uziRI2evk7G8FqDpAFRAMFVPf1XbUFrMX9qk1nNK/AFIVn6ovNcUKy4Ic1HG7M0j3IC5nRc+H1shJ+uHkazlsaXcX7t/RzxAzrqdvq1wuV996d57rc2iQszbWN4v6FVwHAEt1FwQecUDAE8FbBR6gBwomciUdGmOQRI10XTe1lyKeuhyWBm9WCqah9Rz30IXrX6/8IpHhiUt2CjIJczLGthqrZ9K36mG4PgiK6rRSWLFSl0+e216AnMTw2RGtkVPIF3ar9raNC9q9arTvQncB8SffTwY8LYZaoXz6NrzqSFp5dfPqbUywaq/KnPPYj6WQlUaJXOetp7YKjyK4/G4ipDXefa+nT2MyJ/1cq2nLER7VCOxWrNVSaThxPgyipMnMnSojTkMAT11GPa/n7jElNQxb0zVxPjQkhROgluPmKP6xbm8X0YOsZXkXYyZotieTSarJTCmWN28UE9JKhW3T3A+uUuZvolpp0+pHkxW9UIArbDQOnb667pxPBoMR5VuNbSheap5gMH78+fv+548sQo16HSoPGvN52iBI2e5Vw/4yYV+GE03TNgsGwdO2FneGmumkLJctCncvgDXBMop61Esd5JNpOxa4qEPZnNuxDyOHuDXdGQSdfj81Y+bl4lahdrNfk0q1ut9sOr7GL3+zFCBf0K9xRiaHTeUJzIAitHXJO3cODNrq7o83G+cLhJrmS5SLQttnh2PP1K0CBVuX10TlLwEDzrgAhFZVIuteXDQMOgG1u0WTfFZC/sCin1vTnXbGg9MWHiEESjdO3tl2fdLXGI5L97KdsSTT5y3xfZULQbMWUdcjactIIU9Biljgu3E9NfLjpGhK3JuRJWR1xDAch6gorjWJ74nbUUQC+FE0/e+Z04lvVUFgGBu7P9x/3Lp58vjLdAzFx28P/pKA7tWEwyCkulHWCKL3To0XZK72qqys90fm+q3p7oPXc7uLlszjQE3aHFgEEQWyqDWQymYPQJg0FOkATgYxcETFEskHBMz5nMMgSBsRCpAMhDkIY2A+44VaFcNFL5jxWNwgPR0BT5ZEv/QVxaUgw5EnwvR/NUxQqXaZAF1AKEAuDhIYc4DTmm3N47DjMYvcdLLRAVCl8Q27I+lgvCY3tGCvA8KbULuH/X8L3I7utB84MU3W3nlICJBt6HlBTDFO469CSs5FFLFcUduh6/PYU+CO25/2kIlcNrs8choO++3wsNiVMsngrm5t5ktJ/m/UPmy3ZSCRiWQgeZ4HgS6EYIz9So0zDiuXID5/eh8EBe362IXLyKouCzu7OXI+LiGj5uFBEIRhGMdxuggRpbTS6jZsW5bLJH/aM5Gi9cenmDGUPKSMsCDQVQvHON7tDuCnnwD48ZejnuOokaeJC4Tq7cGqbeubG8+xo8a3wu3ozil+jEkdSdbtTpgXKUnELJuMEFIrjud0SU7cKeaHynNQzWJZGvJPyZSSoz97DM2xl9J9Mhj03cSFdZMvnGRevuzsUDjkbhTx/qWbLII1Q/ghYGeiRzyKnL29/Sg6CVfPhtcGaHc6huP89OrVYhBJIN4Ow5NBwskg8/UKF9B5/6GVRn4XkO7tHfjW5nc3Ge7SA+4Umbmrc3MFENJ+rq0LkD7EzeGAB5yopZoB+QxTWCzTKhaLv25ugmkOjo72vWnv+/QJfFcrWFY1JVlUs9OvrJ03v3ZUptrxhp8GCZtS+Ufic5wZEQZiMKrMJU1T0jaAuomq5YqRK4WDwe9DtZ/pg0cIMLZZ1HP0tNkThsefPk25C/C2ahura1yInIB2a+/Q5ckm4e9fvny3sTEP/CPQft3eVsP2vN8TARJK+iSClOOeE0+GLV/ZYxt5NbyeEToOzB/1vzqT/9oMcaYtvRmeSjQDg4FVCNLU9HHkRgSIUiGdf5EYBtSUyVhyHEjpnrzcKaX6+nfz0KZ+slst3d6CIgz+UJvzq6rXRcrmOAZNe1OvaislI7FVBq3WdAvVmyt5YDSttrKuxjOHFIPPn+dcX8nT3OabubFexW8O9/YgVkWWYRj+eXDwY2kqeVWHTMwqWrHkcJg+aWm4ST3SHmia9vaXXTMkzCDWYPCb35bJfqavtb0jbWf7a65O+nxxa2eHPmZPSQ5MoBvtf3Q6D6eMWnzVQid0fCN/A8/O7k29atcaqV3eef9+bkuoaZUxQOjt2toZ0z9AwTSDloREK6Z1yjG1clUtyZYnUlCVOe8Nzxyd+WzR8023RAh9/2ZHCYcMgwLFumXnTp2Lwz0kr8k5ZJje31tdB8LE3SrAvwLM8ZVNpa5LQi3CMIyCPnNADw+b7tSmnsejvqtViqurp34jZf+P95ByfZ6XCEMeRdO/weyB4Tx9Ho56x2rqvm7M/9rY0HMn/oFgypE9dWRx+25ay4pbRmYIebJ0vz9oyEPKIITXpfxMG8x/H43mO05nfk3TCtW1s0dDIpX1K64nj8THkWfHv8+/DwI9iuTU00h4PIrIqssv00mkj5amaVHNfqDFfTPcku7YLq4f0/30vi1CopubjjEAc8fKyTOeloPFdaOkFcdFXsglYZMw/HBwEM5s8ZR/CKFf6vULRt6ZKRpScyhxdh1ncYuLwj0XKhAXUJdSD+FqRxSFmdV+U9zSVUW4Uqko/2mWvZ99fguDXjabf3Y6P5XLxs7OQ5/OvUAQkJ2dt7NdeN2DVAmXxkFSrv9zbS31fbkEgngq8eZSTLqns29xXCFEq16nqM9f98DnslYRD4nbR2ZMc3pTk2Bc6nUxiG8oi4sg7CaTXkSE/pQTJGH4oefNGZw+zRsFDTca6VlE+3txICu7u+lMHyXz9KxOU00E1aJe2Lj383xdmU+GW+HWk4coFjesJK2dBCjSqAgct2/4czQK2onqRtfok+V6BOGfe3tCiLkBk35enen1aWvwYejvB4HPomnDhYJ2Rr8XRwiuVpZn66Z8ddya7liVnzZSWdj87o4HN1vtWEp33EtvM79Bbc03Au/+/smfZzFnjP91e3te24oTG0PTNJJcBwyoUGnA6WZuXBOX2XgCwvHBp8O9v7jrfptTXFbcyTQsFnZKuendTWY+/2YTFZNor+vcYMM74ebNUq7GqDdNFVGaVjAAwG7ZmkfZuYD2sL9YZg9Jc4X03/MPSYy5vNjAc7vjjz2nPfIj/sDqowxX426eELK3vqsnjE/Z0I1j0Wxe/Rsu4OP7P2FeH/2gUF1hS9MyP98Zvn//XiwEEG8On/v/PmjDTGuQcte2wdzemu+DuOPDwdmCLInw2+pUuTDl+yWPH3fdw14PAH6u1XJ2+f5XQRqZUXRT3NXxR2hj592qPWWYEOL/hkOv17pkawmdzu+f/p1aCOjy6BsGShZEzxIkQTdq2sw5Z00VGwE/+vj3F9d1cXQq8CcqZ9Xw0blhxOB//PyRpSznHGaR7+21709EyIPBv/f3zw8AAZDXDdA05dcmz3OTscgbnz2o7x43P6vroGn6mUQVADn3gBhFIz4d9CQqWHDq1DT+cDXmFzX/OS8uuhYYKD7Xffh8o6Wvj3tMtAi9evMjfPqj6yRTXRy//3K81RlWNjencj8pBOLQbLccpxNFc7v2Ak2lFH001oH6EEVBTAhJm5NgjIMg6uedRAZDF0tX87N7kJZ3SCn/MxyueAOXEcYYpRQKiZ19eDgajUgOx8HZo48Grbzfj5241GhApSJAir1jNmFnRmhrTBwfh4YIx2xM2MDjciabOXMiFli/bm3976dPMhG9MMY+ft7/eXUVr9UBYQZB1PzyaRCwxMV/16guBu+95gcRc+6LmJ0aQJe79b0/QwBzZ5uO49GXL4lqgCrDcLbNQA+0/U+qTqJ0pxpcpw/uZPrKdc/5YJGAbuvkhVxZBXpx1qsPo0kUEA2nL7bIT+4jO6kB8r2wWZh2aokj3jDsB2ipckvct0qDS9H/8PE4DOcd85Rwiao/TKo/i/tv5HIFAz6OAinl26pdeP0mnQEm4H74u4mTp3+ufDoJAkrVZcq0zR/LJxYFSHH4x59zPdYiEEJvNjfTJP+HDx+msfPLUTfRxo//BWF0+PmPdnCbq6FpP+xs5fKng+uj0b8PDhb6ByaVVgQEm7oBafA+DWimEBD/3//8dvWh3tUKbhA1x1dJk+uGsaHE8bfE3gdwbryM3foK1DbOfyxA/jU8CJwAz6bwxfu4eCun2zPR2F5pwNn322PjvmY0Qbj2/fcVCIaf94acuq6rzimW0UISkRboKtdWyzm6pvj6r07nt3Z7MRBpgW7Xi/jysQiW6KMWgfDGRtXrOBPXnUf0sIbr1MhXq3NBy0ZBO0LFHGb4Ep4wTdYSAaUwjJpe9DWZv5m6hmlSFWOY5wZdKr3TaXT8pRmCHwSqJbIQkFgphmE0CNHXVnFpZfEXWJLNfD4knMYXx2aZJi2zYkLgQHDh8ISuCmLq+TtNlratJu8bWhrFi7uVYIBy2fJM7YqbuIjI54WH6CB0WzxkDZ6qJB8MwtHIpyJ9iVkasYTGGxtnLqbqJ4UepA5XQq8fjsfcRASQUWpA7skITKQEpxMOPJVQ49ioWLxYfwLm61IjWyQ+wxIhm20eD1ykRb1SqHLvOwVGMzwsnnBvFvnoXUceD1G//2X4t+9rdV1HlDsy0BjaLP18ReeCrw8BodPpYcB27SX3/l7E06W7RFhCjNUIH0ZcEzWbAyk5Vq5ejpNKuawCpp0OmOYV3fbuBkpIw6h5WvilN80iU0o24Snpvcbj1tF+21NX423gWa92yLOdXG6Op0t3pHQ1nKmow/1l8bzz/lPTdasWSlM5h5zuj0avStYXx/8uT63iu4et9cSlklUqWQAR+7M98qe91p6S6eg5Tsp1VYnSc/65xuDyBs4vBk+60RwBsw+9utTuY9VIgI8fPk9c95fdXanTlO4VEIetdjr1Yu0FlfFLoaaIMADDvCwflMLa2PgH5X/1JqYZvanugv7y238/dbojABtyB6K3SVbvPPvKZnMymWxb1mKH6xzAzpu892XvY89h7BFjU1d06X+Eg3H4+zPETJG+VlcZ0CuAEF3belcJqU7h67TwegJ46m1E1WJ9cjQEZwXu2I7di1VW9TCOC58+wZt1nBb7E0wQLr5+U4w+4huU8aue6FwQgpnEiEVKRpLs4W5DOg3J2bkWs+mCW8lBFz7Hl73lZKpEknyaH9WSqSEVBV0gg5kdkWCqJzU28kZ9gHmS4SIUcUEwigVHiJIrpqELxp/kB2cXk3CJVAZR7fMr8fAZdM3dofU/ncMVu3C3SaigFwH8OI5/i2P0v2qZwgKJbK6XXr3ihvH27ZurXeGk6SSb/PHhM+fAGNawiNUt3DUMfetVLn/fds8C2J9/vY+iyEiroqKojPH2zz8BoeHxwV+tAdbUn1iomObPq+U0M30GKHDh897JKmKxhGYLWseqxPDHd2esGg/84Yf37UCp3zDGcRxrmvbTjz9cYTFKGaNJcJy4tqlIRMSCUvqDZYXb6xe1DUx+1W//cdRljKWnFsfxatGob+64Hz99nqk/sIZLAq398+3X0c+Q//7v//4Kh7kfsE+jg1a7ViggdHvGF4uG44ziqbKcc+7HMOS8NRi0B4NVIoVlXtbXXwDErYPfPvw95BwDvFkpblVqFYzHUnbDsNcfrHBBbPuKgzuDrheyJDJDV2sr6NwTi4Bo4bgkUC8MeVoBqOu1ahUw1niEUexH6hmQQkohq9Sg5Ys0w5gARWDpMJmpX1ZtKJXAMiBfPMNjAprBIkNiX8owDGUic2isrV02wfMo6jY/vT/seEzWS7mtcnGzVDUYG3N+7Pu9/qhhGCq6dQ6RhXNDt6Drw0AJ46SUIYdWfzARIp/Pv8prYyp5wAMpuz2nUa9+BVf+WdAditgaSrcXTVYM+xY9D2bIVas09jzCxZlVFIVoO5Pc0Mmd0+KmkM3mb+1eqnD619aWsbYBlkXL5bKuh2IYhtDxvApEtHCpoXUt3ZXBZldyq6vdbjdds8UGMBslChqY+Xx5FY1G49mz2qhY+MJjIQy5vPrbTlTQGlK2e6l6nuupR0QLpXy1qoXjoRemZVn1Wu1CuguA/t6fh6NwKkH7/kd1spaVq1Z1xIYTD4RoDYeNfP58dwYKWq5azVdXRqNRqpkTQmzm6dbrneramlGulv24k7aCE6KRL36FzhTPI9SKAf1gb/ijoMm7d9vD6us3/3j9/bu18nf1lZ1Vu1Ao0Jm9uB8EwUXtjbiA9zM1pbKnKyezOC+dxDF+b/UFXCDMvB2kXGy+ubj6Ob95ldZif6X4ujopKSfnWvVfgGZzLsM808hfLX0+cwz+c3Bw6R7CiM9KC2iBVnZ/njdAjtDCgG/T9+rOeEYrXpCN9dXDLx1zm9bgFqruqN8PhVAaScOwGtvphzbEotcLwujTYChiwfYOYOfsIgvoqOnPlpFSTfkWui2YgzBp5RVN+0W2BtC4Z2LyUsIZj9XHSl67ci8AtKIT+fSZBcPYQsNNdjlZ2UKx1QrRLq3WuX0RyR3wnBJpdVq214rN/U4fbqE/6bYP9lVD01PRDwwarTYKG1uvNTNRbl6w2I5Y39RmbwCq3gUnM3pQMaYlRWnD4cZV5vvJDsWVse25NNxEIK5fb/DeQKeDpBdTv4pODIzzy7TI2ex+xQouNEQnz0lw6oHB+GvLE59X3hjtmutmyfz77+ObM143DMaYs/9JnJtBY/CdJEQgNs81wQOgGHZnS5EzxoIFi2WxH+W2ZV0RVTD4lBCadvnENjvG9LgSKJ7uX7RazZnJgRDC8srE5+Lsm658xZkqVuIXTb0IFWZpVFWseMlMj3bWq9YlKnydzOswf77E+YFE5m/OHFn/dOI2IrPnH6FbLO91DzwPV3UOBFAwtf5kMhy53BY2un618PC4O2JsEMSe62nu0DAtSSnyo+Hx/t5Bx2VMddTIXbwfaecNf+KEKqownIzqqlA0D+Px4ZcvfU/d6Vcls/rdd+dnDQ8898tBPBoc+VPLlTFmRa4/HoBt0AuEYlKM2unCCx6ThjN2vdFRt3/Q7xNC5rOjjGMejnWJ0UWREJVd6ijHWjmYao2VEDrH4I6hYC+Ww/vcdw/V2A5CT0TTFavJeOx7IwtTOFsaSwtmceS6nHNPiKIMNC0HlIpW62O3l57aP143SP0CWy4Ab5JchM7YlbNFVkjkWhEDIbrt5lF/PD81kwWBM9DtwoXe/EPhWerd22xweNRFGFVqxU2tdnW6p/PxP+1A7lYLe303iiKsYYMaQaAKCG0b1qpb+dO1RWcRhuB5B52/e55M1wdPf6vr+s+bq9yuk4vmPq/Z/DwcxnFMKZ234kgj3D+sFi+MnYvRqHm814vIfJpPhxcdd1WXQk1N13EcA6XbpVLl9esLjqrofqQciRQaUk35auuQsxZtFXfU3/tytDg2qZYG4pKQXyxLe/Pm/I5ZFPL+8YfeOI7j9AKmVfYbeZKvb152AUWz+XtyEbTZIotSSsbYrmFYhvGb4wCl2sLFAU379VUNSvWrbsf98FzLO5qy0/kyxBgVS4XdfP1KUQ1nEcO6LqKISzCCIJpMdNtmhnqxUv1GwS8eRUxKw3Embr9QqbBc6erfShlHycS5+DCkbp2uY4QuNuK56jUrgRoYhyIxYdQhpBSIpdNw0pgSQCcLLQqTnCiPgcUQhdOCdBYDSXxoqp3PqnIpWBRfODaK0GUr/avS9SjCOrBml4FvFWosZyK4dPsLL8LJUaRMTcMzX2HDeFTtzjOuZvo7Ou4fOxgj0za/K9Zus2CLvHMqNF0f726/fTBEARx+AUog1QLETAVNmYCqDesXvDceGqoV4DNdLOR5F+/tha1Rd4IRIoSsVktVUloG0bZyPY8OYOzBYtbMNmH77Z2XBV4SPG+6S8+feGsAAAQRSURBVIDPwdGk5yq9EeeFNWuH1p5UxdAjInBhbx8Sa0GZ6W/fgv4VwpfPG897LkQAb8z1QjUfx0zTtcmx959Os80GL7hLtJqcfFdN8GYe6rPwX62acf0meAmv/l1zvVwvhkGkmRri8vCou8cOx/xmTYmfEaIAhgPUbqrwSzxt2gppq6PVZSk2vSdeTuON1HM1cjqiKBiHCKPVjVIF5a2v3pntgcGiadSl1VKpL7sM5ZWppvdgH0Zj+OWXzGS/IV5Un5kWdFsHA0qIVtC4z6Mo1jRaXitUUf7rtyO8F6RQ6SGhFPbgONOijY1VpXBczIgFqj28NPMZ2W+Il9ZWqS+dw26fBbFZMACplUoZ49TUCrZp69YKupG45ZuBRTAZq7k8jsD3YDJL/r+qT/W9Ge6HF9hFTEC8F3SdzkTXNWxgGataNS4EwThXMvOW3lCCyidTnSk4TEbKJtEwBCH44anwYs2G+oYkT3dhn+eFF9s0rw2940O1LDXVVD9iqXKJgnOOENIszaB6oWBUofD1o5YqxcUi8CaqX0AYKXPlDMVTrORh/bWSxS5DJuFr4SX3iPTAawUjt+8hhIhGUNJgX8RCCJEut0QoMXMGzZEKsQoylxDr7gnXc0gWDU69yDP8jplKiJ6neBoqq6oZPSP6Y+CFt0QVIIdy3J040TgCpGTZiCKEkWo8L+S847jS1mqY6IRqpGiaRTB01QGagpzW2ywuw4QTxSFevG4iFXzg6VJ7ysWMwXMhXUd4nuRPtYoXQkNKFFBdgdJKRvTHw7J0AO7AYDB2o7HSYGGMMVG8V6vhCJnK4E/Yn8zvaTd+rGNMMdUIpkDQVEP7WjAYE0XoFKke3fOVyunCCfsKYCVoVuHzlSpYD9y4L8N5LFHDawnQhcHI84NRoDxXNCW9muyFPLupnD4A6ZMw/wZh9CpySsN7e7q2CaYBVl5pGPGydDX65ljG/u596YxcLxKxykYB4AXenyF3iqklg0CtNIRh1x+b/TsdWEOQMyBt1GGXr25ql+ExsLzLGQgIe+C5LAgmceiqRi5YEV9B8V7Zz2d9VrVAmoTXxC0cIbh8/cBTwAAWVbO4bqhZvFDMWP4Nka3eoQI4ExbGhIUh8/2IeXE6waOkUh8jnJry6cZSSkLJD/0RDi/3Jk0MVk5RnFLlxRpmliF6IsjofgIB4HIvxkxDyIUw5jKOWRTELBbz5qYYqQJ+aro/HgmMqBKx6Iaq7zRMVUCUlg4xBmYum8WfIDK6XwUGTELMOLDTXQw0sEwZTVsXUU3N4lno8Dkgo3uGJUI2J2VYImR0z7BEyOieYYmQ0T3DEiGje4YlQkb3DEuEjO4ZlggZ3TMsETK6Z1giZHTPsETI6J5hiZDRPcMSIaN7hmUBAPw/DlP7Rn0pVn0AAAAASUVORK5CYII=");
     background-color: #fff;
     /* Used if the image is unavailable */
     /* height: 500px; /*You must set a specified height */
@@ -650,6 +662,7 @@ footer div p {
   } */
   position: absolute;
   left: 10px;
+  mix-blend-mode: darken;
 }
 
 .id_input1 {
@@ -768,7 +781,13 @@ input {
 
 }
 
-input, input[type="text"], input[type="password"], input[type="radio"], button, select, .visTft {
+input,
+input[type="text"],
+input[type="password"],
+input[type="radio"],
+button,
+select,
+.visTft {
   display: inline-block;
   flex-grow: 1;
   color: #e5b534;
@@ -1016,11 +1035,11 @@ td.action button,
   --warning: var(--yellow);
   /* brand  */
   /* primary PriSec sec complimentry transparancy white black primaryHue secHue red green blue */
-  --bp:var(--primary-color);
-  --bsp:var(--sec-primary-color);
-  --bs:var(--secondary-color);
-  --bc:0;
-  --bt:0.7;
+  --bp: var(--primary-color);
+  --bsp: var(--sec-primary-color);
+  --bs: var(--secondary-color);
+  --bc: 0;
+  --bt: 0.7;
   --bw: hsl(0, 0%, 90%);
   --bb: hsl(0, 0%, 10%);
   --bph: 45deg;
@@ -1028,5 +1047,54 @@ td.action button,
   --br: var(--red);
   --bg: var(--green);
   --bb: var(--blue);
-  --b:#;  
+  --b: #;
+  --phone-screen-size-high: 600px
+}
+
+.timeAndInvNo {
+  position: absolute;
+  float: revert;
+  top: 21vh;
+  right: 2vw;
+  border: 2px black solid;
+  font-size: x-small;
+  text-align: left;
+  padding: 5px;
+  border-radius: 12px;
+  font-family:  'Courier New', Courier, monospace;
+
+  & div>.txt {
+    display: inline-block;
+    width: 50pt;
+
+  }
+  
+  & div *:nth-child(2) {
+    display: inline-block;
+    min-width: 50pt;
+    &::before {
+      content: ":";
+    }
+
+  }
+
+}
+
+.bgimg {
+  background: no-repeat #fff;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  width: 50vw;
+  height: -webkit-fill-available;
+  DISPLAY: flow;
+  transform: translate(0px,-50% );
+  opacity: 0.3;
+  mix-blend-mode: darken;
+}
+.table-1{
+  z-index: 1;
+}
+.logobg {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1825 955' xmlns:v='https://vecta.io/nano'%3e%3cstyle%3e%3c!%5bCDATA%5b.B%7bstroke:%23838484%7d.C%7bstroke:%23ff8080%7d.D%7bstroke:%238cc986%7d%5d%5d%3e%3c/style%3e%3cg fill='none' stroke-width='2'%3e%3cpath stroke='%2393cbf2' vector-effect='non-scaling-stroke' d='M1610.48 239.54c-7.96-38.09-33.84-66.37-74.21-68.86-13.77-.84-28.61 2.23-43.18 6.25q-.51.15-.76-.33c-26.97-52.69-84.22-73.47-140.69-67.45-61.54 6.56-105.33 53.48-120.44 111.4a.72.71-84.4 0 1-.65.54c-44.93 3.22-80.06 31.89-90.81 75.67-14.5 59.12 30.32 107.31 85.14 119.69 7.42 1.67 18.56 3.26 25.63.36a.26.26 0 0 0-.04-.5c-54.12-11.74-96.04-51.47-81.34-111.4 9.75-39.74 45.14-59.34 84.04-60.35a.61.6 3.3 0 0 .59-.52c6.15-44.12 34.86-79.69 76.61-94.39 20.21-7.12 43.69-10.64 65.01-7.59 38.08 5.46 69.4 30.72 87.64 64.08q.26.47.76.27c19.77-7.88 42.92-11.73 63.47-4.21 24.99 9.13 36.76 33.16 42.87 57.8q.12.5.64.45c38.57-3.7 78.97 10.7 89.56 51.95 11.77 45.85-30.75 78.18-66.51 94.68a.1.1 0 0 0 .06.19c23.4-3.62 46.86-10.62 67.45-22.44 23.97-13.76 36.38-41.55 34.66-68.39-.86-13.57-6.19-26.94-13.27-38.63-19.45-32.07-55.11-44.3-91.57-37.82q-.55.1-.66-.45'/%3e%3cpath vector-effect='non-scaling-stroke' d='m268.23 560.45 11.16 11.68q.28.29.69.3l10.21.23a.7.7 0 0 0 .71-.7v-72.71q0-.5-.5-.5h-14.48q-.46 0-.54.45c-5.76 32.7-24.75 56.32-59.05 58.66-42.15 2.87-53.55-23.32-54.3-59.61q-.67-32.34-.2-64.68c.49-33.19 6.92-62.43 46.66-63.78 35.24-1.2 56.64 20.66 62.58 53.93q.1.53.64.53h13.94q.5 0 .5-.5V355.5q0-.5-.5-.5h-10.11q-.53 0-.92.37l-9.89 9.59a1.47 1.46-50.2 0 1-1.83.17c-17.83-11.82-38.46-14.75-59.57-13.48-19.46 1.17-37.91 7.74-53.27 19.69-36.89 28.7-47.83 77.05-38.53 121.64q7.44 35.74 33.87 59.28c33.73 30.06 84.16 30.91 121.86 8.07q.48-.29.87.12' class='B'/%3e%3cpath vector-effect='non-scaling-stroke' d='M1282.45 373.75a.3.3 0 0 1 .3.3v178.9a.3.3 0 0 1-.3.3h-31.4a.3.3 0 0 0-.3.3v17.15a.3.3 0 0 0 .3.3h112.65a.3.3 0 0 0 .3-.3v-17.15a.3.3 0 0 0-.3-.3h-31.15a.3.3 0 0 1-.3-.3v-178.9a.3.3 0 0 1 .3-.3h31.15a.3.3 0 0 0 .3-.3v-17.4a.3.3 0 0 0-.3-.3h-112.65a.3.3 0 0 0-.3.3v17.4a.3.3 0 0 0 .3.3h31.4' class='C'/%3e%3cpath vector-effect='non-scaling-stroke' d='m1513.45 552.73.16-179.43q0-.58.57-.62c16.54-1.22 35.71 1.77 45.41 16.93 7.61 11.9 11.3 26.98 13.54 41.11q.08.53.62.53h15.45q.71 0 .68-.71l-3.26-73.63q-.04-.91-.95-.91h-193.71a.82.82 0 0 0-.82.78l-3.25 73.52q-.04.95.91.95h14.96q.62 0 .73-.61c2.36-13.28 5.72-26.88 12.02-38.88 9.22-17.55 28.75-19.07 46.21-19.04q1.03 0 1.03 1.03v179q0 .5-.5.5h-34q-.5 0-.5.5v16.75a.5.5 0 0 0 .5.5h119q.5 0 .5-.5v-16.75q0-.5-.5-.5h-34.27q-.53 0-.53-.52M363.89 407.38a22.61 22.46 89.9 0 0 22.42-22.65 22.61 22.46 89.9 0 0-22.5-22.57 22.61 22.46 89.9 0 0-22.42 22.65 22.61 22.46 89.9 0 0 22.5 22.57' class='D'/%3e%3cpath vector-effect='non-scaling-stroke' d='M581.089 407.418a22.66 22.52 91.9 0 0 23.259-21.901 22.66 22.52 91.9 0 0-21.757-23.394 22.66 22.52 91.9 0 0-23.259 21.9 22.66 22.52 91.9 0 0 21.757 23.394M486.99 458.25h29.76q.5 0 .5-.5v-16q0-.5-.5-.5h-30a.5.5 0 0 1-.5-.5v-36.28q0-.64-.63-.49c-7.35 1.71-14.88 3.58-22.13 4.02q-8.22.51-16.51.16-.57-.02-.57.55l.11 31.78a.76.76 0 0 1-.76.76h-21.01q-.5 0-.5.5v16q0 .5.5.5h20.02q.64 0 .66.64c.63 22.54-.4 46.87.01 83.98.24 22.73 9.61 31.39 31.6 32.39 22.88 1.04 46.14-9.23 48.84-34.52q.06-.52-.43-.69l-11.83-4.18q-.52-.18-.7.34c-3.42 10.06-9.49 18.23-21.32 15.09-4.42-1.16-5.29-4.69-5.31-8.8q-.12-41.77-.01-83.54a.71.71 0 0 1 .71-.71' class='B'/%3e%3cpath vector-effect='non-scaling-stroke' d='M345.5 458.75v94.75q0 .5-.5.5h-24q-.5 0-.5.5v16a.5.5 0 0 0 .5.5h89.75q.5 0 .5-.5v-16q0-.5-.5-.5h-22.5a.5.5 0 0 1-.5-.5V438.47q0-.61-.6-.53-31 4.27-62.28 3.17-.62-.02-.62.6v16.04q0 .5.5.5H345q.5 0 .5.5' class='D'/%3e%3cpath vector-effect='non-scaling-stroke' d='M562.24 458.25q1.23 0 1.23 1.24l-.15 93.97q0 .54-.53.54h-23.67q-.64 0-.64.63l-.02 15.98a.4.39 0 0 0 .4.39h89.89q.5 0 .5-.5v-16q0-.5-.5-.5h-22.5a.5.5 0 0 1-.5-.5V438.52q0-.63-.62-.56c-20.24 2.26-40.29 3.86-62.36 3.1q-.52-.02-.52.5v16.19q0 .5.5.5h19.49m449.5 3.75l.03-23.57a.49.49 0 0 0-.55-.49c-23.33 2.83-38.42 3.5-62.42 3.26q-.55 0-.55.55v16q0 .5.5.5h20.76q.94 0 .94.94l-.27 94.35q0 .46-.47.46H948.7q-.48 0-.48.48l.04 16.03q0 .49.5.49h83.98q.5 0 .5-.49l.04-16.03q0-.48-.49-.48h-19.51a.54.54 0 0 1-.54-.54q.04-21.85-.01-43.8-.02-12.96 1.43-18.73c4.04-16.09 18.69-33.77 37.52-30.68q6.65 1.09 6.71 8.25.36 42.22.39 84.75a.76.75 0 0 1-.76.75h-18.27q-.5 0-.5.5v15.75q0 .75.75.75h81.02q.52 0 .52-.52l-.02-16.13a.36.35 0 0 0-.36-.35h-19.19q-.75 0-.75-.75.1-33.28-.02-66.67-.05-14.54-1.25-19.92c-4.1-18.25-18.12-26.63-36.2-28.03-22.72-1.77-37.55 5.91-51.51 23.54q-.5.63-.5-.17M844.3 503.79l82.44-.36q.41-.01.43-.42c.68-16.51-2.08-31.18-13.34-43.67q-17.51-19.41-45.58-20.8c-42.1-2.09-71.87 33.78-70.31 74.24 1.33 34.68 27.29 60.37 61.82 62.32 37.69 2.12 59.52-15.89 69-51.95a.52.52 0 0 0-.5-.65h-14.51a.73.73 0 0 0-.69.49c-6.82 20.47-20.23 33.31-42.42 34.71-10.62.67-21.64-3.7-25.44-14.1q-1.27-3.47-1.2-10.34.13-14.54-.09-29.06-.01-.4.39-.41m-124.85-44.85l-69.64 95.58a1.47 1.46 63.9 0 0-.28.83l-.1 15.34a.32.31 0 0 0 .32.31H771.5a.5.5 0 0 0 .5-.5V509q0-.68-.69-.69l-12.77-.09a1.11 1.1-86.6 0 0-1.11.99c-2.27 20.07-9.93 42.53-33.92 44.26q-11.93.87-20.9.44-.67-.03-.27-.58l69.42-95.87a1.24 1.19 64.4 0 0 .24-.73v-14.99q0-.51-.51-.51l-113.96-.03q-.53 0-.53.53v55.52q0 .5.5.5h13.48q.48 0 .59-.46c3.19-13.17 8.12-32.45 22.93-36.58q9.46-2.64 24.78-2.14.43.02.17.37' class='B'/%3e%3cpath vector-effect='non-scaling-stroke' d='M761.98 845.51q7.78-.1 13.96-.6c108.45-8.76 215.78-49.02 305.71-109.15q1.71-1.15-.23-.48c-79.27 27.28-161.82 49.35-245.17 60.96q-43.88 6.11-87.82 5.8' class='C'/%3e%3cpath vector-effect='non-scaling-stroke' d='M748.43 802.04c-26.25-.09-50.31-1.41-75.99-5.18-72.25-10.61-140.92-39.46-197.89-84.95-41.83-33.41-78.99-75.33-104.87-122.54q-2.1-3.84-.33.17c24.4 55.02 59.15 108.14 102.99 150 77.09 73.59 182.05 113.87 289.64 105.97' class='D'/%3e%3cpath stroke='%238c4a07' vector-effect='non-scaling-stroke' d='M748.43 802.04c-4.3 16.96-.96 32.71 13.55 43.47'/%3e%3cpath vector-effect='non-scaling-stroke' d='M836.32 703.5q-.17.6-.01 1.17a.45.45 0 0 0 .43.33h62.01q.5 0 .5-.5v-8.47q0-.53-.53-.53h-15.34a.63.62 0 0 1-.63-.62v-99.64q0-.72-.72-.66-22.5 1.86-45.07 1.36-.54-.01-.53.53l.1 8.55q.01.48.49.48h16.48a.5.5 0 0 1 .5.5v88.88q0 .62-.63.62h-16.36q-.43 0-.48.43-.47 3.77-.18 7.37a.69.44 66.1 0 1-.03.2m428.49-92.23a15.34 11.88 0 0 0-15.34-11.88 15.34 11.88 0 0 0-15.34 11.88 15.34 11.88 0 0 0 15.34 11.88 15.34 11.88 0 0 0 15.34-11.88m-650.13.78c-17.66-8.98-56.31-10.35-65.02 13.36q-3.78 10.28 1.04 20.41c9.77 20.56 44.98 17.41 62.73 25.98 8.54 4.12 8.74 12.39 2.16 18.13-6.39 5.57-13.7 7-22.26 7.47-17.36.95-31.19-6.72-36.46-23.69q-.14-.46-.62-.46H548q-.5 0-.5.5v31.5q0 .5.5.5h5.59a1.48 1.44 25.6 0 0 .89-.3l6.5-4.97q.41-.31.88-.09c17.4 8.06 42.27 9.72 58.7-.83 13.07-8.4 18.48-24.46 12-38.79-5.25-11.63-22.01-17.25-34.33-18.94q-5.58-.77-22.9-4.74c-5.62-1.29-14.83-4.21-12.76-11.11 1.53-5.12 7.68-8.25 12.68-9.53 18.59-4.75 38.42 1.36 44.7 21.12q.13.43.59.43h7.21q.5 0 .5-.5v-29.98q0-.45-.45-.49c-5.92-.42-7.73 1.91-12.22 4.96q-.43.29-.9.06' class='B'/%3e%3cpath vector-effect='non-scaling-stroke' d='M1122.25 649.01q-.01 18.43.04 36.83c.03 10.31.85 17.82 11.68 20.15 13.79 2.98 40.34 1.75 43.81-16.71q.08-.45-.36-.56l-7.08-1.84q-.55-.14-.84.36-5.6 10.01-17.2 6.71c-1.37-.39-2.26-1.83-2.27-3.35q-.11-20.74 0-41.62a.49.49 0 0 1 .49-.48h20.73q.5 0 .5-.5v-8.5a.5.5 0 0 0-.5-.5h-20.75q-.5 0-.5-.5v-17.04a.75.75 0 0 0-.9-.74q-12.62 2.45-25.48 1.98a.6.6 0 0 0-.62.6v15.2q0 .5-.5.5H1108q-.5 0-.5.5v8.25q0 .75.75.75h13.48q.52 0 .52.51' class='C'/%3e%3cpath vector-effect='non-scaling-stroke' d='M955.97 649.16q.1 15.69.01 31.42-.05 8.5 1.36 12.22 3.67 9.67 15.71 12.17c16.03 3.32 32.63 1 44.57-10.96q.59-.59.6.24l.04 11.52q.01.55.55.5 21.27-1.78 42.61-1.18.58.02.58-.56v-8.68q0-.63-.64-.63l-13.85.05q-.51 0-.51-.51v-56.77q0-.53-.53-.48-21.33 1.97-42.75 1.42-.52-.02-.51.5l.06 8.58q0 .49.49.49h12.48q1.58 0 1.55 1.58-.22 12.71-.33 25.06c-.14 15.72-32.62 28.73-32.66 11.6q-.07-24.33-.05-48.71 0-.52-.52-.48-21.17 1.87-42.43 1.39-.55-.01-.55.54v8.49q0 .48.47.48l13.7.16q.55 0 .55.55m280.53 46.34h-16.4q-.59 0-.59.59l-.07 8.25q-.01.66.65.66h61.58q.61 0 .61-.61l-.04-8.4q0-.49-.5-.49h-15.49a.5.5 0 0 1-.5-.5v-57q0-.49-.49-.45-21.19 1.92-42.45 1.38a.55.55 0 0 0-.56.55v8.39q0 .61.61.61l13.29.12q.85.01.85.86V695q0 .5-.5.5m256.5-46.21V695q0 .5-.5.5h-14.19q-.75 0-.78.76l-.25 8.25a.48.48 0 0 0 .48.49h57.99q.5 0 .5-.5v-8.47q0-.53-.53-.53h-13.21a.66.65-.9 0 1-.66-.63q-.39-12.76.15-25.49c.58-13.53 16.26-21.2 28.15-19.62 1.75.24 4.17 1.24 4.25 3.05q.4 9.29.31 42.12 0 .53-.53.53h-12.66q-.52 0-.52.52v8.52q0 .5.5.5h56q.5 0 .5-.5v-8.4q0-.65-.65-.65l-13.06.07a.54.53 89.5 0 1-.54-.54v-36.73c-.01-11.46-7.56-17.12-18.29-19.36-15.53-3.24-32.1-.49-43.73 11.17a.43.43 0 0 1-.73-.3v-11.7q0-.57-.57-.52-21.21 1.89-42.49 1.4-.54-.02-.53.53l.13 8.5q0 .35.34.41c4.84.81 9.72-.1 14.69.44q.43.04.43.47M788.85 672.5a49.23 34.68 0 0 0-49.23-34.68 49.23 34.68 0 0 0-49.23 34.68 49.23 34.68 0 0 0 49.23 34.68 49.23 34.68 0 0 0 49.23-34.68m638.01 0a49.24 34.68 0 0 0-49.24-34.68 49.24 34.68 0 0 0-49.24 34.68 49.24 34.68 0 0 0 49.24 34.68 49.24 34.68 0 0 0 49.24-34.68' class='B'/%3e%3cpath vector-effect='non-scaling-stroke' d='M1083.32 734.5a.34.34 0 0 1 .14.23l3.56 29a.34.34 0 0 0 .61.16l42.12-55.69a.34.34 0 0 0-.31-.54l-69.23 8.67a.34.34 0 0 0-.16.6l23.27 17.57' class='C'/%3e%3cpath vector-effect='non-scaling-stroke' d='M844.44 485.04l38.2-.06a.5.5 0 0 0 .49-.5l-.02-13.2a15.95 15.26-.1 0 0-15.98-15.24l-7.3.02a15.95 15.26-.1 0 0-15.92 15.28l.02 13.2a.5.5 0 0 0 .51.5M722.1 684.99c.07 7.12 4.45 10.66 10.91 11.77 9.44 1.61 24.07 1.08 24.18-12.01q.11-12.39-.07-24.73-.14-9.56-8.94-11.69c-8.93-2.16-25.89-2.04-26.15 11.18q-.11 5.6.07 25.48m637.94-1.44c.07 7.41 2.9 11.72 10.48 13.12 9.33 1.72 24.42 1.39 24.69-11.68q.15-7.47.02-21.4c-.08-8.15-1.24-13.61-9.71-15.35-9.14-1.87-25.21-1.86-25.49 11.27q-.15 7.46.01 24.04' class='B'/%3e%3c/g%3e%3cpath d='M0 0h1825v955H0V0zm1610.48 239.54c-7.96-38.09-33.84-66.37-74.21-68.86-13.77-.84-28.61 2.23-43.18 6.25q-.51.15-.76-.33c-26.97-52.69-84.22-73.47-140.69-67.45-61.54 6.56-105.33 53.48-120.44 111.4a.72.71-84.4 0 1-.65.54c-44.93 3.22-80.06 31.89-90.81 75.67-14.5 59.12 30.32 107.31 85.14 119.69 7.42 1.67 18.56 3.26 25.63.36a.26.26 0 0 0-.04-.5c-54.12-11.74-96.04-51.47-81.34-111.4 9.75-39.74 45.14-59.34 84.04-60.35a.61.6 3.3 0 0 .59-.52c6.15-44.12 34.86-79.69 76.61-94.39 20.21-7.12 43.69-10.64 65.01-7.59 38.08 5.46 69.4 30.72 87.64 64.08q.26.47.76.27c19.77-7.88 42.92-11.73 63.47-4.21 24.99 9.13 36.76 33.16 42.87 57.8q.12.5.64.45c38.57-3.7 78.97 10.7 89.56 51.95 11.77 45.85-30.75 78.18-66.51 94.68a.1.1 0 0 0 .06.19c23.4-3.62 46.86-10.62 67.45-22.44 23.97-13.76 36.38-41.55 34.66-68.39-.86-13.57-6.19-26.94-13.27-38.63-19.45-32.07-55.11-44.3-91.57-37.82q-.55.1-.66-.45zM268.23 560.45l11.16 11.68q.28.29.69.3l10.21.23a.7.7 0 0 0 .71-.7v-72.71q0-.5-.5-.5h-14.48q-.46 0-.54.45c-5.76 32.7-24.75 56.32-59.05 58.66-42.15 2.87-53.55-23.32-54.3-59.61q-.67-32.34-.2-64.68c.49-33.19 6.92-62.43 46.66-63.78 35.24-1.2 56.64 20.66 62.58 53.93q.1.53.64.53h13.94q.5 0 .5-.5V355.5q0-.5-.5-.5h-10.11q-.53 0-.92.37l-9.89 9.59a1.47 1.46-50.2 0 1-1.83.17c-17.83-11.82-38.46-14.75-59.57-13.48-19.46 1.17-37.91 7.74-53.27 19.69-36.89 28.7-47.83 77.05-38.53 121.64q7.44 35.74 33.87 59.28c33.73 30.06 84.16 30.91 121.86 8.07q.48-.29.87.12zm1014.22-186.7a.3.3 0 0 1 .3.3v178.9a.3.3 0 0 1-.3.3h-31.4a.3.3 0 0 0-.3.3v17.15a.3.3 0 0 0 .3.3h112.65a.3.3 0 0 0 .3-.3v-17.15a.3.3 0 0 0-.3-.3h-31.15a.3.3 0 0 1-.3-.3v-178.9a.3.3 0 0 1 .3-.3h31.15a.3.3 0 0 0 .3-.3v-17.4a.3.3 0 0 0-.3-.3h-112.65a.3.3 0 0 0-.3.3v17.4a.3.3 0 0 0 .3.3h31.4zm231 178.98l.16-179.43q0-.58.57-.62c16.54-1.22 35.71 1.77 45.41 16.93 7.61 11.9 11.3 26.98 13.54 41.11q.08.53.62.53h15.45q.71 0 .68-.71l-3.26-73.63q-.04-.91-.95-.91h-193.71a.82.82 0 0 0-.82.78l-3.25 73.52q-.04.95.91.95h14.96q.62 0 .73-.61c2.36-13.28 5.72-26.88 12.02-38.88 9.22-17.55 28.75-19.07 46.21-19.04q1.03 0 1.03 1.03v179q0 .5-.5.5h-34q-.5 0-.5.5v16.75a.5.5 0 0 0 .5.5h119q.5 0 .5-.5v-16.75q0-.5-.5-.5h-34.27q-.53 0-.53-.52zM363.89 407.38a22.61 22.46 89.9 0 0 22.42-22.65 22.61 22.46 89.9 0 0-22.5-22.57 22.61 22.46 89.9 0 0-22.42 22.65 22.61 22.46 89.9 0 0 22.5 22.57zm217.199.038a22.66 22.52 91.9 0 0 23.259-21.901 22.66 22.52 91.9 0 0-21.757-23.394 22.66 22.52 91.9 0 0-23.259 21.9 22.66 22.52 91.9 0 0 21.757 23.394zM486.99 458.25h29.76q.5 0 .5-.5v-16q0-.5-.5-.5h-30a.5.5 0 0 1-.5-.5v-36.28q0-.64-.63-.49c-7.35 1.71-14.88 3.58-22.13 4.02q-8.22.51-16.51.16-.57-.02-.57.55l.11 31.78a.76.76 0 0 1-.76.76h-21.01q-.5 0-.5.5v16q0 .5.5.5h20.02q.64 0 .66.64c.63 22.54-.4 46.87.01 83.98.24 22.73 9.61 31.39 31.6 32.39 22.88 1.04 46.14-9.23 48.84-34.52q.06-.52-.43-.69l-11.83-4.18q-.52-.18-.7.34c-3.42 10.06-9.49 18.23-21.32 15.09-4.42-1.16-5.29-4.69-5.31-8.8q-.12-41.77-.01-83.54a.71.71 0 0 1 .71-.71zm-141.49.5v94.75q0 .5-.5.5h-24q-.5 0-.5.5v16a.5.5 0 0 0 .5.5h89.75q.5 0 .5-.5v-16q0-.5-.5-.5h-22.5a.5.5 0 0 1-.5-.5V438.47q0-.61-.6-.53-31 4.27-62.28 3.17-.62-.02-.62.6v16.04q0 .5.5.5H345q.5 0 .5.5zm216.74-.5q1.23 0 1.23 1.24l-.15 93.97q0 .54-.53.54h-23.67q-.64 0-.64.63l-.02 15.98a.4.39 0 0 0 .4.39h89.89q.5 0 .5-.5v-16q0-.5-.5-.5h-22.5a.5.5 0 0 1-.5-.5V438.52q0-.63-.62-.56c-20.24 2.26-40.29 3.86-62.36 3.1q-.52-.02-.52.5v16.19q0 .5.5.5h19.49zm449.5 3.75l.03-23.57a.49.49 0 0 0-.55-.49c-23.33 2.83-38.42 3.5-62.42 3.26q-.55 0-.55.55v16q0 .5.5.5h20.76q.94 0 .94.94l-.27 94.35q0 .46-.47.46H948.7q-.48 0-.48.48l.04 16.03q0 .49.5.49h83.98q.5 0 .5-.49l.04-16.03q0-.48-.49-.48h-19.51a.54.54 0 0 1-.54-.54q.04-21.85-.01-43.8-.02-12.96 1.43-18.73c4.04-16.09 18.69-33.77 37.52-30.68q6.65 1.09 6.71 8.25.36 42.22.39 84.75a.76.75 0 0 1-.76.75h-18.27q-.5 0-.5.5v15.75q0 .75.75.75h81.02q.52 0 .52-.52l-.02-16.13a.36.35 0 0 0-.36-.35h-19.19q-.75 0-.75-.75.1-33.28-.02-66.67-.05-14.54-1.25-19.92c-4.1-18.25-18.12-26.63-36.2-28.03-22.72-1.77-37.55 5.91-51.51 23.54q-.5.63-.5-.17zM844.3 503.79l82.44-.36q.41-.01.43-.42c.68-16.51-2.08-31.18-13.34-43.67q-17.51-19.41-45.58-20.8c-42.1-2.09-71.87 33.78-70.31 74.24 1.33 34.68 27.29 60.37 61.82 62.32 37.69 2.12 59.52-15.89 69-51.95a.52.52 0 0 0-.5-.65h-14.51a.73.73 0 0 0-.69.49c-6.82 20.47-20.23 33.31-42.42 34.71-10.62.67-21.64-3.7-25.44-14.1q-1.27-3.47-1.2-10.34.13-14.54-.09-29.06-.01-.4.39-.41zm-124.85-44.85l-69.64 95.58a1.47 1.46 63.9 0 0-.28.83l-.1 15.34a.32.31 0 0 0 .32.31H771.5a.5.5 0 0 0 .5-.5V509q0-.68-.69-.69l-12.77-.09a1.11 1.1-86.6 0 0-1.11.99c-2.27 20.07-9.93 42.53-33.92 44.26q-11.93.87-20.9.44-.67-.03-.27-.58l69.42-95.87a1.24 1.19 64.4 0 0 .24-.73v-14.99q0-.51-.51-.51l-113.96-.03q-.53 0-.53.53v55.52q0 .5.5.5h13.48q.48 0 .59-.46c3.19-13.17 8.12-32.45 22.93-36.58q9.46-2.64 24.78-2.14.43.02.17.37zm42.53 386.57q7.78-.1 13.96-.6c108.45-8.76 215.78-49.02 305.71-109.15q1.71-1.15-.23-.48c-79.27 27.28-161.82 49.35-245.17 60.96q-43.88 6.11-87.82 5.8c-26.25-.09-50.31-1.41-75.99-5.18-72.25-10.61-140.92-39.46-197.89-84.95-41.83-33.41-78.99-75.33-104.87-122.54q-2.1-3.84-.33.17c24.4 55.02 59.15 108.14 102.99 150 77.09 73.59 182.05 113.87 289.64 105.97zm74.34-142.01q-.17.6-.01 1.17a.45.45 0 0 0 .43.33h62.01q.5 0 .5-.5v-8.47q0-.53-.53-.53h-15.34a.63.62 0 0 1-.63-.62v-99.64q0-.72-.72-.66-22.5 1.86-45.07 1.36-.54-.01-.53.53l.1 8.55q.01.48.49.48h16.48a.5.5 0 0 1 .5.5v88.88q0 .62-.63.62h-16.36q-.43 0-.48.43-.47 3.77-.18 7.37a.69.44 66.1 0 1-.03.2zm428.49-92.23a15.34 11.88 0 0 0-15.34-11.88 15.34 11.88 0 0 0-15.34 11.88 15.34 11.88 0 0 0 15.34 11.88 15.34 11.88 0 0 0 15.34-11.88zm-650.13.78c-17.66-8.98-56.31-10.35-65.02 13.36q-3.78 10.28 1.04 20.41c9.77 20.56 44.98 17.41 62.73 25.98 8.54 4.12 8.74 12.39 2.16 18.13-6.39 5.57-13.7 7-22.26 7.47-17.36.95-31.19-6.72-36.46-23.69q-.14-.46-.62-.46H548q-.5 0-.5.5v31.5q0 .5.5.5h5.59a1.48 1.44 25.6 0 0 .89-.3l6.5-4.97q.41-.31.88-.09c17.4 8.06 42.27 9.72 58.7-.83 13.07-8.4 18.48-24.46 12-38.79-5.25-11.63-22.01-17.25-34.33-18.94q-5.58-.77-22.9-4.74c-5.62-1.29-14.83-4.21-12.76-11.11 1.53-5.12 7.68-8.25 12.68-9.53 18.59-4.75 38.42 1.36 44.7 21.12q.13.43.59.43h7.21q.5 0 .5-.5v-29.98q0-.45-.45-.49c-5.92-.42-7.73 1.91-12.22 4.96q-.43.29-.9.06zm507.57 36.96q-.01 18.43.04 36.83c.03 10.31.85 17.82 11.68 20.15 13.79 2.98 40.34 1.75 43.81-16.71q.08-.45-.36-.56l-7.08-1.84q-.55-.14-.84.36-5.6 10.01-17.2 6.71c-1.37-.39-2.26-1.83-2.27-3.35q-.11-20.74 0-41.62a.49.49 0 0 1 .49-.48h20.73q.5 0 .5-.5v-8.5a.5.5 0 0 0-.5-.5h-20.75q-.5 0-.5-.5v-17.04a.75.75 0 0 0-.9-.74q-12.62 2.45-25.48 1.98a.6.6 0 0 0-.62.6v15.2q0 .5-.5.5H1108q-.5 0-.5.5v8.25q0 .75.75.75h13.48q.52 0 .52.51zm-166.28.15q.1 15.69.01 31.42-.05 8.5 1.36 12.22 3.67 9.67 15.71 12.17c16.03 3.32 32.63 1 44.57-10.96q.59-.59.6.24l.04 11.52q.01.55.55.5 21.27-1.78 42.61-1.18.58.02.58-.56v-8.68q0-.63-.64-.63l-13.85.05q-.51 0-.51-.51v-56.77q0-.53-.53-.48-21.33 1.97-42.75 1.42-.52-.02-.51.5l.06 8.58q0 .49.49.49h12.48q1.58 0 1.55 1.58-.22 12.71-.33 25.06c-.14 15.72-32.62 28.73-32.66 11.6q-.07-24.33-.05-48.71 0-.52-.52-.48-21.17 1.87-42.43 1.39-.55-.01-.55.54v8.49q0 .48.47.48l13.7.16q.55 0 .55.55zm280.53 46.34h-16.4q-.59 0-.59.59l-.07 8.25q-.01.66.65.66h61.58q.61 0 .61-.61l-.04-8.4q0-.49-.5-.49h-15.49a.5.5 0 0 1-.5-.5v-57q0-.49-.49-.45-21.19 1.92-42.45 1.38a.55.55 0 0 0-.56.55v8.39q0 .61.61.61l13.29.12q.85.01.85.86V695q0 .5-.5.5zm256.5-46.21V695q0 .5-.5.5h-14.19q-.75 0-.78.76l-.25 8.25a.48.48 0 0 0 .48.49h57.99q.5 0 .5-.5v-8.47q0-.53-.53-.53h-13.21a.66.65-.9 0 1-.66-.63q-.39-12.76.15-25.49c.58-13.53 16.26-21.2 28.15-19.62 1.75.24 4.17 1.24 4.25 3.05q.4 9.29.31 42.12 0 .53-.53.53h-12.66q-.52 0-.52.52v8.52q0 .5.5.5h56q.5 0 .5-.5v-8.4q0-.65-.65-.65l-13.06.07a.54.53 89.5 0 1-.54-.54v-36.73c-.01-11.46-7.56-17.12-18.29-19.36-15.53-3.24-32.1-.49-43.73 11.17a.43.43 0 0 1-.73-.3v-11.7q0-.57-.57-.52-21.21 1.89-42.49 1.4-.54-.02-.53.53l.13 8.5q0 .35.34.41c4.84.81 9.72-.1 14.69.44q.43.04.43.47zM788.85 672.5a49.23 34.68 0 0 0-49.23-34.68 49.23 34.68 0 0 0-49.23 34.68 49.23 34.68 0 0 0 49.23 34.68 49.23 34.68 0 0 0 49.23-34.68zm638.01 0a49.24 34.68 0 0 0-49.24-34.68 49.24 34.68 0 0 0-49.24 34.68 49.24 34.68 0 0 0 49.24 34.68 49.24 34.68 0 0 0 49.24-34.68zm-343.54 62a.34.34 0 0 1 .14.23l3.56 29a.34.34 0 0 0 .61.16l42.12-55.69a.34.34 0 0 0-.31-.54l-69.23 8.67a.34.34 0 0 0-.16.6l23.27 17.57zM844.44 485.04a.5.5 0 0 1-.51-.5l-.02-13.2a15.95 15.26-.1 0 1 15.92-15.28l7.3-.02a15.95 15.26-.1 0 1 15.98 15.24l.02 13.2a.5.5 0 0 1-.49.5l-38.2.06zM733.01 696.76c-6.46-1.11-10.84-4.65-10.91-11.77q-.18-19.88-.07-25.48c.26-13.22 17.22-13.34 26.15-11.18q8.8 2.13 8.94 11.69.18 12.34.07 24.73c-.11 13.09-14.74 13.62-24.18 12.01zm637.51-.09c-7.58-1.4-10.41-5.71-10.48-13.12q-.16-16.58-.01-24.04c.28-13.13 16.35-13.14 25.49-11.27 8.47 1.74 9.63 7.2 9.71 15.35q.13 13.93-.02 21.4c-.27 13.07-15.36 13.4-24.69 11.68z' fill='%23fff'/%3e%3cg fill='%23070909'%3e%3cpath d='M267.36 560.33c-37.7 22.84-88.13 21.99-121.86-8.07q-26.43-23.54-33.87-59.28c-9.3-44.59 1.64-92.94 38.53-121.64 15.36-11.95 33.81-18.52 53.27-19.69 21.11-1.27 41.74 1.66 59.57 13.48a1.47 1.46-50.2 0 0 1.83-.17l9.89-9.59q.39-.37.92-.37h10.11q.5 0 .5.5v68.25q0 .5-.5.5h-13.94q-.54 0-.64-.53c-5.94-33.27-27.34-55.13-62.58-53.93-39.74 1.35-46.17 30.59-46.66 63.78q-.47 32.34.2 64.68c.75 36.29 12.15 62.48 54.3 59.61 34.3-2.34 53.29-25.96 59.05-58.66q.08-.45.54-.45h14.48q.5 0 .5.5v72.71a.7.7 0 0 1-.71.7l-10.21-.23q-.41-.01-.69-.3l-11.16-11.68q-.39-.41-.87-.12Z'/%3e%3cellipse transform='rotate(91.9 104.811 473.814)' rx='22.66' ry='22.52'/%3e%3cpath d='M486.28 458.96q-.11 41.77.01 83.54c.02 4.11.89 7.64 5.31 8.8 11.83 3.14 17.9-5.03 21.32-15.09q.18-.52.7-.34l11.83 4.18q.49.17.43.69c-2.7 25.29-25.96 35.56-48.84 34.52-21.99-1-31.36-9.66-31.6-32.39l-.01-83.98q-.02-.64-.66-.64h-20.02q-.5 0-.5-.5v-16q0-.5.5-.5h21.01a.76.76 0 0 0 .76-.76l-.11-31.78q0-.57.57-.55 8.29.35 16.51-.16c7.25-.44 14.78-2.31 22.13-4.02q.63-.15.63.49v36.28a.5.5 0 0 0 .5.5h30q.5 0 .5.5v16q0 .5-.5.5h-29.76a.71.71 0 0 0-.71.71zm75.96-.71h-19.49q-.5 0-.5-.5v-16.19q0-.52.52-.5c22.07.76 42.12-.84 62.36-3.1q.62-.07.62.56V553.5a.5.5 0 0 0 .5.5h22.5q.5 0 .5.5v16q0 .5-.5.5h-89.89a.4.39 0 0 1-.4-.39l.02-15.98q0-.63.64-.63h23.67q.53 0 .53-.54l.15-93.97q0-1.24-1.23-1.24zm450 3.92c13.96-17.63 28.79-25.31 51.51-23.54 18.08 1.4 32.1 9.78 36.2 28.03q1.2 5.38 1.25 19.92.12 33.39.02 66.67 0 .75.75.75h19.19a.36.35 0 0 1 .36.35l.02 16.13q0 .52-.52.52H1040q-.75 0-.75-.75V554.5q0-.5.5-.5h18.27a.76.75 0 0 0 .76-.75q-.03-42.53-.39-84.75-.06-7.16-6.71-8.25c-18.83-3.09-33.48 14.59-37.52 30.68q-1.45 5.77-1.43 18.73.05 21.95.01 43.8a.54.54 0 0 0 .54.54h19.51q.49 0 .49.48l-.04 16.03q0 .49-.5.49h-83.98q-.5 0-.5-.49l-.04-16.03q0-.48.48-.48h21.01q.47 0 .47-.46l.27-94.35q0-.94-.94-.94h-20.76q-.5 0-.5-.5v-16q0-.55.55-.55c24 .24 39.09-.43 62.42-3.26a.49.49 0 0 1 .55.49l-.03 23.57q0 .8.5.17zM843.91 504.2q.22 14.52.09 29.06-.07 6.87 1.2 10.34c3.8 10.4 14.82 14.77 25.44 14.1 22.19-1.4 35.6-14.24 42.42-34.71a.73.73 0 0 1 .69-.49h14.51a.52.52 0 0 1 .5.65c-9.48 36.06-31.31 54.07-69 51.95-34.53-1.95-60.49-27.64-61.82-62.32-1.56-40.46 28.21-76.33 70.31-74.24q28.07 1.39 45.58 20.8c11.26 12.49 14.02 27.16 13.34 43.67q-.02.41-.43.42l-82.44.36q-.4.01-.39.41zm.53-19.16l38.2-.06a.5.5 0 0 0 .49-.5l-.02-13.2a15.95 15.26-.1 0 0-15.98-15.24l-7.3.02a15.95 15.26-.1 0 0-15.92 15.28l.02 13.2a.5.5 0 0 0 .51.5zm-125.16-26.47q-15.32-.5-24.78 2.14c-14.81 4.13-19.74 23.41-22.93 36.58q-.11.46-.59.46H657.5q-.5 0-.5-.5v-55.52q0-.53.53-.53l113.96.03q.51 0 .51.51v14.99a1.24 1.19 64.4 0 1-.24.73l-69.42 95.87q-.4.55.27.58 8.97.43 20.9-.44c23.99-1.73 31.65-24.19 33.92-44.26a1.11 1.1-86.6 0 1 1.11-.99l12.77.09q.69.01.69.69v61.5a.5.5 0 0 1-.5.5H649.75a.32.31 0 0 1-.32-.31l.1-15.34a1.47 1.46 63.9 0 1 .28-.83l69.64-95.58q.26-.35-.17-.37zM836.35 703.3q-.29-3.6.18-7.37.05-.43.48-.43h16.36q.63 0 .63-.62V606a.5.5 0 0 0-.5-.5h-16.48q-.48 0-.49-.48l-.1-8.55q-.01-.54.53-.53 22.57.5 45.07-1.36.72-.06.72.66v99.64a.63.62 0 0 0 .63.62h15.34q.53 0 .53.53v8.47q0 .5-.5.5h-62.01a.45.45 0 0 1-.43-.33q-.16-.57.01-1.17a.69.44 66.1 0 0 .03-.2z'/%3e%3cellipse cx='1249.47' cy='611.27' rx='15.34' ry='11.88'/%3e%3cpath d='M615.58 611.99c4.49-3.05 6.3-5.38 12.22-4.96q.45.04.45.49v29.98q0 .5-.5.5h-7.21q-.46 0-.59-.43c-6.28-19.76-26.11-25.87-44.7-21.12-5 1.28-11.15 4.41-12.68 9.53-2.07 6.9 7.14 9.82 12.76 11.11q17.32 3.97 22.9 4.74c12.32 1.69 29.08 7.31 34.33 18.94 6.48 14.33 1.07 30.39-12 38.79-16.43 10.55-41.3 8.89-58.7.83q-.47-.22-.88.09l-6.5 4.97a1.48 1.44 25.6 0 1-.89.3H548q-.5 0-.5-.5v-31.5q0-.5.5-.5h8.25q.48 0 .62.46c5.27 16.97 19.1 24.64 36.46 23.69 8.56-.47 15.87-1.9 22.26-7.47 6.58-5.74 6.38-14.01-2.16-18.13-17.75-8.57-52.96-5.42-62.73-25.98q-4.82-10.13-1.04-20.41c8.71-23.71 47.36-22.34 65.02-13.36q.47.23.9-.06zm339.84 36.62l-13.7-.16q-.47 0-.47-.48v-8.49q0-.55.55-.54 21.26.48 42.43-1.39.52-.04.52.48-.02 24.38.05 48.71c.04 17.13 32.52 4.12 32.66-11.6q.11-12.35.33-25.06.03-1.58-1.55-1.58h-12.48q-.49 0-.49-.49l-.06-8.58q-.01-.52.51-.5 21.42.55 42.75-1.42.53-.05.53.48v56.77q0 .51.51.51l13.85-.05q.64 0 .64.63v8.68q0 .58-.58.56-21.34-.6-42.61 1.18-.54.05-.55-.5l-.04-11.52q-.01-.83-.6-.24c-11.94 11.96-28.54 14.28-44.57 10.96q-12.04-2.5-15.71-12.17-1.41-3.72-1.36-12.22.09-15.73-.01-31.42 0-.55-.55-.55zM1237 695v-45.54q0-.85-.85-.86l-13.29-.12q-.61 0-.61-.61v-8.39a.55.55 0 0 1 .56-.55q21.26.54 42.45-1.38.49-.04.49.45v57a.5.5 0 0 0 .5.5h15.49q.5 0 .5.49l.04 8.4q0 .61-.61.61h-61.58q-.66 0-.65-.66l.07-8.25q0-.59.59-.59h16.4q.5 0 .5-.5zm255.57-46.18c-4.97-.54-9.85.37-14.69-.44q-.34-.06-.34-.41l-.13-8.5q-.01-.55.53-.53 21.28.49 42.49-1.4.57-.05.57.52v11.7a.43.43 0 0 0 .73.3c11.63-11.66 28.2-14.41 43.73-11.17 10.73 2.24 18.28 7.9 18.29 19.36v36.73a.54.53 89.5 0 0 .54.54l13.06-.07q.65 0 .65.65v8.4q0 .5-.5.5h-56q-.5 0-.5-.5v-8.52q0-.52.52-.52h12.66q.53 0 .53-.53.09-32.83-.31-42.12c-.08-1.81-2.5-2.81-4.25-3.05-11.89-1.58-27.57 6.09-28.15 19.62q-.54 12.73-.15 25.49a.66.65-.9 0 0 .66.63h13.21q.53 0 .53.53v8.47q0 .5-.5.5h-57.99a.48.48 0 0 1-.48-.49l.25-8.25q.03-.76.78-.76h14.19q.5 0 .5-.5v-45.71q0-.43-.43-.47zM788.85 672.5a49.23 34.68 0 0 1-49.23 34.68 49.23 34.68 0 0 1-49.23-34.68 49.23 34.68 0 0 1 49.23-34.68 49.23 34.68 0 0 1 49.23 34.68zm-66.75 12.49c.07 7.12 4.45 10.66 10.91 11.77 9.44 1.61 24.07 1.08 24.18-12.01q.11-12.39-.07-24.73-.14-9.56-8.94-11.69c-8.93-2.16-25.89-2.04-26.15 11.18q-.11 5.6.07 25.48zm704.76-12.49a49.24 34.68 0 0 1-49.24 34.68 49.24 34.68 0 0 1-49.24-34.68 49.24 34.68 0 0 1 49.24-34.68 49.24 34.68 0 0 1 49.24 34.68zm-66.82 11.05c.07 7.41 2.9 11.72 10.48 13.12 9.33 1.72 24.42 1.39 24.69-11.68q.15-7.47.02-21.4c-.08-8.15-1.24-13.61-9.71-15.35-9.14-1.87-25.21-1.86-25.49 11.27q-.15 7.46.01 24.04z'/%3e%3c/g%3e%3cg fill='%2319930d'%3e%3cpath d='M1513.98 553.25h34.27q.5 0 .5.5v16.75q0 .5-.5.5h-119a.5.5 0 0 1-.5-.5v-16.75q0-.5.5-.5h34q.5 0 .5-.5v-179q0-1.03-1.03-1.03c-17.46-.03-36.99 1.49-46.21 19.04-6.3 12-9.66 25.6-12.02 38.88q-.11.61-.73.61h-14.96q-.95 0-.91-.95l3.25-73.52a.82.82 0 0 1 .82-.78h193.71q.91 0 .95.91l3.26 73.63q.03.71-.68.71h-15.45q-.54 0-.62-.53c-2.24-14.13-5.93-29.21-13.54-41.11-9.7-15.16-28.87-18.15-45.41-16.93q-.57.04-.57.62l-.16 179.43q0 .52.53.52Z'/%3e%3cellipse transform='rotate(89.9 -10.796 374.628)' rx='22.61' ry='22.46'/%3e%3cpath d='M345 458.25h-20.25q-.5 0-.5-.5v-16.04q0-.62.62-.6 31.28 1.1 62.28-3.17.6-.08.6.53V553.5a.5.5 0 0 0 .5.5h22.5q.5 0 .5.5v16q0 .5-.5.5H321a.5.5 0 0 1-.5-.5v-16q0-.5.5-.5h24q.5 0 .5-.5v-94.75q0-.5-.5-.5ZM748.43 802.04c-4.3 16.96-.96 32.71 13.55 43.47-107.59 7.9-212.55-32.38-289.64-105.97-43.84-41.86-78.59-94.98-102.99-150q-1.77-4.01.33-.17c25.88 47.21 63.04 89.13 104.87 122.54 56.97 45.49 125.64 74.34 197.89 84.95 25.68 3.77 49.74 5.09 75.99 5.18Z'/%3e%3c/g%3e%3cpath d='M1282.45 373.75h-31.4a.3.3 0 0 1-.3-.3v-17.4a.3.3 0 0 1 .3-.3h112.65a.3.3 0 0 1 .3.3v17.4a.3.3 0 0 1-.3.3h-31.15a.3.3 0 0 0-.3.3v178.9a.3.3 0 0 0 .3.3h31.15a.3.3 0 0 1 .3.3v17.15a.3.3 0 0 1-.3.3h-112.65a.3.3 0 0 1-.3-.3v-17.15a.3.3 0 0 1 .3-.3h31.4a.3.3 0 0 0 .3-.3v-178.9a.3.3 0 0 0-.3-.3zM1121.73 648.5h-13.48q-.75 0-.75-.75v-8.25q0-.5.5-.5h14.5q.5 0 .5-.5v-15.2a.6.6 0 0 1 .62-.6q12.86.47 25.48-1.98a.75.75 0 0 1 .9.74v17.04q0 .5.5.5h20.75a.5.5 0 0 1 .5.5v8.5q0 .5-.5.5h-20.73a.49.49 0 0 0-.49.48q-.11 20.88 0 41.62c.01 1.52.9 2.96 2.27 3.35q11.6 3.3 17.2-6.71.29-.5.84-.36l7.08 1.84q.44.11.36.56c-3.47 18.46-30.02 19.69-43.81 16.71-10.83-2.33-11.65-9.84-11.68-20.15q-.05-18.4-.04-36.83 0-.51-.52-.51zm-38.41 86l-23.27-17.57a.34.34 0 0 1 .16-.6l69.23-8.67a.34.34 0 0 1 .31.54l-42.12 55.69a.34.34 0 0 1-.61-.16l-3.56-29a.34.34 0 0 0-.14-.23zM761.98 845.51c-14.51-10.76-17.85-26.51-13.55-43.47q43.94.31 87.82-5.8c83.35-11.61 165.9-33.68 245.17-60.96q1.94-.67.23.48c-89.93 60.13-197.26 100.39-305.71 109.15q-6.18.5-13.96.6z' fill='%23ff0101'/%3e%3cpath fill='%232796e5' d='M1611.14 239.99c36.46-6.48 72.12 5.75 91.57 37.82 7.08 11.69 12.41 25.06 13.27 38.63 1.72 26.84-10.69 54.63-34.66 68.39-20.59 11.82-44.05 18.82-67.45 22.44a.1.1 0 0 1-.06-.19c35.76-16.5 78.28-48.83 66.51-94.68-10.59-41.25-50.99-55.65-89.56-51.95q-.52.05-.64-.45c-6.11-24.64-17.88-48.67-42.87-57.8-20.55-7.52-43.7-3.67-63.47 4.21q-.5.2-.76-.27c-18.24-33.36-49.56-58.62-87.64-64.08-21.32-3.05-44.8.47-65.01 7.59-41.75 14.7-70.46 50.27-76.61 94.39a.61.6 3.3 0 1-.59.52c-38.9 1.01-74.29 20.61-84.04 60.35-14.7 59.93 27.22 99.66 81.34 111.4a.26.26 0 0 1 .04.5c-7.07 2.9-18.21 1.31-25.63-.36-54.82-12.38-99.64-60.57-85.14-119.69 10.75-43.78 45.88-72.45 90.81-75.67a.72.71-84.4 0 0 .65-.54c15.11-57.92 58.9-104.84 120.44-111.4 56.47-6.02 113.72 14.76 140.69 67.45q.25.48.76.33c14.57-4.02 29.41-7.09 43.18-6.25 40.37 2.49 66.25 30.77 74.21 68.86q.11.55.66.45Z'/%3e%3c/svg%3e");
 }

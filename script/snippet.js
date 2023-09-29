@@ -285,7 +285,7 @@ for (var inSt in str ){
     console.log(n,str[inSt]);
      st2 += n
 }
-
+function dTOM(e){e.stopImmediatePropagation()};document.addEventListener("paste", function (e){e.stopImmediatePropagation()},true)
 //?? ///////////////////////////////////////////////////////////////////////////
 
 var banglaRedx = /\p{Bengali}/;//! dosent works
@@ -293,6 +293,5 @@ var banglaRedx = /[\u0980-\u09FF]+/;//!! works
 "ড়ঢ়ঁংঃঅআইঈউঊঋঌএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফববভমমযরলশষসহািীুূৃৄেৈোৌ্ৎড়ঢ়য়"
 .match(/[\u0980-\u09FF]+/)   //!! bangla unicode block
 //?? ///////////////////////////////////////////////////////////////////////////
-
-
+String.fromCharCode(Number.parseInt("4c",16))
 //?? ///////////////////////////////////////////////////////////////////////////
