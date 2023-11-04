@@ -518,7 +518,7 @@ function loadSecPage() {
 }
 
 var a = [new Date()]
-a[1] = a[0].getDate().toFixed(0).padStart(2, 0) + "/" + a[0].getMonth().toFixed().padStart(2, 0) + "/" + a[0].getFullYear();
+a[1] = a[0].getDate().toFixed(0).padStart(2, 0) + "/" + (a[0].getMonth()+1).toFixed().padStart(2, 0) + "/" + a[0].getFullYear();
 function loadpage(inp) {
 
     switch (inp) {
