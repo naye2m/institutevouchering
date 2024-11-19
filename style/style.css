@@ -1095,5 +1095,6 @@ td.action button,
   z-index: 1;
 }
 .logobg {
-  background-image: url("./weblogo.png");
+    background-image: url(../weblogo.png);
+    background-size: cover;
 }
