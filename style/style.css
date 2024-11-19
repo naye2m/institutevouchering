@@ -1047,8 +1047,7 @@ td.action button,
   --br: var(--red);
   --bg: var(--green);
   --bb: var(--blue);
-  --b: #;
-  --phone-screen-size-high: 600px
+  --phone-screen-size-high: 600px;
 }
 
 .timeAndInvNo {
@@ -1096,5 +1095,5 @@ td.action button,
   z-index: 1;
 }
 .logobg {
-  background-image: url("./weblogo.png"
+  background-image: url("./weblogo.png");
 }
