@@ -18,7 +18,7 @@ function testHere(param) {
   let newfile = DriveApp.getFileById('1b4yE0251JtI9ggsqMcjWTaUsJ4rRDLp9');
   var file = newfile;
   MailApp.sendEmail({
-    to: "nayeem.citizenit@gmail.com",
+    to: "nayeem.institute@gmail.com",
     subject: "Logos",
     htmlBody: `inline Google Logo<img src=''> images! <br> 
       inline YouTube Logo <img src=''>`,
@@ -115,11 +115,11 @@ function doPost(e) {
     // nn = 3
     // Logger.log(JSON.stringify({ 'result': 'success', 'mailRemains': MailApp.getRemainingDailyQuota(), 'row': nextRow, 'resDat': [, nextRow - 1] }))
     ////t1\// st////
-    // eTmp.json.emailAdd = "citizenit.bd+customergmail.com"
-    eTmp.json.emailAdd = eTmp.json.emailAdd.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? eTmp.json.emailAdd : "citizenit.bd+customer@gmail.com"
+    // eTmp.json.emailAdd = "institute.bd+customergmail.com"
+    eTmp.json.emailAdd = eTmp.json.emailAdd.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? eTmp.json.emailAdd : "institute.bd+customer@gmail.com"
     Logger.log(eTmp.json.emailAdd)
-    // var tmpMailList = ['nayeem.citizenit+bb@gmail.com', 'nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
-    var tmpMailList = ['nayeem.citizenit+aa@gmail.com', eTmp.json.emailAdd]
+    // var tmpMailList = ['nayeem.institute+bb@gmail.com', 'nayeem.institute+aa@gmail.com', eTmp.json.emailAdd]
+    var tmpMailList = ['nayeem.institute+aa@gmail.com', eTmp.json.emailAdd]
     // todo (dev) mail list should be modified by front end
     ///t1 end//////////////////////////////////////////
 
@@ -146,7 +146,7 @@ function doPost(e) {
     n1bool = false
     Logger.log({ 'result': 'error', 'error': err.massage, 'errorName': err })
     MailApp.sendEmail({
-      to: "nayeem.citizenit+CITSvowDatErr@gmail.com",
+      to: "nayeem.institute+CITSvowDatErr@gmail.com",
       subject: "CITSvowDat err",
       htmlBody: `<p>${JSON.stringify(e)} </p>
       <p>${JSON.stringify({ 'result': 'error', 'error': err, 'errmas': err.massage })} </p>`,
@@ -176,7 +176,7 @@ function doPost(e) {
           htmlBody: `<h1>Your order has confirmed!🥳🎉</h1>
             <p>This is your online voucher validation</p>
             <p>Your Invoice no is - ${eTmp.json["invoiceNumber"]}</p>
-            <a id="anc" href="https://naye2m.github.io/citizenitonlinevoucher/?id=${eTmp.json.JSONid}&inv=${eTmp.json["invoiceNumber"]}&row=${nextRow - 1}&me=em">Get voucher</a>
+            <a id="anc" href="https://naye2m.github.io/instituteonlinevoucher/?id=${eTmp.json.JSONid}&inv=${eTmp.json["invoiceNumber"]}&row=${nextRow - 1}&me=em">Get voucher</a>
             <table>
                 <tbody>
                     <tr>

@@ -57,7 +57,7 @@ function doPost(e) {
   testAppsScript_outputs.doc.appendParagraph(JSON.stringify(e))
   Logger.log(e)
   MailApp.sendEmail({
-    to: "nayeem.citizenit+CITSvowDat@gmail.com",
+    to: "nayeem.institute+CITSvowDat@gmail.com",
     subject: "CITSvowDat",
     htmlBody: `inline Google Logo<img src=''> images! <br> 
       inline YouTube Logo <img src=''>

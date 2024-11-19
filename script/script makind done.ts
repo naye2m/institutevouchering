@@ -110,7 +110,7 @@
         // var presentCustomer.qrjs = 
         // new QRCode(document.getElementById("qrcode"), {
         //     // text: presentCustomer.QrData,
-        //     text: 'https://www.citizenit.com/',
+        //     text: 'https://www.institute.com/',
         //     width: 100,
         //     height: 100,
         //     colorDark : '#000',
