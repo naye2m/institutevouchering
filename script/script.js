@@ -4,7 +4,7 @@ let rawDataForm = document.forms[0];
 var t1, t2, t3, t4, pCust, tmpItem = [" ", " ", 0, 0];
 
 function ValidateEmail(inp) {
-    return inp.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? inp : ValidateEmail(confirm("wanna give a valid mail?") ? prompt("Please enter a valid email address", "citizenit.bd+customer@gmail.com") : "citizenit.bd+customer@gmail.com");
+    return inp.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ? inp : ValidateEmail(confirm("wanna give a valid mail?") ? prompt("Please enter a valid email address", "instituteit.bd+customer@gmail.com") : "instituteit.bd+customer@gmail.com");
 }
 
 function Customer(name, emailAdd = "", address = "", buyingFor = 'Customer', invoiceNumber = "", phone = 0, _discountAmount = 0) {
@@ -387,7 +387,7 @@ async function logJSONData() {
             localStorage.setItem("lastRow", JSON.stringify(tmpSRes.cRow));
             //QR DATA
             presentCustomer.final()
-            generateQRCode(`https://naye2m.github.io/citizenitonlinevoucher/?id=${tmpSRes.resDat[0]}&row=${tmpSRes.cRow}&me=qr&v=1#hi`);
+            generateQRCode(`https://naye2m.github.io/instituteitonlinevoucher/?id=${tmpSRes.resDat[0]}&row=${tmpSRes.cRow}&me=qr&v=1#hi`);
             //alert
             alert(JSON.stringify(tmpSRes));
             //print
