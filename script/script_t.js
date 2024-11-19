@@ -1,4 +1,3 @@
-console.log("   _______ __  _                    __________   \r\n  / ____(_) /_(_)___ ___  ____     /  _/_  __/   \r\n / /   / / __/ /_  // _ \\/ __ \\    / /  / /      \r\n/ /___/ / /_/ / / //  __/ / / /  _/ /  / /       \r\n\\____/_/\\__/_/ /___|___/_/ /_/  /___/ /_/        \r\n   _________  / /_  __/ /_(_)___  ____  _____    \r\n  / ___/ __ \\/ / / / / __/ / __ \\/ __ \\/ ___/    \r\n (__  ) /_/ / / /_/ / /_/ / /_/ / / / (__  )     \r\n/____/\\____/_/\\__,_/\\__/_/\\____/_/ /_/____/\r\n                                              -@naye2m\r\nCopyright © 2012 - 2023 Citizen IT® solutions. All rights reserved."); // turn fist on DIPLOY
 var presentCustomer;
 let rawDataForm = document.forms[0];
 
@@ -192,8 +191,9 @@ function newItem(name, price, qty, itemSirialNo) {
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbwwpudyHgrwpPmM7qS2nC0xa2TsuKs1UVWEwdrpOnsWNxW48dFPadxfVyagnBrGdjSk/exec'//2nd deployment
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbwNZNyairQJqPfaydWe6RjvarBgYDX3isggiSSByRd0RZVxznkUYO8IkIUAVwC1_TM/exec'//3rd deployment
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbxBx4pqfK2TQtxPc9y0oon6jMnf2Z3eW4Nr8Z-4Rh213lkf-_YR4S4MlHxwCktDcSBk/exec' //4th deployment
-var scriptURL = 'https://script.google.com/macros/s/AKfycbwuuHmci7IXs2yZznsTOA37hduR7fAoa2aPXn-r57yvMuNlX5f7erdJs-4jmhqOZ-Co/exec' //5th deployment
+// var scriptURL = 'https://script.google.com/macros/s/AKfycbwuuHmci7IXs2yZznsTOA37hduR7fAoa2aPXn-r57yvMuNlX5f7erdJs-4jmhqOZ-Co/exec' //5th deployment
 // var scriptURL = 'https://script.google.com/macros/s/AKfycbwVmBDq5ymZXacyfRkBD0C_Pyokmcg1rIQY2lHXI_wi9nEBOhM6tUrwIqmaUjy7OyNp/exec'//v2 1st deployment
+var scriptURL = 'https://script.google.com/macros/s/AKfycbze6hvJ-WeDBno4ecCx8B0NG5iYPIoNoEnBH5NtrBqEpZB9O6p7KMI8wLUhbU7vA-gt/exec' //super deploy
 const fetchingForm = rawDataForm; //?? make it constant
 // const fetchingForm = document.forms['formName']
 fetchingForm.addEventListener('submit', e => {
